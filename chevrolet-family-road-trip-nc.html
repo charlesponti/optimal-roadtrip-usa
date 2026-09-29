@@ -1,231 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-  	<meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="The Midwest Family Road Trip by Chevrolet.">
-    <meta name="author" content="Chevrolet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The Midwest Family Road Trip by Chevrolet (restored map)</title>
+<meta name="description" content="The Midwest Family Road Trip by Chevrolet: 10 stops, 1,961 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="chevrolet-family-road-trip-nc.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"chevrolet-family-road-trip-nc","profile":"car","assets":"assets/","data":"data/chevrolet-family-road-trip-nc/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[{"order":4,"drive":[-86.042076,44.882517],"display":[-85.9996747,44.8757238],"distance_m":3425,"via":"the fixed 2026-09-26: Dune Climb parking on M-109"}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The Midwest Family Road Trip by Chevrolet</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The Midwest Family Road Trip by Chevrolet</strong>
+      <span class="meta">10 stops · 1,961 mi · 39.3 hours driving</span><br>
+      <a href="chevrolet-family-road-trip-nc.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>10<small>one way</small></dd></div>
+      <div><dt>Distance</dt><dd>1,961 mi<small>3,156 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>39.3 hours<small>1.6 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>9<small>all by road</small></dd></div>
+    </dl>
     
-    <title>The Midwest Family Road Trip by Chevrolet</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var routes_list = [];
-		
-		var marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10;
-		var infoWindows = [];
-		
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var routeMarkerOptions = {visible: false, zIndex: 0};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: routeMarkerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+    
 
-		function initialize() {
-		  var center = new google.maps.LatLng(42.758075, -86.085717);
-		  var mapOptions = {
-			zoom: 7,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  for (i=0; i<routes_list.length; i++) {
-		  	routes_list[i].setMap(map);
-		  }
-		  marker1.setMap(map); marker2.setMap(map); marker3.setMap(map); marker4.setMap(map); marker5.setMap(map); marker6.setMap(map); marker7.setMap(map); marker8.setMap(map); marker9.setMap(map); marker10.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/chevrolet-family-road-trip-nc/route.gpx" download>GPX<small>137 KB</small></a><a class="btn" href="data/chevrolet-family-road-trip-nc/route.kml" download>KML<small>304 KB</small></a><a class="btn" href="data/chevrolet-family-road-trip-nc/route.geojson" download>GeoJSON<small>93 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=39.790315%2C-86.233661&amp;destination=38.204247%2C-85.771631&amp;waypoints=41.882105%2C-87.622957%7C43.031128%2C-87.916204%7C44.973019%2C-93.237028%7C44.882517%2C-86.042076%7C42.359442%2C-83.064365%7C41.508518%2C-81.695506%7C39.961374%2C-82.998910%7C39.143330%2C-84.508987&amp;travelmode=driving" rel="noopener" target="_blank">Open</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=39.790315%2C-86.233661&amp;destination=38.204247%2C-85.771631&amp;waypoint=41.882105%2C-87.622957&amp;waypoint=43.031128%2C-87.916204&amp;waypoint=44.973019%2C-93.237028&amp;waypoint=44.882517%2C-86.042076&amp;waypoint=42.359442%2C-83.064365&amp;waypoint=41.508518%2C-81.695506&amp;waypoint=39.961374%2C-82.998910&amp;waypoint=39.143330%2C-84.508987&amp;mode=driving" rel="noopener" target="_blank">Open</a></p>
 
-		function calcRoute(start, end, routes) {
-		  
-		  var directionsDisplay = new google.maps.DirectionsRenderer(directionsDisplayOptions);
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Indianapolis Motor Speedway</span><span class="stop-leg">177 mi (285 km), 3 h 34 min driving to 2. The Bean at Millennium Park</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">The Bean at Millennium Park</span><span class="stop-leg">89 mi (143 km), 1 h 54 min driving to 3. Harley-Davidson Museum</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Harley-Davidson Museum</span><span class="stop-leg">335 mi (539 km), 6 h 11 min driving to 4. Frederick R Weisman Art Museum</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Frederick R Weisman Art Museum</span><span class="stop-leg">563 mi (906 km), 12 h driving to 5. Sleeping Bear Dunes National Seashore</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Sleeping Bear Dunes National Seashore</span><span class="stop-via">Reached via the fixed 2026-09-26: Dune Climb parking on M-109 (2.1 mi away)</span><span class="stop-leg">273 mi (439 km), 5 h 25 min driving to 6. Detroit Institute of Arts</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Detroit Institute of Arts</span><span class="stop-leg">169 mi (272 km), 3 h 21 min driving to 7. Rock and Roll Hall of Fame Museum</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Rock and Roll Hall of Fame Museum</span><span class="stop-leg">142 mi (229 km), 2 h 43 min driving to 8. Ohio Statehouse</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Ohio Statehouse</span><span class="stop-leg">106 mi (170 km), 2 h 3 min driving to 9. Cincinnati Zoo</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Cincinnati Zoo</span><span class="stop-leg">108 mi (173 km), 2 h 9 min driving to 10. Churchill Downs</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Churchill Downs</span><span class="stop-leg">Final stop</span></span></button></li>
+    </ol>
 
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				directionsDisplay.setDirections(response);		
-			}
-		  });
-
-		  routes_list.push(directionsDisplay);
-		}
-
-		function createRoutes(route) {
-			// Google's free map API is limited to 10 waypoints so need to break into batches
-			route.push(route[0]);
-			var subset = 0;
-			while (subset < route.length) {
-				var waypointSubset = route.slice(subset, subset + 10);
-
-				var startPoint = waypointSubset[0];
-				var midPoints = waypointSubset.slice(1, waypointSubset.length - 1);
-				var endPoint = waypointSubset[waypointSubset.length - 1];
-
-				calcRoute(startPoint, endPoint, midPoints);
-
-				subset += 9;
-			}
-		}
-
-		optimal_route = ['4790 W 16th St, Indianapolis, IN 46222', '201 E Randolph St, Chicago, IL 60602', '400 W Canal St, Milwaukee, WI 53201', '333 E River Pkwy, Minneapolis, MN 55455', 'Sleeping Bear Dunes National Seashore, Michigan', '5200 Woodward Ave, Detroit, MI 48202', '1100 E 9th St, Cleveland, OH 44114', '1 Capitol Square, Columbus, OH 43215', '3400 Vine St, Cincinnati, OH 45220', '700 Central Ave, Louisville, KY 40208']
-		
-		createRoutes(optimal_route);
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-		
-        var infoWindow1 = new google.maps.InfoWindow({ content: "<h3>Indianapolis Motor Speedway<br />4790 W 16th St, Indianapolis, IN 46222</h3>"});
-
-        infoWindows.push(infoWindow1);
-        
-        marker1 = new google.maps.Marker({
-                                position: new google.maps.LatLng(39.79031459999999, -86.23366109999999),
-                                options: markerOptions,
-                                title: "Indianapolis Motor Speedway"
-                                });
-
-        google.maps.event.addListener(marker1, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow1.open(map, marker1); });
-
-        var infoWindow2 = new google.maps.InfoWindow({ content: "<h3>The Bean at Millennium Park<br />201 E Randolph St, Chicago, IL 60602</h3>"});
-
-        infoWindows.push(infoWindow2);
-        
-        marker2 = new google.maps.Marker({
-                                position: new google.maps.LatLng(41.8821051, -87.6229572),
-                                options: markerOptions,
-                                title: "The Bean at Millennium Park"
-                                });
-
-        google.maps.event.addListener(marker2, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow2.open(map, marker2); });
-
-        var infoWindow3 = new google.maps.InfoWindow({ content: "<h3>Harley-Davidson Museum<br />400 W Canal St, Milwaukee, WI 53201</h3>"});
-
-        infoWindows.push(infoWindow3);
-        
-        marker3 = new google.maps.Marker({
-                                position: new google.maps.LatLng(43.0311282, -87.9162042),
-                                options: markerOptions,
-                                title: "Harley-Davidson Museum"
-                                });
-
-        google.maps.event.addListener(marker3, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow3.open(map, marker3); });
-
-        var infoWindow4 = new google.maps.InfoWindow({ content: "<h3>Frederick R Weisman Art Museum<br />333 E River Pkwy, Minneapolis, MN 55455</h3>"});
-
-        infoWindows.push(infoWindow4);
-        
-        marker4 = new google.maps.Marker({
-                                position: new google.maps.LatLng(44.9730193, -93.237028),
-                                options: markerOptions,
-                                title: "Frederick R Weisman Art Museum"
-                                });
-
-        google.maps.event.addListener(marker4, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow4.open(map, marker4); });
-
-        var infoWindow5 = new google.maps.InfoWindow({ content: "<h3>Sleeping Bear Dunes National Seashore<br />Sleeping Bear Dunes National Seashore, Michigan</h3>"});
-
-        infoWindows.push(infoWindow5);
-        
-        marker5 = new google.maps.Marker({
-                                position: new google.maps.LatLng(44.8757238, -85.9996747),
-                                options: markerOptions,
-                                title: "Sleeping Bear Dunes National Seashore"
-                                });
-
-        google.maps.event.addListener(marker5, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow5.open(map, marker5); });
-
-        var infoWindow6 = new google.maps.InfoWindow({ content: "<h3>Detroit Institute of Arts<br />5200 Woodward Ave, Detroit, MI 48202</h3>"});
-
-        infoWindows.push(infoWindow6);
-        
-        marker6 = new google.maps.Marker({
-                                position: new google.maps.LatLng(42.3594422, -83.0643655),
-                                options: markerOptions,
-                                title: "Detroit Institute of Arts"
-                                });
-
-        google.maps.event.addListener(marker6, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow6.open(map, marker6); });
-
-        var infoWindow7 = new google.maps.InfoWindow({ content: "<h3>Rock and Roll Hall of Fame Museum<br />1100 E 9th St, Cleveland, OH 44114</h3>"});
-
-        infoWindows.push(infoWindow7);
-        
-        marker7 = new google.maps.Marker({
-                                position: new google.maps.LatLng(41.5085183, -81.69550579999999),
-                                options: markerOptions,
-                                title: "Rock and Roll Hall of Fame Museum"
-                                });
-
-        google.maps.event.addListener(marker7, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow7.open(map, marker7); });
-
-        var infoWindow8 = new google.maps.InfoWindow({ content: "<h3>Ohio Statehouse<br />1 Capitol Square, Columbus, OH 43215</h3>"});
-
-        infoWindows.push(infoWindow8);
-        
-        marker8 = new google.maps.Marker({
-                                position: new google.maps.LatLng(39.9613745, -82.9989103),
-                                options: markerOptions,
-                                title: "Ohio Statehouse"
-                                });
-
-        google.maps.event.addListener(marker8, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow8.open(map, marker8); });
-
-        var infoWindow9 = new google.maps.InfoWindow({ content: "<h3>Cincinnati Zoo<br />3400 Vine St, Cincinnati, OH 45220</h3>"});
-
-        infoWindows.push(infoWindow9);
-        
-        marker9 = new google.maps.Marker({
-                                position: new google.maps.LatLng(39.1433304, -84.50898719999999),
-                                options: markerOptions,
-                                title: "Cincinnati Zoo"
-                                });
-
-        google.maps.event.addListener(marker9, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow9.open(map, marker9); });
-
-        var infoWindow10 = new google.maps.InfoWindow({ content: "<h3>Churchill Downs<br />700 Central Ave, Louisville, KY 40208</h3>"});
-
-        infoWindows.push(infoWindow10);
-        
-        marker10 = new google.maps.Marker({
-                                position: new google.maps.LatLng(38.2042473, -85.7716305),
-                                options: markerOptions,
-                                title: "Churchill Downs"
-                                });
-
-        google.maps.event.addListener(marker10, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow10.open(map, marker10); });
-
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-    <!-- <a href="https://www.chevrolet.com/"><img src="images/chevrolet-logo.png" width="400px"  style="position: absolute; bottom: 35px; left: 7px;" /></a> -->
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

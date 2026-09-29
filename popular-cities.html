@@ -1,128 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Randy Olson uses machine learning to find the optimal road trip across the U.S.">
-    <meta name="author" content="Randal S. Olson">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The optimal road trip across the USA according to machine learning (restored map)</title>
+<meta name="description" content="The optimal road trip across the USA according to machine learning: 47 stops, 12,245 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="popular-cities.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"popular-cities","profile":"car","assets":"assets/","data":"data/popular-cities/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The optimal road trip across the USA according to machine learning</h1>
+    <p class="restored">Restored in 2026 with open data. Originally published March 8, 2015. <a href="https://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">Read the original post</a>. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The optimal road trip across the USA according to machine learning</strong>
+      <span class="meta">47 stops · 12,245 mi · 235 hours driving</span><br>
+      <a href="popular-cities.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>47<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>12,245 mi<small>19,707 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>235 hours<small>9.8 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>47<small>all by road</small></dd></div>
+    </dl>
     
-    <title>The optimal road trip across the USA according to machine learning</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var directionsDisplay1, directionsDisplay2;
-		var directionsDisplay3, directionsDisplay4;
-		var directionsDisplay5, directionsDisplay6;
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: markerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+    <p class="note">The original post quoted 12,290 mi.</p>
 
-		function initialize() {
-		  var center = new google.maps.LatLng(39, -96);
-		  var mapOptions = {
-			zoom: 5,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  directionsDisplay1.setMap(map);
-		  directionsDisplay2.setMap(map);
-		  directionsDisplay3.setMap(map);
-		  directionsDisplay4.setMap(map);
-		  directionsDisplay5.setMap(map);
-		  directionsDisplay6.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/popular-cities/route.gpx" download>GPX<small>842 KB</small></a><a class="btn" href="data/popular-cities/route.kml" download>KML<small>1.9 MB</small></a><a class="btn" href="data/popular-cities/route.geojson" download>GeoJSON<small>574 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=35.468990%2C-97.520730&amp;destination=40.644722%2C-111.495556&amp;waypoints=37.688889%2C-97.336111%7C39.739167%2C-104.984722%7C35.084444%2C-106.650278%7C33.448333%2C-112.073889%7C36.167222%2C-115.148611%7C37.775000%2C-122.419444%7C45.515000%2C-122.679167%7C47.605000%2C-122.330000%7C43.615833%2C-116.201667&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=40.644722%2C-111.495556&amp;destination=38.256111%2C-85.751389&amp;waypoints=43.475278%2C-110.769167%7C45.785200%2C-108.505800%7C43.546056%2C-96.731389%7C41.258611%2C-95.937500%7C41.590833%2C-93.620833%7C44.981944%2C-93.269167%7C43.041700%2C-87.909800%7C41.881944%2C-87.627778%7C39.768611%2C-86.158056&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=38.256111%2C-85.751389&amp;destination=39.278600%2C-74.576100&amp;waypoints=39.962222%2C-83.000556%7C42.331667%2C-83.047500%7C41.499167%2C-81.694722%7C42.990833%2C-71.463611%7C43.660000%2C-70.255000%7C42.360278%2C-71.057778%7C41.823990%2C-71.412830%7C41.308333%2C-72.925000%7C40.712778%2C-74.006111&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=39.278600%2C-74.576100&amp;destination=36.162222%2C-86.774444&amp;waypoints=39.952778%2C-75.163611%7C39.748333%2C-75.551389%7C39.286389%2C-76.615000%7C38.895000%2C-77.039472%7C36.850600%2C-75.977900%7C35.226944%2C-80.843333%7C32.783333%2C-79.931944%7C28.537600%2C-81.379600%7C33.754444%2C-84.389722&amp;travelmode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=36.162222%2C-86.774444&amp;destination=35.468990%2C-97.520730&amp;waypoints=33.517500%2C-86.809444%7C32.298889%2C-90.184722%7C29.949700%2C-90.070600%7C29.756667%2C-95.365278%7C34.744444%2C-92.288056%7C36.643700%2C-93.214900&amp;travelmode=driving" rel="noopener" target="_blank">Part 5</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=35.468990%2C-97.520730&amp;destination=40.644722%2C-111.495556&amp;waypoint=37.688889%2C-97.336111&amp;waypoint=39.739167%2C-104.984722&amp;waypoint=35.084444%2C-106.650278&amp;waypoint=33.448333%2C-112.073889&amp;waypoint=36.167222%2C-115.148611&amp;waypoint=37.775000%2C-122.419444&amp;waypoint=45.515000%2C-122.679167&amp;waypoint=47.605000%2C-122.330000&amp;waypoint=43.615833%2C-116.201667&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=40.644722%2C-111.495556&amp;destination=38.256111%2C-85.751389&amp;waypoint=43.475278%2C-110.769167&amp;waypoint=45.785200%2C-108.505800&amp;waypoint=43.546056%2C-96.731389&amp;waypoint=41.258611%2C-95.937500&amp;waypoint=41.590833%2C-93.620833&amp;waypoint=44.981944%2C-93.269167&amp;waypoint=43.041700%2C-87.909800&amp;waypoint=41.881944%2C-87.627778&amp;waypoint=39.768611%2C-86.158056&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=38.256111%2C-85.751389&amp;destination=39.278600%2C-74.576100&amp;waypoint=39.962222%2C-83.000556&amp;waypoint=42.331667%2C-83.047500&amp;waypoint=41.499167%2C-81.694722&amp;waypoint=42.990833%2C-71.463611&amp;waypoint=43.660000%2C-70.255000&amp;waypoint=42.360278%2C-71.057778&amp;waypoint=41.823990%2C-71.412830&amp;waypoint=41.308333%2C-72.925000&amp;waypoint=40.712778%2C-74.006111&amp;mode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://maps.apple.com/directions?source=39.278600%2C-74.576100&amp;destination=36.162222%2C-86.774444&amp;waypoint=39.952778%2C-75.163611&amp;waypoint=39.748333%2C-75.551389&amp;waypoint=39.286389%2C-76.615000&amp;waypoint=38.895000%2C-77.039472&amp;waypoint=36.850600%2C-75.977900&amp;waypoint=35.226944%2C-80.843333&amp;waypoint=32.783333%2C-79.931944&amp;waypoint=28.537600%2C-81.379600&amp;waypoint=33.754444%2C-84.389722&amp;mode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://maps.apple.com/directions?source=36.162222%2C-86.774444&amp;destination=35.468990%2C-97.520730&amp;waypoint=33.517500%2C-86.809444&amp;waypoint=32.298889%2C-90.184722&amp;waypoint=29.949700%2C-90.070600&amp;waypoint=29.756667%2C-95.365278&amp;waypoint=34.744444%2C-92.288056&amp;waypoint=36.643700%2C-93.214900&amp;mode=driving" rel="noopener" target="_blank">Part 5</a></p>
 
-		function calcRoute(start, end, routes) {
-		  switch (start) {
-		  	case "Oklahoma City, Oklahoma":
-		  		directionsDisplay1 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Boise, Idaho":
-		  		directionsDisplay2 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Chicago, Illinois":
-		  		directionsDisplay3 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Providence, Rhode Island":
-		  		directionsDisplay4 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Charlotte, North Carolina":
-		  		directionsDisplay5 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Little Rock, Arkansas":
-		  		directionsDisplay6 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  }
-		  
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				switch (start) {
-					case "Oklahoma City, Oklahoma":
-						directionsDisplay1.setDirections(response);
-						break;
-					case "Boise, Idaho":
-						directionsDisplay2.setDirections(response);
-						break;
-					case "Chicago, Illinois":
-						directionsDisplay3.setDirections(response);
-						break;
-					case "Providence, Rhode Island":
-						directionsDisplay4.setDirections(response);
-						break;
-					case "Charlotte, North Carolina":
-						directionsDisplay5.setDirections(response);
-						break;
-					case "Little Rock, Arkansas":
-						directionsDisplay6.setDirections(response);
-						break;
-				  }
-			}
-		  });
-		}
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Oklahoma City</span><span class="stop-leg">159 mi (256 km), 2 h 51 min driving to 2. Wichita</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Wichita</span><span class="stop-leg">520 mi (837 km), 8 h 54 min driving to 3. Denver</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Denver</span><span class="stop-leg">446 mi (718 km), 7 h 48 min driving to 4. Albuquerque</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Albuquerque</span><span class="stop-leg">419 mi (674 km), 7 h 55 min driving to 5. Phoenix</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Phoenix</span><span class="stop-leg">286 mi (461 km), 6 h 1 min driving to 6. Las Vegas</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Las Vegas</span><span class="stop-leg">567 mi (913 km), 10 h 35 min driving to 7. San Francisco</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">San Francisco</span><span class="stop-leg">634 mi (1,020 km), 12 h 14 min driving to 8. Portland</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Portland</span><span class="stop-leg">174 mi (281 km), 3 h 30 min driving to 9. Seattle</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Seattle</span><span class="stop-leg">491 mi (790 km), 9 h 7 min driving to 10. Boise</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Boise</span><span class="stop-leg">371 mi (597 km), 6 h 11 min driving to 11. Park City</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Park City</span><span class="stop-leg">254 mi (409 km), 5 h 8 min driving to 12. Jackson</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">Jackson</span><span class="stop-leg">284 mi (457 km), 6 h 55 min driving to 13. Billings</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">Billings</span><span class="stop-leg">661 mi (1,064 km), 11 h 31 min driving to 14. Sioux Falls</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Sioux Falls</span><span class="stop-leg">181 mi (292 km), 3 h 14 min driving to 15. Omaha</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Omaha</span><span class="stop-leg">134 mi (216 km), 2 h 30 min driving to 16. Des Moines</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Des Moines</span><span class="stop-leg">244 mi (393 km), 4 h 31 min driving to 17. Minneapolis</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Minneapolis</span><span class="stop-leg">337 mi (543 km), 6 h 14 min driving to 18. Milwaukee</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Milwaukee</span><span class="stop-leg">89 mi (144 km), 1 h 53 min driving to 19. Chicago</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">Chicago</span><span class="stop-leg">181 mi (291 km), 3 h 39 min driving to 20. Indianapolis</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">Indianapolis</span><span class="stop-leg">114 mi (183 km), 2 h 9 min driving to 21. Louisville</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Louisville</span><span class="stop-leg">208 mi (334 km), 4 h 5 min driving to 22. Columbus</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">Columbus</span><span class="stop-leg">199 mi (320 km), 4 h 2 min driving to 23. Detroit</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">Detroit</span><span class="stop-leg">169 mi (272 km), 3 h 16 min driving to 24. Cleveland</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">Cleveland</span><span class="stop-leg">631 mi (1,016 km), 13 h 11 min driving to 25. Manchester</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Manchester</span><span class="stop-leg">95 mi (153 km), 1 h 56 min driving to 26. Portland</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">Portland</span><span class="stop-leg">107 mi (171 km), 2 h 10 min driving to 27. Boston</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">Boston</span><span class="stop-leg">50 mi (80 km), 1 h 8 min driving to 28. Providence</span></span></button></li>
+        <li data-order="27"><button type="button"><span class="num">28</span><span><span class="stop-name">Providence</span><span class="stop-leg">104 mi (168 km), 2 h 6 min driving to 29. New Haven</span></span></button></li>
+        <li data-order="28"><button type="button"><span class="num">29</span><span><span class="stop-name">New Haven</span><span class="stop-leg">81 mi (130 km), 2 h 2 min driving to 30. New York City</span></span></button></li>
+        <li data-order="29"><button type="button"><span class="num">30</span><span><span class="stop-name">New York City</span><span class="stop-leg">129 mi (208 km), 2 h 47 min driving to 31. Ocean City</span></span></button></li>
+        <li data-order="30"><button type="button"><span class="num">31</span><span><span class="stop-name">Ocean City</span><span class="stop-leg">65 mi (105 km), 1 h 26 min driving to 32. Philadelphia</span></span></button></li>
+        <li data-order="31"><button type="button"><span class="num">32</span><span><span class="stop-name">Philadelphia</span><span class="stop-leg">28 mi (45 km), 45 min driving to 33. Wilmington</span></span></button></li>
+        <li data-order="32"><button type="button"><span class="num">33</span><span><span class="stop-name">Wilmington</span><span class="stop-leg">74 mi (119 km), 1 h 33 min driving to 34. Baltimore</span></span></button></li>
+        <li data-order="33"><button type="button"><span class="num">34</span><span><span class="stop-name">Baltimore</span><span class="stop-leg">40 mi (64 km), 1 h 1 min driving to 35. Washington</span></span></button></li>
+        <li data-order="34"><button type="button"><span class="num">35</span><span><span class="stop-name">Washington</span><span class="stop-leg">208 mi (335 km), 4 h 7 min driving to 36. Virginia Beach</span></span></button></li>
+        <li data-order="35"><button type="button"><span class="num">36</span><span><span class="stop-name">Virginia Beach</span><span class="stop-leg">346 mi (557 km), 6 h 53 min driving to 37. Charlotte</span></span></button></li>
+        <li data-order="36"><button type="button"><span class="num">37</span><span><span class="stop-name">Charlotte</span><span class="stop-leg">208 mi (335 km), 3 h 59 min driving to 38. Charleston</span></span></button></li>
+        <li data-order="37"><button type="button"><span class="num">38</span><span><span class="stop-name">Charleston</span><span class="stop-leg">379 mi (609 km), 7 h 18 min driving to 39. Orlando</span></span></button></li>
+        <li data-order="38"><button type="button"><span class="num">39</span><span><span class="stop-name">Orlando</span><span class="stop-leg">438 mi (704 km), 7 h 57 min driving to 40. Atlanta</span></span></button></li>
+        <li data-order="39"><button type="button"><span class="num">40</span><span><span class="stop-name">Atlanta</span><span class="stop-leg">247 mi (397 km), 4 h 40 min driving to 41. Nashville</span></span></button></li>
+        <li data-order="40"><button type="button"><span class="num">41</span><span><span class="stop-name">Nashville</span><span class="stop-leg">191 mi (307 km), 3 h 29 min driving to 42. Birmingham</span></span></button></li>
+        <li data-order="41"><button type="button"><span class="num">42</span><span><span class="stop-name">Birmingham</span><span class="stop-leg">237 mi (382 km), 4 h 21 min driving to 43. Jackson</span></span></button></li>
+        <li data-order="42"><button type="button"><span class="num">43</span><span><span class="stop-name">Jackson</span><span class="stop-leg">186 mi (299 km), 3 h 30 min driving to 44. New Orleans</span></span></button></li>
+        <li data-order="43"><button type="button"><span class="num">44</span><span><span class="stop-name">New Orleans</span><span class="stop-leg">348 mi (560 km), 6 h 33 min driving to 45. Houston</span></span></button></li>
+        <li data-order="44"><button type="button"><span class="num">45</span><span><span class="stop-name">Houston</span><span class="stop-leg">434 mi (699 km), 8 h driving to 46. Little Rock</span></span></button></li>
+        <li data-order="45"><button type="button"><span class="num">46</span><span><span class="stop-name">Little Rock</span><span class="stop-leg">170 mi (274 km), 3 h 49 min driving to 47. Branson</span></span></button></li>
+        <li data-order="46"><button type="button"><span class="num">47</span><span><span class="stop-name">Branson</span><span class="stop-leg">325 mi (523 km), 5 h 49 min driving to 1. Oklahoma City</span></span></button></li>
+    </ol>
 
-		google.maps.event.addDomListener(window, 'load', initialize);
-		
-		calcRoute("Oklahoma City, Oklahoma", "Boise, Idaho", ["Wichita, Kansas", "Denver, Colorado", "Albuquerque, New Mexico", "Phoenix, Arizona", "Las Vegas, Nevada", "San Francisco, California", "Portland, Oregon", "Seattle, Washington"]);
-		calcRoute("Boise, Idaho", "Chicago, Illinois", ["Park City, Utah", "Jackson, Wyoming", "Billings, Montana", "Sioux Falls, South Dakota", "Omaha, Nebraska", "Des Moines, Iowa", "Minneapolis, Minnesota", "Milwaukee, Wisconsin"]);
-		calcRoute("Chicago, Illinois", "Providence, Rhode Island", ["Indianapolis, Indiana", "Louisville, Kentucky", "Columbus, Ohio", "Detroit, Michigan", "Cleveland, Ohio", "Manchester, New Hampshire", "Portland, Maine", "Boston, Massachusetts"]);
-		calcRoute("Providence, Rhode Island", "Charlotte, North Carolina", ["New Haven, Connecticut", "New York City, New York", "Ocean City, New Jersey", "Philadelphia, Pennsylvania", "Wilmington, Delaware", "Baltimore, Maryland", "Washington, D.C.", "Virginia Beach, Virginia"]);
-		calcRoute("Charlotte, North Carolina", "Little Rock, Arkansas", ["Charleston, South Carolina", "Orlando, Florida", "Atlanta, Georgia", "Nashville, Tennessee", "Birmingham, Alabama", "Jackson, Mississippi", "New Orleans, Louisiana", "Houston, Texas"]);
-		calcRoute("Little Rock, Arkansas", "Oklahoma City, Oklahoma", ["Branson, Missouri"]);
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

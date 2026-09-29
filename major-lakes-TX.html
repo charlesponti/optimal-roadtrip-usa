@@ -1,137 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-<meta name="description" content="Denise Turic uses machine learning to Map a road trip to all Texas lakes with a 
-Reservoir Storage (acre-ft) > 200K.">
-<meta name="author" content="Denise Turic based on code from Randal S. Olson">
-<title>The optimal road trip to Large Lakes in Texas according to machine learning</title>
-<style>
-html, body, #map-canvas {
-height: 100%;
-margin: 0px;
-padding: 0px
-}
-#panel {
-position: absolute;
-top: 5px;
-left: 50%;
-margin-left: -180px;
-z-index: 5;
-background-color: #fff;
-padding: 10px;
-border: 1px solid #999;
-}
-</style>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-<script>
-var directionsDisplay1, directionsDisplay2;
-var directionsDisplay3, directionsDisplay4;
-var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-var directionsDisplayOptions = {preserveViewport: true,
-markerOptions: markerOptions};
-var directionsService = new google.maps.DirectionsService();
-var map;
-function initialize() {
-var center = new google.maps.LatLng(30, -97.5);
-var mapOptions = {
-zoom: 6,
-center: center
-};
-map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-directionsDisplay1.setMap(map);
-directionsDisplay2.setMap(map);
-directionsDisplay3.setMap(map);
-directionsDisplay4.setMap(map);
-}
-function calcRoute(start, end, routes) {
-switch (start) {
-case "Lake Texoma":
-directionsDisplay1 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-break;
-case "Caddo Lake":
-directionsDisplay2 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-break;
-case "Lake Whitney, TX":
-directionsDisplay3 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-break;
-case "Lake Ray Roberts, TX":
-directionsDisplay3 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-break;
-}
-var waypts = [];
-for (var i = 0; i < routes.length; i++) {
-waypts.push({
-location:routes[i],
-stopover:true});
-}
-var request = {
-origin: start,
-destination: end,
-waypoints: waypts,
-optimizeWaypoints: false,
-travelMode: google.maps.TravelMode.DRIVING
-};
-directionsService.route(request, function(response, status) {
-if (status == google.maps.DirectionsStatus.OK) {
-switch (start) {
-case "Lake Texoma":
-directionsDisplay1.setDirections(response);
-break;
-case "Caddo Lake":
-directionsDisplay2.setDirections(response);
-break;
-case "Lake Whitney, TX":
-directionsDisplay3.setDirections(response);
-break;
-case "Lake Ray Roberts, TX":
-directionsDisplay4.setDirections(response);
-break;
-}
-}
-});
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-calcRoute("Lake Texoma", 
-	"Caddo Lake", 
-	["Lavon Lake, TX", 
-	"Lake Ray Hubbard, TX", 
-	"Lake Tawakoni, TX", 
-	"Lake Fork, TX",
-	"Jim Chapman Lake, TX", 
-	"Lake Bob Sandlin, TX", 
-	"Lake O' the Pines, Texas", 
-	"Wright Patman Lake, TX"]);
-
-calcRoute("Caddo Lake", 
-	"Lake Whitney, TX", 
-	["Toledo Bend Reservoir", 
-	"Sam Rayburn Reservoir, Angelina National Forest,TX", 
-	"Lake Livingston, TX", 
-	"Conroe Lake, TX", 
-	"Lake Limestone, TX", 
-	"Richland Chambers Reservoir, TX", 
-	"Lake Palestine, TX", 
-	"Cedar Creek Reservoir, TX"]);
-
-calcRoute("Lake Whitney, TX", 
-	"Lake Ray Roberts, TX", 
-	["Belton Lake, Bell County, TX", 
-	"Buchanan Lake, TX", 
-	"Lake Travis, TX", 
-	"Canyon Lake, TX", 
-	"Falcon Reservoir", 
-	"Amistad National Recreation Area, Del Rio, TX", 
-	"Possum Kingdom Lake, TX", 
-	"Lewisville Lake, TX"]);
-
-calcRoute("Lake Ray Roberts, TX", 
-	"Lake Texoma", []);
-
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The optimal road trip to Large Lakes in Texas according to machine learning (restored map)</title>
+<meta name="description" content="The optimal road trip to Large Lakes in Texas according to machine learning: 28 stops, 2,472 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="major-lakes-TX.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"major-lakes-TX","profile":"car","assets":"assets/","data":"data/major-lakes-TX/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[{"order":1,"drive":[-96.443715,33.041799],"display":[-96.465556,33.044444],"distance_m":2057,"via":"the fixed 2026-09-26: Lavonia Park"},{"order":5,"drive":[-95.663674,33.348684],"display":[-95.645942,33.323644],"distance_m":3235,"via":"the fixed 2026-09-26: Cooper Lake State Park"},{"order":6,"drive":[-95.094751,33.047908],"display":[-95.081878,33.047608],"distance_m":1200,"via":"the fixed 2026-09-26: Lake Bob Sandlin State Park boat ramp"},{"order":7,"drive":[-94.549281,32.788532],"display":[-94.543611,32.770833],"distance_m":2038,"via":"the fixed 2026-09-26: Johnson Creek Park"},{"order":9,"drive":[-94.176367,32.680255],"display":[-94.01,32.71],"distance_m":15916,"via":""},{"order":12,"drive":[-95.150655,30.666117],"display":[-95.15,30.74],"distance_m":8216,"via":"the fixed 2026-09-26: Wolf Creek Park"},{"order":14,"drive":[-96.317219,31.325572],"display":[-96.318727,31.355301],"distance_m":3309,"via":"the fixed 2026-09-26: Sterling C. Robertson Dam"},{"order":16,"drive":[-95.440082,32.173448],"display":[-95.4803,32.1846],"distance_m":3983,"via":""},{"order":17,"drive":[-96.17145,32.328371],"display":[-96.1747,32.3637],"distance_m":3940,"via":"the fixed 2026-09-26: Tom Finley Park on the lake shore"},{"order":23,"drive":[-99.142865,26.582701],"display":[-99.2,26.65],"distance_m":9395,"via":"the fixed 2026-09-26: Falcon State Park"},{"order":24,"drive":[-100.988367,29.465988],"display":[-100.9742404,29.5084351],"distance_m":4914,"via":""},{"order":27,"drive":[-97.020446,33.375433],"display":[-97.051389,33.364722],"distance_m":3111,"via":"the fixed 2026-09-26: Ray Roberts Lake State Park"}]}</script>
+<script type="module" src="assets/app.js"></script>
 </head>
 <body>
-<div id="map-canvas"></div>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The optimal road trip to Large Lakes in Texas according to machine learning</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The optimal road trip to Large Lakes in Texas according to machine learning</strong>
+      <span class="meta">28 stops · 2,472 mi · 55.5 hours driving</span><br>
+      <a href="major-lakes-TX.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>28<small>one way</small></dd></div>
+      <div><dt>Distance</dt><dd>2,472 mi<small>3,978 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>55.5 hours<small>2.3 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>27<small>all by road</small></dd></div>
+    </dl>
+    
+    
+
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/major-lakes-TX/route.gpx" download>GPX<small>195 KB</small></a><a class="btn" href="data/major-lakes-TX/route.kml" download>KML<small>432 KB</small></a><a class="btn" href="data/major-lakes-TX/route.geojson" download>GeoJSON<small>132 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=33.831944%2C-96.571111&amp;destination=31.196500%2C-93.572100&amp;waypoints=33.041799%2C-96.443715%7C32.799444%2C-96.495000%7C32.808056%2C-95.920556%7C32.804167%2C-95.539444%7C33.348684%2C-95.663674%7C33.047908%2C-95.094751%7C32.788532%2C-94.549281%7C33.304700%2C-94.160000%7C32.680255%2C-94.176367&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=31.196500%2C-93.572100&amp;destination=30.751833%2C-98.418667&amp;waypoints=31.061111%2C-94.106111%7C30.666117%2C-95.150655%7C30.356944%2C-95.560278%7C31.325572%2C-96.317219%7C31.951944%2C-96.098889%7C32.173448%2C-95.440082%7C32.328371%2C-96.171450%7C31.866900%2C-97.370800%7C31.108611%2C-97.472500&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=30.751833%2C-98.418667&amp;destination=33.375433%2C-97.020446&amp;waypoints=30.391944%2C-97.906667%7C29.881400%2C-98.267500%7C26.582701%2C-99.142865%7C29.465988%2C-100.988367%7C32.866667%2C-98.433333%7C33.069167%2C-96.964444&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=33.831944%2C-96.571111&amp;destination=31.196500%2C-93.572100&amp;waypoint=33.041799%2C-96.443715&amp;waypoint=32.799444%2C-96.495000&amp;waypoint=32.808056%2C-95.920556&amp;waypoint=32.804167%2C-95.539444&amp;waypoint=33.348684%2C-95.663674&amp;waypoint=33.047908%2C-95.094751&amp;waypoint=32.788532%2C-94.549281&amp;waypoint=33.304700%2C-94.160000&amp;waypoint=32.680255%2C-94.176367&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=31.196500%2C-93.572100&amp;destination=30.751833%2C-98.418667&amp;waypoint=31.061111%2C-94.106111&amp;waypoint=30.666117%2C-95.150655&amp;waypoint=30.356944%2C-95.560278&amp;waypoint=31.325572%2C-96.317219&amp;waypoint=31.951944%2C-96.098889&amp;waypoint=32.173448%2C-95.440082&amp;waypoint=32.328371%2C-96.171450&amp;waypoint=31.866900%2C-97.370800&amp;waypoint=31.108611%2C-97.472500&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=30.751833%2C-98.418667&amp;destination=33.375433%2C-97.020446&amp;waypoint=30.391944%2C-97.906667&amp;waypoint=29.881400%2C-98.267500&amp;waypoint=26.582701%2C-99.142865&amp;waypoint=29.465988%2C-100.988367&amp;waypoint=32.866667%2C-98.433333&amp;waypoint=33.069167%2C-96.964444&amp;mode=driving" rel="noopener" target="_blank">Part 3</a></p>
+
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Lake Texoma</span><span class="stop-leg">62 mi (99 km), 1 h 23 min driving to 2. Lavon Lake</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Lavon Lake</span><span class="stop-via">Reached via the fixed 2026-09-26: Lavonia Park (1.3 mi away)</span><span class="stop-leg">21 mi (34 km), 41 min driving to 3. Lake Ray Hubbard</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Lake Ray Hubbard</span><span class="stop-leg">42 mi (68 km), 1 h 6 min driving to 4. Lake Tawakoni</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Lake Tawakoni</span><span class="stop-leg">27 mi (44 km), 40 min driving to 5. Lake Fork</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Lake Fork</span><span class="stop-leg">46 mi (75 km), 1 h 12 min driving to 6. Jim Chapman Lake</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Jim Chapman Lake</span><span class="stop-via">Reached via the fixed 2026-09-26: Cooper Lake State Park (2 mi away)</span><span class="stop-leg">57 mi (91 km), 1 h 29 min driving to 7. Lake Bob Sandlin</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Lake Bob Sandlin</span><span class="stop-via">Reached via the fixed 2026-09-26: Lake Bob Sandlin State Park boat ramp (0.7 mi away)</span><span class="stop-leg">45 mi (73 km), 1 h 26 min driving to 8. Lake O&#39; the Pines</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Lake O&#39; the Pines</span><span class="stop-via">Reached via the fixed 2026-09-26: Johnson Creek Park (1.3 mi away)</span><span class="stop-leg">55 mi (89 km), 1 h 22 min driving to 9. Wright Patman Lake</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Wright Patman Lake</span><span class="stop-leg">49 mi (79 km), 1 h 13 min driving to 10. Caddo Lake</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Caddo Lake</span><span class="stop-via">Reached by road via a separate drive point 9.9 mi away</span><span class="stop-leg">137 mi (221 km), 3 h 8 min driving to 11. Toledo Bend Reservoir</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Toledo Bend Reservoir</span><span class="stop-leg">65 mi (105 km), 1 h 25 min driving to 12. Sam Rayburn Reservoir</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">Sam Rayburn Reservoir</span><span class="stop-leg">109 mi (175 km), 2 h 13 min driving to 13. Lake Livingston</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">Lake Livingston</span><span class="stop-via">Reached via the fixed 2026-09-26: Wolf Creek Park (5.1 mi away)</span><span class="stop-leg">50 mi (80 km), 1 h 18 min driving to 14. Conroe Lake</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Conroe Lake</span><span class="stop-leg">108 mi (175 km), 2 h 25 min driving to 15. Lake Limestone</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Lake Limestone</span><span class="stop-via">Reached via the fixed 2026-09-26: Sterling C. Robertson Dam (2.1 mi away)</span><span class="stop-leg">59 mi (94 km), 1 h 40 min driving to 16. Richland Chambers Reservoir</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Richland Chambers Reservoir</span><span class="stop-leg">60 mi (97 km), 1 h 32 min driving to 17. Lake Palestine</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Lake Palestine</span><span class="stop-via">Reached by road via a separate drive point 2.5 mi away</span><span class="stop-leg">57 mi (92 km), 1 h 12 min driving to 18. Cedar Creek Reservoir</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Cedar Creek Reservoir</span><span class="stop-via">Reached via the fixed 2026-09-26: Tom Finley Park on the lake shore (2.4 mi away)</span><span class="stop-leg">87 mi (140 km), 2 h 11 min driving to 19. Lake Whitney</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">Lake Whitney</span><span class="stop-leg">61 mi (98 km), 1 h 27 min driving to 20. Belton Lake</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">Belton Lake</span><span class="stop-leg">84 mi (135 km), 1 h 43 min driving to 21. Buchanan Lake</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Buchanan Lake</span><span class="stop-leg">60 mi (96 km), 1 h 23 min driving to 22. Lake Travis</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">Lake Travis</span><span class="stop-leg">69 mi (112 km), 1 h 52 min driving to 23. Canyon Lake</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">Canyon Lake</span><span class="stop-leg">278 mi (448 km), 5 h 20 min driving to 24. Falcon Reservoir</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">Falcon Reservoir</span><span class="stop-via">Reached via the fixed 2026-09-26: Falcon State Park (5.8 mi away)</span><span class="stop-leg">270 mi (434 km), 5 h 10 min driving to 25. Amistad National Recreation Area</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Amistad National Recreation Area</span><span class="stop-via">Reached by road via a separate drive point 3.1 mi away</span><span class="stop-leg">360 mi (580 km), 7 h 5 min driving to 26. Possum Kingdom Lake</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">Possum Kingdom Lake</span><span class="stop-leg">118 mi (190 km), 2 h 39 min driving to 27. Lewisville Lake</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">Lewisville Lake</span><span class="stop-leg">34 mi (54 km), 1 h 10 min driving to 28. Lake Ray Roberts</span></span></button></li>
+        <li data-order="27"><button type="button"><span class="num">28</span><span><span class="stop-name">Lake Ray Roberts</span><span class="stop-via">Reached via the fixed 2026-09-26: Ray Roberts Lake State Park (1.9 mi away)</span><span class="stop-leg">Final stop</span></span></button></li>
+    </ol>
+
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
 </body>
 </html>

@@ -1,0 +1,230 @@
+{
+  "id": "germany-road-trip",
+  "title": "Die Uber Deutsch Road Trip",
+  "legacy_url": "https://rhiever.github.io/optimal-roadtrip-usa/germany-road-trip.html",
+  "post_url": null,
+  "profile": "car",
+  "closed_loop": true,
+  "quoted_total": null,
+  "stops": [
+    {
+      "order": 0,
+      "name": "Europa-Park, Europa-Park-Stra\u00dfe, Rust",
+      "query": "Europa-Park, Europa-Park-Stra\u00dfe, Rust",
+      "lat": 48.2660194,
+      "lon": 7.7220076,
+      "drive_lat": 48.2660194,
+      "drive_lon": 7.7220076,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: theme park, Europa-Park-Strasse, Rust; legacy Google marker kept, 272 m from wikipedia:en:Europa-Park"
+    },
+    {
+      "order": 1,
+      "name": "Perl, Deutschland",
+      "query": "Perl, Deutschland",
+      "lat": 49.4730674,
+      "lon": 6.3851003,
+      "drive_lat": 49.4730674,
+      "drive_lon": 6.3851003,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: village of Perl, Saarland; legacy Google marker kept, 1510 m from wikipedia:en:Perl,_Saarland"
+    },
+    {
+      "order": 2,
+      "name": "K\u00f6lner Dom, Domkloster, K\u00f6ln",
+      "query": "K\u00f6lner Dom, Domkloster, K\u00f6ln",
+      "lat": 50.94127839999999,
+      "lon": 6.9582814,
+      "drive_lat": 50.94127839999999,
+      "drive_lon": 6.9582814,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: cathedral; legacy Google marker kept, 13 m from wikipedia:en:Cologne_Cathedral"
+    },
+    {
+      "order": 3,
+      "name": "Sankt Goarshausen, Deutschland",
+      "query": "Sankt Goarshausen, Deutschland",
+      "lat": 50.154722,
+      "lon": 7.715277999999999,
+      "drive_lat": 50.154722,
+      "drive_lon": 7.715277999999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: town (Loreley); legacy Google marker kept, 0 m from wikipedia:en:Sankt_Goarshausen"
+    },
+    {
+      "order": 4,
+      "name": "Drosselgasse 65385, R\u00fcdesheim",
+      "query": "Drosselgasse 65385, R\u00fcdesheim",
+      "lat": 49.9783876,
+      "lon": 7.9207746,
+      "drive_lat": 49.9783876,
+      "drive_lon": 7.9207746,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: pedestrian lane in Rudesheim; router snaps to the adjacent Rheinstrasse; legacy Google marker kept, 5 m from wikipedia:de:Drosselgasse"
+    },
+    {
+      "order": 5,
+      "name": "Wartburg, Auf der Wartburg, Eisenach",
+      "query": "Wartburg, Auf der Wartburg, Eisenach",
+      "lat": 50.9663423,
+      "lon": 10.3063424,
+      "drive_lat": 50.965659,
+      "drive_lon": 10.318155,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker; drive=osm:way/42978884",
+      "note": "verified 2026-09-26: castle on a hilltop with restricted access road; drive point is Parkplatz Wartburg P1; legacy Google marker kept, 26 m from wikipedia:en:Wartburg"
+    },
+    {
+      "order": 6,
+      "name": "Wernigerode, Deutschland",
+      "query": "Wernigerode, Deutschland",
+      "lat": 51.8368113,
+      "lon": 10.7844266,
+      "drive_lat": 51.8368113,
+      "drive_lon": 10.7844266,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: town; legacy Google marker kept, 210 m from wikipedia:en:Wernigerode"
+    },
+    {
+      "order": 7,
+      "name": "Roland, Am Markt, Bremen",
+      "query": "Roland, Am Markt, Bremen",
+      "lat": 53.07586569999999,
+      "lon": 8.8073005,
+      "drive_lat": 53.07586569999999,
+      "drive_lon": 8.8073005,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: statue on the Marktplatz; router snaps to the nearest street; legacy Google marker kept, 4 m from wikipedia:en:Bremen_Roland"
+    },
+    {
+      "order": 8,
+      "name": "Cuxhaven, Deutschland",
+      "query": "Cuxhaven, Deutschland",
+      "lat": 53.859336,
+      "lon": 8.6879057,
+      "drive_lat": 53.859336,
+      "drive_lon": 8.6879057,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: town; legacy Google marker kept, 472 m from wikipedia:en:Cuxhaven"
+    },
+    {
+      "order": 9,
+      "name": "Altona Fischmarkt, Gro\u00dfe Elbstra\u00dfe, Hamburg",
+      "query": "Altona Fischmarkt, Gro\u00dfe Elbstra\u00dfe, Hamburg",
+      "lat": 53.54561,
+      "lon": 9.95427,
+      "drive_lat": 53.544631,
+      "drive_lon": 9.939849,
+      "mode_to_next": "drive",
+      "geocode_source": "wikipedia:de:Altonaer_Fischmarkt; drive=legacy-marker",
+      "note": "verified 2026-09-26: Altona fish market; the 2015 Google marker sat 1.0 km west on Grosse Elbstrasse, so display moved to the market square (dewiki) and the legacy marker kept as drive point"
+    },
+    {
+      "order": 10,
+      "name": "Museum Holstentor, Holstentorplatz, L\u00fcbeck",
+      "query": "Museum Holstentor, Holstentorplatz, L\u00fcbeck",
+      "lat": 53.8662577,
+      "lon": 10.6796268,
+      "drive_lat": 53.8662577,
+      "drive_lon": 10.6796268,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: city gate; legacy Google marker kept, 8 m from wikipedia:en:Holsten_Gate"
+    },
+    {
+      "order": 11,
+      "name": "Nationalpark-Zentrum K\u00f6nigsstuhl, Stubbenkammer, Sassnitz",
+      "query": "Nationalpark-Zentrum K\u00f6nigsstuhl, Stubbenkammer, Sassnitz",
+      "lat": 54.57338,
+      "lon": 13.66009,
+      "drive_lat": 54.560602,
+      "drive_lon": 13.634792,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker; drive=osm:node/504895548",
+      "note": "verified 2026-09-26: visitor centre; the road to Konigsstuhl is closed to private cars, drive point is the Hagen car park (shuttle bus); legacy Google marker kept, 1 m from wikipedia:de:Nationalpark-Zentrum_K\u00f6nigsstuhl"
+    },
+    {
+      "order": 12,
+      "name": "East Side Gallery, M\u00fchlenstra\u00dfe, Berlin",
+      "query": "East Side Gallery, M\u00fchlenstra\u00dfe, Berlin",
+      "lat": 52.50502239999999,
+      "lon": 13.4396953,
+      "drive_lat": 52.50502239999999,
+      "drive_lon": 13.4396953,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: gallery along Muhlenstrasse; legacy Google marker kept, 404 m from wikidata:Q313746"
+    },
+    {
+      "order": 13,
+      "name": "Schloss Sanssouci, Maulbeerallee, Potsdam",
+      "query": "Schloss Sanssouci, Maulbeerallee, Potsdam",
+      "lat": 52.40420169999999,
+      "lon": 13.0384999,
+      "drive_lat": 52.40420169999999,
+      "drive_lon": 13.0384999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: palace, Maulbeerallee; legacy Google marker kept, 105 m from wikipedia:en:Sanssouci"
+    },
+    {
+      "order": 14,
+      "name": "Frauenkirche Dresden, Neumarkt, Dresden",
+      "query": "Frauenkirche Dresden, Neumarkt, Dresden",
+      "lat": 51.0518734,
+      "lon": 13.7415216,
+      "drive_lat": 51.0518734,
+      "drive_lon": 13.7415216,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "verified 2026-09-26: church on the Neumarkt; router snaps to nearest street; legacy Google marker kept, 13 m from wikipedia:en:Frauenkirche,_Dresden"
+    },
+    {
+      "order": 15,
+      "name": "Schloss Neuschwanstein, Neuschwansteinstra\u00dfe 20, 87645, Schwangau",
+      "query": "Schloss Neuschwanstein, Neuschwansteinstra\u00dfe 20, 87645, Schwangau",
+      "lat": 47.557574,
+      "lon": 10.7498004,
+      "drive_lat": 47.557181,
+      "drive_lon": 10.738969,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker; drive=osm:way/221601966",
+      "note": "verified 2026-09-26: castle; no public car access, drive point is P1 Parkplatz Konigsschlosser in Hohenschwangau; legacy Google marker kept, 28 m from wikipedia:en:Neuschwanstein_Castle"
+    }
+  ],
+  "totals": {
+    "distance_m": 3380859.4,
+    "duration_s": 142947.5,
+    "flight_distance_m": 0,
+    "flight_legs": 0
+  },
+  "comparison": null,
+  "warnings": [],
+  "build": {
+    "osm_snapshot": "2026-09-25T20:24:36Z",
+    "osrm_version": "v26.9.0",
+    "built_at": "2026-09-27T07:14:03Z"
+  },
+  "override_note": null,
+  "exports": {
+    "gpx": "route.gpx",
+    "kml": "route.kml",
+    "google_maps": [
+      "https://www.google.com/maps/dir/?api=1&origin=48.266019%2C7.722008&destination=53.866258%2C10.679627&waypoints=49.473067%2C6.385100%7C50.941278%2C6.958281%7C50.154722%2C7.715278%7C49.978388%2C7.920775%7C50.965659%2C10.318155%7C51.836811%2C10.784427%7C53.075866%2C8.807301%7C53.859336%2C8.687906%7C53.544631%2C9.939849&travelmode=driving",
+      "https://www.google.com/maps/dir/?api=1&origin=53.866258%2C10.679627&destination=48.266019%2C7.722008&waypoints=54.560602%2C13.634792%7C52.505022%2C13.439695%7C52.404202%2C13.038500%7C51.051873%2C13.741522%7C47.557181%2C10.738969&travelmode=driving"
+    ],
+    "apple_maps": [
+      "https://maps.apple.com/directions?source=48.266019%2C7.722008&destination=53.866258%2C10.679627&waypoint=49.473067%2C6.385100&waypoint=50.941278%2C6.958281&waypoint=50.154722%2C7.715278&waypoint=49.978388%2C7.920775&waypoint=50.965659%2C10.318155&waypoint=51.836811%2C10.784427&waypoint=53.075866%2C8.807301&waypoint=53.859336%2C8.687906&waypoint=53.544631%2C9.939849&mode=driving",
+      "https://maps.apple.com/directions?source=53.866258%2C10.679627&destination=48.266019%2C7.722008&waypoint=54.560602%2C13.634792&waypoint=52.505022%2C13.439695&waypoint=52.404202%2C13.038500&waypoint=51.051873%2C13.741522&waypoint=47.557181%2C10.738969&mode=driving"
+    ],
+    "geojson": "route.geojson"
+  }
+}

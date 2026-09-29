@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="road-trips-pipeline" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>An optimized walking tour around NYC</name>
+    <desc>An optimized walking tour around NYC. Route data © OpenStreetMap contributors, ODbL 1.0.</desc>
+    <copyright author="OpenStreetMap contributors">
+      <license>https://opendatacommons.org/licenses/odbl/1-0/</license>
+    </copyright>
+    <link href="https://www.randalolson.com/2015/03/25/optimized-walking-tours-of-new-york-city-and-philadelphia/">
+      <text>An optimized walking tour around NYC</text>
+    </link>
+  </metadata>
+  <wpt lat="40.780833" lon="-73.974444">
+    <name>American Museum of Natural History</name>
+    <desc>verified 2026-09-26: museum on Central Park West</desc>
+  </wpt>
+  <wpt lat="40.779400" lon="-73.963100">
+    <name>The Metropolitan Museum of Art</name>
+    <desc>verified 2026-09-26: museum, 1000 5th Avenue</desc>
+  </wpt>
+  <wpt lat="40.771100" lon="-73.967200">
+    <name>The Frick Collection</name>
+    <desc>verified 2026-09-26: museum, East 70th Street</desc>
+  </wpt>
+  <wpt lat="40.782222" lon="-73.965278">
+    <name>Central Park</name>
+    <desc>verified 2026-09-26: park (large area, open to walkers throughout); enwiki point by the Great Lawn</desc>
+  </wpt>
+  <wpt lat="40.761700" lon="-73.977500">
+    <name>The Museum of Modern Art (MOMA)</name>
+    <desc>verified 2026-09-26: museum, West 53rd Street; was blank</desc>
+  </wpt>
+  <wpt lat="40.758611" lon="-73.976389">
+    <name>St. Patrick's Cathedral</name>
+    <desc>verified 2026-09-26: cathedral</desc>
+  </wpt>
+  <wpt lat="40.758611" lon="-73.979167">
+    <name>Rockefeller Center</name>
+    <desc>verified 2026-09-26: complex (45 Rockefeller Plaza)</desc>
+  </wpt>
+  <wpt lat="40.759722" lon="-73.979167">
+    <name>Radio City Music Hall</name>
+    <desc>verified 2026-09-26: theatre</desc>
+  </wpt>
+  <wpt lat="40.759000" lon="-73.985000">
+    <name>Theater District</name>
+    <desc>verified 2026-09-26: neighbourhood</desc>
+  </wpt>
+  <wpt lat="40.757500" lon="-73.985800">
+    <name>Times Square</name>
+    <desc>verified 2026-09-26: square</desc>
+  </wpt>
+  <wpt lat="40.753889" lon="-73.983889">
+    <name>Bryant Park</name>
+    <desc>verified 2026-09-26: park</desc>
+  </wpt>
+  <wpt lat="40.753056" lon="-73.981944">
+    <name>New York Public Library</name>
+    <desc>verified 2026-09-26: library</desc>
+  </wpt>
+  <wpt lat="40.751667" lon="-73.975278">
+    <name>Chrysler Building</name>
+    <desc>verified 2026-09-26: skyscraper</desc>
+  </wpt>
+  <wpt lat="40.752800" lon="-73.977200">
+    <name>Grand Central Terminal</name>
+    <desc>verified 2026-09-26: station</desc>
+  </wpt>
+  <wpt lat="40.749167" lon="-73.981389">
+    <name>The Morgan Library &amp; Museum</name>
+    <desc>verified 2026-09-26: museum</desc>
+  </wpt>
+  <wpt lat="40.748300" lon="-73.985600">
+    <name>Empire State Building Observation Deck</name>
+    <desc>verified 2026-09-26: observation deck entrance is on 5th Avenue; was blank</desc>
+  </wpt>
+  <wpt lat="40.750556" lon="-73.993611">
+    <name>Madison Square Garden</name>
+    <desc>verified 2026-09-26: arena</desc>
+  </wpt>
+  <wpt lat="40.748300" lon="-74.005000">
+    <name>The High Line</name>
+    <desc>verified 2026-09-26: elevated park; Wikidata point at about West 22nd Street</desc>
+  </wpt>
+  <wpt lat="40.742500" lon="-74.006111">
+    <name>Chelsea Market</name>
+    <desc>verified 2026-09-26: market</desc>
+  </wpt>
+  <wpt lat="40.741210" lon="-74.006720">
+    <name>Ground Zero Museum Workshop</name>
+    <desc>verified 2026-09-26: museum (420 West 14th Street, since closed)</desc>
+  </wpt>
+  <wpt lat="40.733611" lon="-74.002778">
+    <name>Greenwich Village</name>
+    <desc>verified 2026-09-26: neighbourhood</desc>
+  </wpt>
+  <wpt lat="40.730833" lon="-73.997500">
+    <name>Washington Square Park</name>
+    <desc>verified 2026-09-26: park</desc>
+  </wpt>
+  <wpt lat="40.723000" lon="-74.000000">
+    <name>SoHo</name>
+    <desc>verified 2026-09-26: neighbourhood</desc>
+  </wpt>
+  <wpt lat="40.718500" lon="-73.990139">
+    <name>Tenement Museum</name>
+    <desc>verified 2026-09-26: museum, Orchard Street</desc>
+  </wpt>
+  <wpt lat="40.711320" lon="-74.009200">
+    <name>St. Paul's Chapel</name>
+    <desc>verified 2026-09-26: chapel on Broadway</desc>
+  </wpt>
+  <wpt lat="40.711667" lon="-74.013611">
+    <name>The National September 11 Memorial &amp; Museum</name>
+    <desc>verified 2026-09-26: memorial; was blank</desc>
+  </wpt>
+  <wpt lat="40.703239" lon="-74.017352">
+    <name>Liberty Island Ferry</name>
+    <desc>verified 2026-09-26: Liberty Island ferry (the post's Statue of Liberty stop): display and walking endpoint at the Statue Cruises ferry dock in Battery Park, the Manhattan departure; Liberty Island itself is boat-only; Nominatim had a false match in Wisconsin</desc>
+  </wpt>
+  <rte>
+    <name>An optimized walking tour around NYC route</name>
+    <rtept lat="40.780833" lon="-73.974444">
+      <name>American Museum of Natural History</name>
+    </rtept>
+    <rtept lat="40.779400" lon="-73.963100">
+      <name>The Metropolitan Museum of Art</name>
+    </rtept>
+    <rtept lat="40.771100" lon="-73.967200">
+      <name>The Frick Collection</name>
+    </rtept>
+    <rtept lat="40.782222" lon="-73.965278">
+      <name>Central Park</name>
+    </rtept>
+    <rtept lat="40.761700" lon="-73.977500">
+      <name>The Museum of Modern Art (MOMA)</name>
+    </rtept>
+    <rtept lat="40.758611" lon="-73.976389">
+      <name>St. Patrick's Cathedral</name>
+    </rtept>
+    <rtept lat="40.758611" lon="-73.979167">
+      <name>Rockefeller Center</name>
+    </rtept>
+    <rtept lat="40.759722" lon="-73.979167">
+      <name>Radio City Music Hall</name>
+    </rtept>
+    <rtept lat="40.759000" lon="-73.985000">
+      <name>Theater District</name>
+    </rtept>
+    <rtept lat="40.757500" lon="-73.985800">
+      <name>Times Square</name>
+    </rtept>
+    <rtept lat="40.753889" lon="-73.983889">
+      <name>Bryant Park</name>
+    </rtept>
+    <rtept lat="40.753056" lon="-73.981944">
+      <name>New York Public Library</name>
+    </rtept>
+    <rtept lat="40.751667" lon="-73.975278">
+      <name>Chrysler Building</name>
+    </rtept>
+    <rtept lat="40.752800" lon="-73.977200">
+      <name>Grand Central Terminal</name>
+    </rtept>
+    <rtept lat="40.749167" lon="-73.981389">
+      <name>The Morgan Library &amp; Museum</name>
+    </rtept>
+    <rtept lat="40.748300" lon="-73.985600">
+      <name>Empire State Building Observation Deck</name>
+    </rtept>
+    <rtept lat="40.750556" lon="-73.993611">
+      <name>Madison Square Garden</name>
+    </rtept>
+    <rtept lat="40.748300" lon="-74.005000">
+      <name>The High Line</name>
+    </rtept>
+    <rtept lat="40.742500" lon="-74.006111">
+      <name>Chelsea Market</name>
+    </rtept>
+    <rtept lat="40.741210" lon="-74.006720">
+      <name>Ground Zero Museum Workshop</name>
+    </rtept>
+    <rtept lat="40.733611" lon="-74.002778">
+      <name>Greenwich Village</name>
+    </rtept>
+    <rtept lat="40.730833" lon="-73.997500">
+      <name>Washington Square Park</name>
+    </rtept>
+    <rtept lat="40.723000" lon="-74.000000">
+      <name>SoHo</name>
+    </rtept>
+    <rtept lat="40.718500" lon="-73.990139">
+      <name>Tenement Museum</name>
+    </rtept>
+    <rtept lat="40.711320" lon="-74.009200">
+      <name>St. Paul's Chapel</name>
+    </rtept>
+    <rtept lat="40.711667" lon="-74.013611">
+      <name>The National September 11 Memorial &amp; Museum</name>
+    </rtept>
+    <rtept lat="40.703239" lon="-74.017352">
+      <name>Liberty Island Ferry</name>
+    </rtept>
+  </rte>
+  <trk>
+    <name>An optimized walking tour around NYC track</name>
+    <trkseg>
+      <trkpt lat="40.780538" lon="-73.974659"/>
+      <trkpt lat="40.780151" lon="-73.974845"/>
+      <trkpt lat="40.779480" lon="-73.973415"/>
+      <trkpt lat="40.778915" lon="-73.972806"/>
+      <trkpt lat="40.778386" lon="-73.972756"/>
+      <trkpt lat="40.778893" lon="-73.971833"/>
+      <trkpt lat="40.778611" lon="-73.971589"/>
+      <trkpt lat="40.778775" lon="-73.970168"/>
+      <trkpt lat="40.778321" lon="-73.969557"/>
+      <trkpt lat="40.778472" lon="-73.968215"/>
+      <trkpt lat="40.777950" lon="-73.967177"/>
+      <trkpt lat="40.778193" lon="-73.966577"/>
+      <trkpt lat="40.776917" lon="-73.963945"/>
+      <trkpt lat="40.779097" lon="-73.962372"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.779097" lon="-73.962372"/>
+      <trkpt lat="40.771166" lon="-73.967854"/>
+      <trkpt lat="40.770940" lon="-73.967317"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.770940" lon="-73.967317"/>
+      <trkpt lat="40.771166" lon="-73.967854"/>
+      <trkpt lat="40.775244" lon="-73.965169"/>
+      <trkpt lat="40.776175" lon="-73.965756"/>
+      <trkpt lat="40.777525" lon="-73.965242"/>
+      <trkpt lat="40.777971" lon="-73.964654"/>
+      <trkpt lat="40.779362" lon="-73.965893"/>
+      <trkpt lat="40.780243" lon="-73.965394"/>
+      <trkpt lat="40.782232" lon="-73.965251"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.782232" lon="-73.965251"/>
+      <trkpt lat="40.780243" lon="-73.965394"/>
+      <trkpt lat="40.779362" lon="-73.965893"/>
+      <trkpt lat="40.777971" lon="-73.964654"/>
+      <trkpt lat="40.777525" lon="-73.965242"/>
+      <trkpt lat="40.776175" lon="-73.965756"/>
+      <trkpt lat="40.775244" lon="-73.965169"/>
+      <trkpt lat="40.761041" lon="-73.975543"/>
+      <trkpt lat="40.761824" lon="-73.977409"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.761824" lon="-73.977409"/>
+      <trkpt lat="40.761041" lon="-73.975543"/>
+      <trkpt lat="40.758553" lon="-73.977030"/>
+      <trkpt lat="40.758358" lon="-73.976579"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.758358" lon="-73.976579"/>
+      <trkpt lat="40.759096" lon="-73.978326"/>
+      <trkpt lat="40.758623" lon="-73.979158"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.758623" lon="-73.979158"/>
+      <trkpt lat="40.759161" lon="-73.978494"/>
+      <trkpt lat="40.759516" lon="-73.979321"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.759516" lon="-73.979321"/>
+      <trkpt lat="40.759905" lon="-73.980607"/>
+      <trkpt lat="40.758768" lon="-73.981442"/>
+      <trkpt lat="40.759101" lon="-73.982605"/>
+      <trkpt lat="40.758594" lon="-73.982975"/>
+      <trkpt lat="40.759222" lon="-73.984474"/>
+      <trkpt lat="40.758965" lon="-73.984925"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.758965" lon="-73.984925"/>
+      <trkpt lat="40.757485" lon="-73.985764"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.757485" lon="-73.985764"/>
+      <trkpt lat="40.755675" lon="-73.986312"/>
+      <trkpt lat="40.754706" lon="-73.984044"/>
+      <trkpt lat="40.754116" lon="-73.984008"/>
+      <trkpt lat="40.753801" lon="-73.982938"/>
+      <trkpt lat="40.754165" lon="-73.983856"/>
+      <trkpt lat="40.753888" lon="-73.983888"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.753888" lon="-73.983888"/>
+      <trkpt lat="40.753737" lon="-73.984171"/>
+      <trkpt lat="40.753337" lon="-73.983247"/>
+      <trkpt lat="40.753963" lon="-73.982528"/>
+      <trkpt lat="40.753452" lon="-73.981129"/>
+      <trkpt lat="40.753014" lon="-73.981769"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.753014" lon="-73.981769"/>
+      <trkpt lat="40.753529" lon="-73.980691"/>
+      <trkpt lat="40.752503" lon="-73.978258"/>
+      <trkpt lat="40.752943" lon="-73.977824"/>
+      <trkpt lat="40.751863" lon="-73.975134"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.751863" lon="-73.975134"/>
+      <trkpt lat="40.752767" lon="-73.977224"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.752767" lon="-73.977224"/>
+      <trkpt lat="40.748507" lon="-73.980554"/>
+      <trkpt lat="40.748933" lon="-73.981561"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.748933" lon="-73.981561"/>
+      <trkpt lat="40.749069" lon="-73.981882"/>
+      <trkpt lat="40.747653" lon="-73.982918"/>
+      <trkpt lat="40.748306" lon="-73.984510"/>
+      <trkpt lat="40.747790" lon="-73.984892"/>
+      <trkpt lat="40.748137" lon="-73.985719"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.748137" lon="-73.985719"/>
+      <trkpt lat="40.750212" lon="-73.991010"/>
+      <trkpt lat="40.749223" lon="-73.992105"/>
+      <trkpt lat="40.750321" lon="-73.994645"/>
+      <trkpt lat="40.750351" lon="-73.994108"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.750351" lon="-73.994108"/>
+      <trkpt lat="40.750396" lon="-73.994959"/>
+      <trkpt lat="40.749052" lon="-73.995930"/>
+      <trkpt lat="40.750108" lon="-73.998519"/>
+      <trkpt lat="40.749600" lon="-73.999107"/>
+      <trkpt lat="40.749763" lon="-74.001054"/>
+      <trkpt lat="40.750214" lon="-74.002148"/>
+      <trkpt lat="40.747848" lon="-74.004241"/>
+      <trkpt lat="40.748195" lon="-74.005078"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.748195" lon="-74.005078"/>
+      <trkpt lat="40.747957" lon="-74.004651"/>
+      <trkpt lat="40.744929" lon="-74.006838"/>
+      <trkpt lat="40.743862" lon="-74.006955"/>
+      <trkpt lat="40.742848" lon="-74.007537"/>
+      <trkpt lat="40.742307" lon="-74.006253"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.742307" lon="-74.006253"/>
+      <trkpt lat="40.741761" lon="-74.004956"/>
+      <trkpt lat="40.740919" lon="-74.005566"/>
+      <trkpt lat="40.741358" lon="-74.006612"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.741358" lon="-74.006612"/>
+      <trkpt lat="40.740716" lon="-74.005064"/>
+      <trkpt lat="40.740052" lon="-74.005174"/>
+      <trkpt lat="40.739477" lon="-74.003822"/>
+      <trkpt lat="40.738185" lon="-74.004260"/>
+      <trkpt lat="40.738189" lon="-74.003954"/>
+      <trkpt lat="40.733677" lon="-74.002794"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.733677" lon="-74.002794"/>
+      <trkpt lat="40.730867" lon="-73.997653"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.730867" lon="-73.997653"/>
+      <trkpt lat="40.730543" lon="-73.996885"/>
+      <trkpt lat="40.729479" lon="-73.996551"/>
+      <trkpt lat="40.728806" lon="-73.995179"/>
+      <trkpt lat="40.723020" lon="-74.000042"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.723020" lon="-74.000042"/>
+      <trkpt lat="40.723410" lon="-73.999717"/>
+      <trkpt lat="40.720948" lon="-73.993972"/>
+      <trkpt lat="40.720296" lon="-73.994235"/>
+      <trkpt lat="40.720116" lon="-73.993968"/>
+      <trkpt lat="40.718885" lon="-73.989925"/>
+      <trkpt lat="40.718495" lon="-73.990123"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.718495" lon="-73.990123"/>
+      <trkpt lat="40.714340" lon="-73.992445"/>
+      <trkpt lat="40.713997" lon="-73.997392"/>
+      <trkpt lat="40.713310" lon="-73.998607"/>
+      <trkpt lat="40.712582" lon="-74.002339"/>
+      <trkpt lat="40.711451" lon="-74.004514"/>
+      <trkpt lat="40.711926" lon="-74.005332"/>
+      <trkpt lat="40.711259" lon="-74.008418"/>
+      <trkpt lat="40.711413" lon="-74.009120"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.711413" lon="-74.009120"/>
+      <trkpt lat="40.712041" lon="-74.012074"/>
+      <trkpt lat="40.711687" lon="-74.012236"/>
+      <trkpt lat="40.711668" lon="-74.013611"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.711668" lon="-74.013611"/>
+      <trkpt lat="40.711627" lon="-74.014117"/>
+      <trkpt lat="40.705175" lon="-74.016378"/>
+      <trkpt lat="40.704723" lon="-74.016264"/>
+      <trkpt lat="40.704706" lon="-74.016801"/>
+      <trkpt lat="40.703936" lon="-74.017414"/>
+      <trkpt lat="40.703286" lon="-74.017224"/>
+    </trkseg>
+  </trk>
+</gpx>

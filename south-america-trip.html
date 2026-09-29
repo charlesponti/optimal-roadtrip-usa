@@ -1,148 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Randy Olson uses machine learning to find the optimal road trip across South America.">
-    <meta name="author" content="Randal S. Olson">
-    
-    <title>An optimal road trip across South America according to machine learning</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var directionsDisplay1, directionsDisplay2;
-		var directionsDisplay3, directionsDisplay4;
-		var directionsDisplay5;
-		var flightPath1, flightPath2;
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: markerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>An optimal road trip across South America according to machine learning (restored map)</title>
+<meta name="description" content="An optimal road trip across South America according to machine learning: 36 stops, 18,222 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="south-america-trip.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"south-america-trip","profile":"car","assets":"assets/","data":"data/south-america-trip/","basemap":{"region":"south-america","url":"assets/basemaps/south-america.pmtiles","maxzoom":8},"connectors":[{"order":0,"drive":[-64.649489,10.21338],"display":[-63.929052,10.998852],"distance_m":117594,"via":"the Conferry terminal at Puerto La Cruz"},{"order":1,"drive":[-63.536368,8.121937],"display":[-62.852937,6.235794],"distance_m":222870,"via":"Tomas de Heres Airport, Ciudad Bolivar"},{"order":2,"drive":[-40.450608,-2.898628],"display":[-40.51523,-2.795168],"distance_m":13559,"via":"Jijoca de Jericoacoara town"}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>An optimal road trip across South America according to machine learning</h1>
+    <p class="restored">Restored in 2026 with open data. Originally published March 14, 2015. <a href="https://www.randalolson.com/2015/03/14/computing-the-optimal-road-trip-across-south-america/">Read the original post</a>. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>An optimal road trip across South America according to machine learning</strong>
+      <span class="meta">36 stops · 18,222 mi · 443 hours driving</span><br>
+      <a href="south-america-trip.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>36<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>18,222 mi<small>29,325 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>443 hours<small>18.5 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>36<small>34 road, 2 flight or ferry</small></dd></div>
+    </dl>
+    <p class="note">Plus 2 flight or ferry legs (1,104 mi straight line, dashed on the map), not counted above.</p>
+    <p class="note">The original post quoted 18,148 mi.</p>
 
-		function initialize() {
-		  var center = new google.maps.LatLng(-18.7, -57.6);
-		  var mapOptions = {
-			zoom: 4,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  directionsDisplay1.setMap(map);
-		  directionsDisplay2.setMap(map);
-		  directionsDisplay3.setMap(map);
-		  directionsDisplay4.setMap(map);
-		  directionsDisplay5.setMap(map);
-		  flightPath1.setMap(map);
-		  flightPath2.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/south-america-trip/route.gpx" download>GPX<small>1.7 MB</small></a><a class="btn" href="data/south-america-trip/route.kml" download>KML<small>3.6 MB</small></a><a class="btn" href="data/south-america-trip/route.geojson" download>GeoJSON<small>1.2 MB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=10.213380%2C-64.649489&amp;destination=-23.550000%2C-46.633333&amp;waypoints=8.121937%2C-63.536368%7C-2.898628%2C-40.450608%7C-3.727500%2C-38.527500%7C-5.795000%2C-35.208889%7C-12.974722%2C-38.476667%7C-16.592528%2C-39.102806%7C-19.928056%2C-43.941944%7C-22.746944%2C-41.881944%7C-22.911111%2C-43.205556&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-23.550000%2C-46.633333&amp;destination=-34.637222%2C-71.363056&amp;waypoints=-25.429722%2C-49.271111%7C-27.592550%2C-48.558163%7C-29.378889%2C-50.873889%7C-34.955739%2C-54.938115%7C-25.280000%2C-57.634444%7C-34.603889%2C-58.381389%7C-50.973232%2C-72.782584%7C-50.337778%2C-72.260000%7C-41.133657%2C-71.310332&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-34.637222%2C-71.363056&amp;destination=-4.105556%2C-81.047222&amp;waypoints=-33.437500%2C-70.650000%7C-33.024444%2C-71.551667%7C-22.910800%2C-68.200100%7C-16.495833%2C-68.133333%7C-15.843333%2C-70.023611%7C-16.398889%2C-71.536944%7C-13.304167%2C-72.116667%7C-13.516900%2C-71.978600%7C-12.045833%2C-77.030556&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-4.105556%2C-81.047222&amp;destination=10.213380%2C-64.649489&amp;waypoints=-0.220000%2C-78.512500%7C4.598056%2C-74.076111%7C10.426557%2C-75.544167%7C11.240057%2C-74.190282%7C11.267479%2C-74.190828&amp;travelmode=driving" rel="noopener" target="_blank">Part 4</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=10.213380%2C-64.649489&amp;destination=-23.550000%2C-46.633333&amp;waypoint=8.121937%2C-63.536368&amp;waypoint=-2.898628%2C-40.450608&amp;waypoint=-3.727500%2C-38.527500&amp;waypoint=-5.795000%2C-35.208889&amp;waypoint=-12.974722%2C-38.476667&amp;waypoint=-16.592528%2C-39.102806&amp;waypoint=-19.928056%2C-43.941944&amp;waypoint=-22.746944%2C-41.881944&amp;waypoint=-22.911111%2C-43.205556&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=-23.550000%2C-46.633333&amp;destination=-34.637222%2C-71.363056&amp;waypoint=-25.429722%2C-49.271111&amp;waypoint=-27.592550%2C-48.558163&amp;waypoint=-29.378889%2C-50.873889&amp;waypoint=-34.955739%2C-54.938115&amp;waypoint=-25.280000%2C-57.634444&amp;waypoint=-34.603889%2C-58.381389&amp;waypoint=-50.973232%2C-72.782584&amp;waypoint=-50.337778%2C-72.260000&amp;waypoint=-41.133657%2C-71.310332&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=-34.637222%2C-71.363056&amp;destination=-4.105556%2C-81.047222&amp;waypoint=-33.437500%2C-70.650000&amp;waypoint=-33.024444%2C-71.551667&amp;waypoint=-22.910800%2C-68.200100&amp;waypoint=-16.495833%2C-68.133333&amp;waypoint=-15.843333%2C-70.023611&amp;waypoint=-16.398889%2C-71.536944&amp;waypoint=-13.304167%2C-72.116667&amp;waypoint=-13.516900%2C-71.978600&amp;waypoint=-12.045833%2C-77.030556&amp;mode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://maps.apple.com/directions?source=-4.105556%2C-81.047222&amp;destination=10.213380%2C-64.649489&amp;waypoint=-0.220000%2C-78.512500&amp;waypoint=4.598056%2C-74.076111&amp;waypoint=10.426557%2C-75.544167&amp;waypoint=11.240057%2C-74.190282&amp;waypoint=11.267479%2C-74.190828&amp;mode=driving" rel="noopener" target="_blank">Part 4</a></p>
 
-		function calcRoute(start, end, routes) {
-		  switch (start) {
-		  	case "Isla Margarita, Venezuela":
-		  		directionsDisplay1 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Rio de Janeiro, Brazil":
-		  		directionsDisplay2 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "El Calafate, Argentina":
-		  		directionsDisplay3 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Arequipa, Peru":
-		  		directionsDisplay4 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Bogota, Colombia":
-		  		directionsDisplay5 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  }
-		  
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				switch (start) {
-					case "Isla Margarita, Venezuela":
-						directionsDisplay1.setDirections(response);
-						break;
-					case "Rio de Janeiro, Brazil":
-						directionsDisplay2.setDirections(response);
-						break;
-					case "El Calafate, Argentina":
-						directionsDisplay3.setDirections(response);
-						break;
-					case "Arequipa, Peru":
-						directionsDisplay4.setDirections(response);
-						break;
-					case "Bogota, Colombia":
-						directionsDisplay5.setDirections(response);
-						break;
-				  }
-			}
-		  });
-		}
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Isla Margarita</span><span class="stop-via">Reached via the Conferry terminal at Puerto La Cruz (73 mi away)</span><span class="stop-leg">185 mi (298 km), 5 h 57 min driving to 2. Parque Nacional Canaima</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Parque Nacional Canaima</span><span class="stop-via">Reached via Tomas de Heres Airport, Ciudad Bolivar (138 mi away)</span><span class="stop-leg">3,536 mi (5,691 km), 107 h 25 min driving to 3. Jericoacoara</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Jericoacoara</span><span class="stop-via">Reached via Jijoca de Jericoacoara town (8.4 mi away)</span><span class="stop-leg">172 mi (277 km), 4 h 28 min driving to 4. Fortaleza</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Fortaleza</span><span class="stop-leg">318 mi (512 km), 8 h 2 min driving to 5. Natal</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Natal</span><span class="stop-leg">676 mi (1,088 km), 15 h 2 min driving to 6. Salvador</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Salvador</span><span class="stop-leg">446 mi (717 km), 11 h 36 min driving to 7. Trancoso</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Trancoso</span><span class="stop-leg">557 mi (897 km), 15 h 2 min driving to 8. Belo Horizonte</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Belo Horizonte</span><span class="stop-leg">361 mi (581 km), 9 h 3 min driving to 9. Buzios</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Buzios</span><span class="stop-leg">106 mi (170 km), 2 h 54 min driving to 10. Rio de Janeiro</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Rio de Janeiro</span><span class="stop-leg">267 mi (429 km), 5 h 23 min driving to 11. Sao Paulo</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Sao Paulo</span><span class="stop-leg">251 mi (404 km), 5 h 44 min driving to 12. Curitiba</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">Curitiba</span><span class="stop-leg">188 mi (302 km), 4 h 13 min driving to 13. Florianopolis</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">Florianopolis</span><span class="stop-leg">276 mi (444 km), 6 h 4 min driving to 14. Gramado</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Gramado</span><span class="stop-leg">526 mi (846 km), 12 h 15 min driving to 15. Punta del Este</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Punta del Este</span><span class="stop-leg">893 mi (1,437 km), 17 h 37 min driving to 16. Asuncion</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Asuncion</span><span class="stop-leg">777 mi (1,250 km), 14 h 33 min driving to 17. Buenos Aires</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Buenos Aires</span><span class="stop-leg">1,749 mi (2,815 km), 34 h 16 min driving to 18. Torres del Paine</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Torres del Paine</span><span class="stop-leg">165 mi (265 km), 5 h 17 min driving to 19. El Calafate</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">El Calafate</span><span class="stop-leg">920 mi (1,481 km), 19 h 24 min driving to 20. San Carlos de Bariloche</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">San Carlos de Bariloche</span><span class="stop-leg">633 mi (1,018 km), 12 h 41 min driving to 21. Santa Cruz</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Santa Cruz</span><span class="stop-leg">113 mi (182 km), 2 h 21 min driving to 22. Santiago</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">Santiago</span><span class="stop-leg">76 mi (122 km), 1 h 34 min driving to 23. Vina del Mar</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">Vina del Mar</span><span class="stop-leg">980 mi (1,577 km), 20 h 10 min driving to 24. San Pedro de Atacama</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">San Pedro de Atacama</span><span class="stop-leg">765 mi (1,232 km), 18 h 40 min driving to 25. Nuestra Senora de La Paz</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Nuestra Senora de La Paz</span><span class="stop-leg">160 mi (258 km), 4 h 27 min driving to 26. Reserva Nacional Titicaca</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">Reserva Nacional Titicaca</span><span class="stop-leg">182 mi (293 km), 5 h 31 min driving to 27. Arequipa</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">Arequipa</span><span class="stop-leg">338 mi (545 km), 10 h 3 min driving to 28. Urubamba</span></span></button></li>
+        <li data-order="27"><button type="button"><span class="num">28</span><span><span class="stop-name">Urubamba</span><span class="stop-leg">31 mi (51 km), 55 min driving to 29. Cusco</span></span></button></li>
+        <li data-order="28"><button type="button"><span class="num">29</span><span><span class="stop-name">Cusco</span><span class="stop-leg">681 mi (1,096 km), 17 h 56 min driving to 30. Lima</span></span></button></li>
+        <li data-order="29"><button type="button"><span class="num">30</span><span><span class="stop-name">Lima</span><span class="stop-leg">719 mi (1,158 km), 17 h 59 min driving to 31. Mancora</span></span></button></li>
+        <li data-order="30"><button type="button"><span class="num">31</span><span><span class="stop-name">Mancora</span><span class="stop-leg">422 mi (680 km), 9 h 47 min driving to 32. Quito</span></span></button></li>
+        <li data-order="31"><button type="button"><span class="num">32</span><span><span class="stop-name">Quito</span><span class="stop-leg flight">Flight or ferry to 33. Bogota, 452 mi straight line</span></span></button></li>
+        <li data-order="32"><button type="button"><span class="num">33</span><span><span class="stop-name">Bogota</span><span class="stop-leg">610 mi (982 km), 13 h 33 min driving to 34. Cartagena</span></span></button></li>
+        <li data-order="33"><button type="button"><span class="num">34</span><span><span class="stop-name">Cartagena</span><span class="stop-leg">140 mi (226 km), 3 h 15 min driving to 35. Santa Marta</span></span></button></li>
+        <li data-order="34"><button type="button"><span class="num">35</span><span><span class="stop-name">Santa Marta</span><span class="stop-leg">3.5 mi (5.6 km), 8 min driving to 36. Taganga</span></span></button></li>
+        <li data-order="35"><button type="button"><span class="num">36</span><span><span class="stop-name">Taganga</span><span class="stop-leg flight">Flight or ferry to 1. Isla Margarita, 652 mi straight line</span></span></button></li>
+    </ol>
 
-		google.maps.event.addDomListener(window, 'load', initialize);
-
-		calcRoute("Isla Margarita, Venezuela", "Rio de Janeiro, Brazil", ["Parque Nacional Canaima, Venezuela", "Jericoacoara, Brazil", "Fortaleza, Brazil", "Natal, Brazil", "Salvador, Brazil", "Trancoso, Brazil", "Belo Horizonte, Brazil", "Buzios, Brazil"]);
-
-		calcRoute("Rio de Janeiro, Brazil", "El Calafate, Argentina", ["Sao Paulo, Brazil", "Curitiba, Brazil", "Florianopolis, Brazil", "Gramado, Brazil", "Punta del Este, Uruguay", "Asuncion, Paraguay", "Buenos Aires, Argentina", "Torres del Paine, Chile"]);
-
-		calcRoute("El Calafate, Argentina", "Arequipa, Peru", ["San Carlos de Bariloche, Argentina", "Santa Cruz, Chile", "Santiago, Chile", "Vina del Mar, Chile", "San Pedro de Atacama, Chile", "Nuestra Senora de La Paz, Bolivia", "Reserva Nacional Titicaca, Peru"]);
-
-		calcRoute("Arequipa, Peru", "Quito, Ecuador", ["Urubamba, Peru", "Cusco, Peru", "Lima, Peru", "Mancora, Peru"]);
-
-		calcRoute("Bogota, Colombia", "Taganga, Santa Marta, Magdalena, Colombia", ["Cartagena, Bolívar, Colombia", "Santa Marta, Magdalena, Colombia"]);
-
-		/* Flight between Quito & Bogota */
-		flightPath1 = new google.maps.Polyline({
-			path: [new google.maps.LatLng(-0.154687, -78.510119),
-				   new google.maps.LatLng(4.604248, -74.156505)],
-			geodesic: true,
-			strokeColor: '#3399FF',
-			strokeOpacity: 1.0,
-			strokeWeight: 6
-			});
-			
-		/* Flight between Santa Marta & Isla Margarita */
-		flightPath2 = new google.maps.Polyline({
-			path: [new google.maps.LatLng(11.240057, -74.190282),
-				   new google.maps.LatLng(10.998852, -63.929052)],
-			geodesic: true,
-			strokeColor: '#3399FF',
-			strokeOpacity: 1.0,
-			strokeWeight: 6
-			});
-
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

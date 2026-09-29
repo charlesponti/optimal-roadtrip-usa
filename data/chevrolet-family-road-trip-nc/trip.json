@@ -1,0 +1,156 @@
+{
+  "id": "chevrolet-family-road-trip-nc",
+  "title": "The Midwest Family Road Trip by Chevrolet",
+  "legacy_url": "https://rhiever.github.io/optimal-roadtrip-usa/chevrolet-family-road-trip-nc.html",
+  "post_url": null,
+  "profile": "car",
+  "closed_loop": false,
+  "quoted_total": null,
+  "stops": [
+    {
+      "order": 0,
+      "name": "Indianapolis Motor Speedway",
+      "query": "4790 W 16th St, Indianapolis, IN 46222",
+      "lat": 39.79031459999999,
+      "lon": -86.23366109999999,
+      "drive_lat": 39.79031459999999,
+      "drive_lon": -86.23366109999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 1,
+      "name": "The Bean at Millennium Park",
+      "query": "201 E Randolph St, Chicago, IL 60602",
+      "lat": 41.8821051,
+      "lon": -87.6229572,
+      "drive_lat": 41.8821051,
+      "drive_lon": -87.6229572,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 2,
+      "name": "Harley-Davidson Museum",
+      "query": "400 W Canal St, Milwaukee, WI 53201",
+      "lat": 43.0311282,
+      "lon": -87.9162042,
+      "drive_lat": 43.0311282,
+      "drive_lon": -87.9162042,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 3,
+      "name": "Frederick R Weisman Art Museum",
+      "query": "333 E River Pkwy, Minneapolis, MN 55455",
+      "lat": 44.9730193,
+      "lon": -93.237028,
+      "drive_lat": 44.9730193,
+      "drive_lon": -93.237028,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 4,
+      "name": "Sleeping Bear Dunes National Seashore",
+      "query": "Sleeping Bear Dunes National Seashore, Michigan",
+      "lat": 44.8757238,
+      "lon": -85.9996747,
+      "drive_lat": 44.882517,
+      "drive_lon": -86.042076,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": "drive point fixed 2026-09-26: Dune Climb parking on M-109, the park's signature access (osm:way/92189285); the 2015 Google pin is off-road south of Glen Arbor"
+    },
+    {
+      "order": 5,
+      "name": "Detroit Institute of Arts",
+      "query": "5200 Woodward Ave, Detroit, MI 48202",
+      "lat": 42.3594422,
+      "lon": -83.0643655,
+      "drive_lat": 42.3594422,
+      "drive_lon": -83.0643655,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 6,
+      "name": "Rock and Roll Hall of Fame Museum",
+      "query": "1100 E 9th St, Cleveland, OH 44114",
+      "lat": 41.5085183,
+      "lon": -81.69550579999999,
+      "drive_lat": 41.5085183,
+      "drive_lon": -81.69550579999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 7,
+      "name": "Ohio Statehouse",
+      "query": "1 Capitol Square, Columbus, OH 43215",
+      "lat": 39.9613745,
+      "lon": -82.9989103,
+      "drive_lat": 39.9613745,
+      "drive_lon": -82.9989103,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 8,
+      "name": "Cincinnati Zoo",
+      "query": "3400 Vine St, Cincinnati, OH 45220",
+      "lat": 39.1433304,
+      "lon": -84.50898719999999,
+      "drive_lat": 39.1433304,
+      "drive_lon": -84.50898719999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 9,
+      "name": "Churchill Downs",
+      "query": "700 Central Ave, Louisville, KY 40208",
+      "lat": 38.2042473,
+      "lon": -85.7716305,
+      "drive_lat": 38.2042473,
+      "drive_lon": -85.7716305,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    }
+  ],
+  "totals": {
+    "distance_m": 3155991.3,
+    "duration_s": 141590.1,
+    "flight_distance_m": 0,
+    "flight_legs": 0
+  },
+  "comparison": null,
+  "warnings": [],
+  "build": {
+    "osm_snapshot": "2026-09-25T20:24:36Z",
+    "osrm_version": "v26.9.0",
+    "built_at": "2026-09-27T22:16:44Z"
+  },
+  "override_note": null,
+  "exports": {
+    "gpx": "route.gpx",
+    "kml": "route.kml",
+    "google_maps": [
+      "https://www.google.com/maps/dir/?api=1&origin=39.790315%2C-86.233661&destination=38.204247%2C-85.771631&waypoints=41.882105%2C-87.622957%7C43.031128%2C-87.916204%7C44.973019%2C-93.237028%7C44.882517%2C-86.042076%7C42.359442%2C-83.064365%7C41.508518%2C-81.695506%7C39.961374%2C-82.998910%7C39.143330%2C-84.508987&travelmode=driving"
+    ],
+    "apple_maps": [
+      "https://maps.apple.com/directions?source=39.790315%2C-86.233661&destination=38.204247%2C-85.771631&waypoint=41.882105%2C-87.622957&waypoint=43.031128%2C-87.916204&waypoint=44.973019%2C-93.237028&waypoint=44.882517%2C-86.042076&waypoint=42.359442%2C-83.064365&waypoint=41.508518%2C-81.695506&waypoint=39.961374%2C-82.998910&waypoint=39.143330%2C-84.508987&mode=driving"
+    ],
+    "geojson": "route.geojson"
+  }
+}

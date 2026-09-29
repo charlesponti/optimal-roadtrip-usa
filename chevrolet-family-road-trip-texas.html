@@ -1,230 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-  	<meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="The Texas Family Road Trip by Chevrolet.">
-    <meta name="author" content="Chevrolet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The Texas Family Road Trip by Chevrolet (restored map)</title>
+<meta name="description" content="The Texas Family Road Trip by Chevrolet: 10 stops, 875 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="chevrolet-family-road-trip-texas.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"chevrolet-family-road-trip-texas","profile":"car","assets":"assets/","data":"data/chevrolet-family-road-trip-texas/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The Texas Family Road Trip by Chevrolet</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The Texas Family Road Trip by Chevrolet</strong>
+      <span class="meta">10 stops · 875 mi · 17.4 hours driving</span><br>
+      <a href="chevrolet-family-road-trip-texas.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>10<small>one way</small></dd></div>
+      <div><dt>Distance</dt><dd>875 mi<small>1,409 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>17.4 hours<small>0.7 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>9<small>all by road</small></dd></div>
+    </dl>
     
-    <title>The Texas Family Road Trip by Chevrolet</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var routes_list = [];
-		
-		var marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10;
-		var infoWindows = [];
-		
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var routeMarkerOptions = {visible: false, zIndex: 0};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: routeMarkerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+    
 
-		function initialize() {
-		  var center = new google.maps.LatLng(31, -96.75);
-		  var mapOptions = {
-			zoom: 8,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  for (i=0; i<routes_list.length; i++) {
-		  	routes_list[i].setMap(map);
-		  }
-		  marker1.setMap(map); marker2.setMap(map); marker3.setMap(map); marker4.setMap(map); marker5.setMap(map); marker6.setMap(map); marker7.setMap(map); marker8.setMap(map); marker9.setMap(map); marker10.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/chevrolet-family-road-trip-texas/route.gpx" download>GPX<small>53 KB</small></a><a class="btn" href="data/chevrolet-family-road-trip-texas/route.kml" download>KML<small>159 KB</small></a><a class="btn" href="data/chevrolet-family-road-trip-texas/route.geojson" download>GeoJSON<small>36 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=32.821148%2C-96.716681&amp;destination=32.752493%2C-97.069977&amp;waypoints=29.273028%2C-94.850660%7C29.549782%2C-95.095791%7C29.722593%2C-95.385080%7C29.706318%2C-98.117301%7C29.425745%2C-98.486156%7C29.458353%2C-98.700196%7C32.248058%2C-97.816743%7C32.721097%2C-97.356029&amp;travelmode=driving" rel="noopener" target="_blank">Open</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=32.821148%2C-96.716681&amp;destination=32.752493%2C-97.069977&amp;waypoint=29.273028%2C-94.850660&amp;waypoint=29.549782%2C-95.095791&amp;waypoint=29.722593%2C-95.385080&amp;waypoint=29.706318%2C-98.117301&amp;waypoint=29.425745%2C-98.486156&amp;waypoint=29.458353%2C-98.700196&amp;waypoint=32.248058%2C-97.816743&amp;waypoint=32.721097%2C-97.356029&amp;mode=driving" rel="noopener" target="_blank">Open</a></p>
 
-		function calcRoute(start, end, routes) {
-		  
-		  var directionsDisplay = new google.maps.DirectionsRenderer(directionsDisplayOptions);
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">The Rory Meyers Children&#39;s Adventure Garden - Dallas Arboretum and Botanical Garden</span><span class="stop-leg">292 mi (471 km), 5 h 23 min driving to 2. Moody Gardens</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Moody Gardens</span><span class="stop-leg">30 mi (49 km), 41 min driving to 3. Space Center Houston</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Space Center Houston</span><span class="stop-leg">25 mi (41 km), 34 min driving to 4. Children’s Museum of Houston</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Children’s Museum of Houston</span><span class="stop-leg">177 mi (285 km), 3 h 23 min driving to 5. Schlitterbahn Waterpark</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Schlitterbahn Waterpark</span><span class="stop-leg">32 mi (52 km), 41 min driving to 6. The Alamo</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">The Alamo</span><span class="stop-leg">19 mi (30 km), 31 min driving to 7. Sea World</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Sea World</span><span class="stop-leg">222 mi (357 km), 4 h 31 min driving to 8. Dinosaur Valley State Park</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Dinosaur Valley State Park</span><span class="stop-leg">58 mi (93 km), 1 h 10 min driving to 9. Fort Worth Zoo</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Fort Worth Zoo</span><span class="stop-leg">20 mi (32 km), 29 min driving to 10. Six Flags Over Texas</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Six Flags Over Texas</span><span class="stop-leg">Final stop</span></span></button></li>
+    </ol>
 
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				directionsDisplay.setDirections(response);		
-			}
-		  });
-
-		  routes_list.push(directionsDisplay);
-		}
-
-		function createRoutes(route) {
-			// Google's free map API is limited to 10 waypoints so need to break into batches
-			route.push(route[0]);
-			var subset = 0;
-			while (subset < route.length) {
-				var waypointSubset = route.slice(subset, subset + 10);
-
-				var startPoint = waypointSubset[0];
-				var midPoints = waypointSubset.slice(1, waypointSubset.length - 1);
-				var endPoint = waypointSubset[waypointSubset.length - 1];
-
-				calcRoute(startPoint, endPoint, midPoints);
-
-				subset += 9;
-			}
-		}
-
-		optimal_route = ['8525 Garland Rd, Dallas, TX 75218', '1 Hope Blvd, Galveston, TX 77554', '1601 E NASA Pkwy, Houston, TX 77058', '1500 Binz St, Houston, TX 77004', '588 S Union Ave, New Braunfels, TX 78130', '300 Alamo Plaza, San Antonio, TX 78205', '10500 Sea World Dr, San Antonio, TX\u200e', '1629 Park Rd 59, Glen Rose, TX 76043', '1989 Colonial Pkwy, Fort Worth, TX 76110', '2201 E Road to Six Flags St, Arlington, TX 76010']
-		
-		createRoutes(optimal_route);
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-
-        var infoWindow1 = new google.maps.InfoWindow({ content: "<h3>The Rory Meyers Children's Adventure Garden<br />Dallas Arboretum and Botanical Garden<br />8525 Garland Rd, Dallas, TX 75218</h3>"});
-
-        infoWindows.push(infoWindow1);
-        
-        marker1 = new google.maps.Marker({
-                                position: new google.maps.LatLng(32.8211475, -96.716681),
-                                options: markerOptions,
-                                title: "The Rory Meyers Children's Adventure Garden - Dallas Arboretum and Botanical Garden"
-                                });
-
-        google.maps.event.addListener(marker1, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow1.open(map, marker1); });
-
-        var infoWindow2 = new google.maps.InfoWindow({ content: "<h3>Moody Gardens<br />1 Hope Blvd, Galveston, TX 77554</h3>"});
-
-        infoWindows.push(infoWindow2);
-        
-        marker2 = new google.maps.Marker({
-                                position: new google.maps.LatLng(29.2730284, -94.8506598),
-                                options: markerOptions,
-                                title: "Moody Gardens"
-                                });
-
-        google.maps.event.addListener(marker2, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow2.open(map, marker2); });
-
-        var infoWindow3 = new google.maps.InfoWindow({ content: "<h3>Space Center Houston<br />1601 E NASA Pkwy, Houston, TX 77058</h3>"});
-
-        infoWindows.push(infoWindow3);
-        
-        marker3 = new google.maps.Marker({
-                                position: new google.maps.LatLng(29.549782, -95.0957914),
-                                options: markerOptions,
-                                title: "Space Center Houston"
-                                });
-
-        google.maps.event.addListener(marker3, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow3.open(map, marker3); });
-
-        var infoWindow4 = new google.maps.InfoWindow({ content: "<h3>Children’s Museum of Houston<br />1500 Binz St, Houston, TX 77004</h3>"});
-
-        infoWindows.push(infoWindow4);
-        
-        marker4 = new google.maps.Marker({
-                                position: new google.maps.LatLng(29.7225935, -95.3850803),
-                                options: markerOptions,
-                                title: "Children’s Museum of Houston"
-                                });
-
-        google.maps.event.addListener(marker4, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow4.open(map, marker4); });
-
-        var infoWindow5 = new google.maps.InfoWindow({ content: "<h3>Schlitterbahn Waterpark<br />588 S Union Ave, New Braunfels, TX 78130</h3>"});
-
-        infoWindows.push(infoWindow5);
-        
-        marker5 = new google.maps.Marker({
-                                position: new google.maps.LatLng(29.706318, -98.1173013),
-                                options: markerOptions,
-                                title: "Schlitterbahn Waterpark"
-                                });
-
-        google.maps.event.addListener(marker5, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow5.open(map, marker5); });
-
-        var infoWindow6 = new google.maps.InfoWindow({ content: "<h3>The Alamo<br />300 Alamo Plaza, San Antonio, TX 78205</h3>"});
-
-        infoWindows.push(infoWindow6);
-        
-        marker6 = new google.maps.Marker({
-                                position: new google.maps.LatLng(29.425745, -98.4861562),
-                                options: markerOptions,
-                                title: "The Alamo"
-                                });
-
-        google.maps.event.addListener(marker6, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow6.open(map, marker6); });
-
-        var infoWindow7 = new google.maps.InfoWindow({ content: "<h3>Sea World<br />10500 Sea World Dr, San Antonio, TX‎</h3>"});
-
-        infoWindows.push(infoWindow7);
-        
-        marker7 = new google.maps.Marker({
-                                position: new google.maps.LatLng(29.4583528, -98.7001956),
-                                options: markerOptions,
-                                title: "Sea World"
-                                });
-
-        google.maps.event.addListener(marker7, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow7.open(map, marker7); });
-
-        var infoWindow8 = new google.maps.InfoWindow({ content: "<h3>Dinosaur Valley State Park<br />1629 Park Rd 59, Glen Rose, TX 76043</h3>"});
-
-        infoWindows.push(infoWindow8);
-        
-        marker8 = new google.maps.Marker({
-                                position: new google.maps.LatLng(32.2480584, -97.8167426),
-                                options: markerOptions,
-                                title: "Dinosaur Valley State Park"
-                                });
-
-        google.maps.event.addListener(marker8, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow8.open(map, marker8); });
-
-        var infoWindow9 = new google.maps.InfoWindow({ content: "<h3>Fort Worth Zoo<br />1989 Colonial Pkwy, Fort Worth, TX 76110</h3>"});
-
-        infoWindows.push(infoWindow9);
-        
-        marker9 = new google.maps.Marker({
-                                position: new google.maps.LatLng(32.7210971, -97.3560292),
-                                options: markerOptions,
-                                title: "Fort Worth Zoo"
-                                });
-
-        google.maps.event.addListener(marker9, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow9.open(map, marker9); });
-
-        var infoWindow10 = new google.maps.InfoWindow({ content: "<h3>Six Flags Over Texas<br />2201 E Road to Six Flags St, Arlington, TX 76010</h3>"});
-
-        infoWindows.push(infoWindow10);
-        
-        marker10 = new google.maps.Marker({
-                                position: new google.maps.LatLng(32.7524928, -97.0699775),
-                                options: markerOptions,
-                                title: "Six Flags Over Texas"
-                                });
-
-        google.maps.event.addListener(marker10, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow10.open(map, marker10); });
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-    <!-- <a href="https://www.chevrolet.com/"><img src="images/chevrolet-logo.png" width="400px"  style="position: absolute; bottom: 35px; left: 7px;" /></a> -->
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

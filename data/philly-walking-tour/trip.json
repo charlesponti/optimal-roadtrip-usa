@@ -1,0 +1,352 @@
+{
+  "id": "philly-walking-tour",
+  "title": "An optimized walking tour around Philadelphia",
+  "legacy_url": "https://rhiever.github.io/optimal-roadtrip-usa/philly-walking-tour.html",
+  "post_url": "https://www.randalolson.com/2015/03/25/optimized-walking-tours-of-new-york-city-and-philadelphia/",
+  "profile": "foot",
+  "closed_loop": false,
+  "quoted_total": {
+    "distance_m": 19312,
+    "duration_s": 14400,
+    "source": "post text: 'This 12-mile, 4-hour walking tour'"
+  },
+  "stops": [
+    {
+      "order": 0,
+      "name": "Fairmount Park",
+      "query": "Fairmount Park, Philadelphia, PA",
+      "lat": 39.989444,
+      "lon": -75.202778,
+      "drive_lat": 39.989444,
+      "drive_lon": -75.202778,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Fairmount_Park",
+      "note": "verified 2026-09-26: park (large area); enwiki point in East/West Fairmount Park"
+    },
+    {
+      "order": 1,
+      "name": "Please Touch Museum",
+      "query": "Please Touch Museum, 4231 Avenue of the Republic, Philadelphia, PA",
+      "lat": 39.9795,
+      "lon": -75.2092,
+      "drive_lat": 39.9795,
+      "drive_lon": -75.2092,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Please_Touch_Museum",
+      "note": "verified 2026-09-26: museum, Memorial Hall"
+    },
+    {
+      "order": 2,
+      "name": "Philadelphia Zoo",
+      "query": "Philadelphia Zoo, West Girard Avenue, Philadelphia, PA",
+      "lat": 39.9725,
+      "lon": -75.196667,
+      "drive_lat": 39.9725,
+      "drive_lon": -75.196667,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Philadelphia_Zoo",
+      "note": "verified 2026-09-26: zoo, West Girard Avenue"
+    },
+    {
+      "order": 3,
+      "name": "Philadelphia Museum of Art",
+      "query": "Philadelphia Museum of Art, Benjamin Franklin Parkway, Philadelphia, PA",
+      "lat": 39.966,
+      "lon": -75.181,
+      "drive_lat": 39.966,
+      "drive_lon": -75.181,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Philadelphia_Museum_of_Art",
+      "note": "verified 2026-09-26: museum"
+    },
+    {
+      "order": 4,
+      "name": "Rocky Steps",
+      "query": "Rocky Steps, Benjamin Franklin Parkway, Philadelphia, PA",
+      "lat": 39.9649,
+      "lon": -75.1802,
+      "drive_lat": 39.9649,
+      "drive_lon": -75.1802,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Rocky_Steps",
+      "note": "verified 2026-09-26: east entrance steps of the museum"
+    },
+    {
+      "order": 5,
+      "name": "Eastern State Penitentiary",
+      "query": "Eastern State Penitentiary, Fairmount Avenue, Philadelphia, PA",
+      "lat": 39.9683,
+      "lon": -75.1725,
+      "drive_lat": 39.9683,
+      "drive_lon": -75.1725,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Eastern_State_Penitentiary",
+      "note": "verified 2026-09-26: museum, Fairmount Avenue"
+    },
+    {
+      "order": 6,
+      "name": "Rodin Museum",
+      "query": "Rodin Museum, Benjamin Franklin Parkway, Philadelphia, PA",
+      "lat": 39.962,
+      "lon": -75.174,
+      "drive_lat": 39.962,
+      "drive_lon": -75.174,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Rodin_Museum",
+      "note": "verified 2026-09-26: museum"
+    },
+    {
+      "order": 7,
+      "name": "Barnes Foundation",
+      "query": "Barnes Foundation, 2025 Benjamin Franklin Parkway, Philadelphia, PA 19130",
+      "lat": 39.9605,
+      "lon": -75.1727,
+      "drive_lat": 39.9605,
+      "drive_lon": -75.1727,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Barnes_Foundation",
+      "note": "verified 2026-09-26: museum, 2025 Benjamin Franklin Parkway"
+    },
+    {
+      "order": 8,
+      "name": "The Franklin Institute",
+      "query": "The Franklin Institute, North 20th Street, Philadelphia, PA",
+      "lat": 39.958056,
+      "lon": -75.173611,
+      "drive_lat": 39.958056,
+      "drive_lon": -75.173611,
+      "mode_to_next": "walk",
+      "geocode_source": "wikidata:Q339484",
+      "note": "verified 2026-09-26: museum, North 20th Street; Nominatim had a false match in Columbus, Ohio"
+    },
+    {
+      "order": 9,
+      "name": "Mutter Museum",
+      "query": "Mutter Museum, South 22nd Street, Philadelphia, PA",
+      "lat": 39.953333,
+      "lon": -75.176667,
+      "drive_lat": 39.953333,
+      "drive_lon": -75.176667,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:M\u00fctter_Museum",
+      "note": "verified 2026-09-26: museum, South 22nd Street"
+    },
+    {
+      "order": 10,
+      "name": "Penn Museum",
+      "query": "Penn Museum, 3260 South Street, Philadelphia, PA",
+      "lat": 39.949,
+      "lon": -75.1911,
+      "drive_lat": 39.949,
+      "drive_lon": -75.1911,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Penn_Museum",
+      "note": "verified 2026-09-26: museum, 3260 South Street"
+    },
+    {
+      "order": 11,
+      "name": "University of Pennsylvania",
+      "query": "University of Pennsylvania, Philadelphia, PA",
+      "lat": 39.951944,
+      "lon": -75.193611,
+      "drive_lat": 39.951944,
+      "drive_lon": -75.193611,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:University_of_Pennsylvania",
+      "note": "verified 2026-09-26: campus"
+    },
+    {
+      "order": 12,
+      "name": "Rittenhouse Square",
+      "query": "Rittenhouse Square, Philadelphia, PA",
+      "lat": 39.9495,
+      "lon": -75.1719,
+      "drive_lat": 39.9495,
+      "drive_lon": -75.1719,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Rittenhouse_Square",
+      "note": "verified 2026-09-26: park; Nominatim had the neighbourhood point 165 m east"
+    },
+    {
+      "order": 13,
+      "name": "Cathedral Basilica of Saints Peter & Paul",
+      "query": "Cathedral Basilica of Saints Peter & Paul, Race Street, Philadelphia, PA",
+      "lat": 39.9575,
+      "lon": -75.1686,
+      "drive_lat": 39.9575,
+      "drive_lon": -75.1686,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Cathedral_Basilica_of_Saints_Peter_and_Paul_(Philadelphia)",
+      "note": "verified 2026-09-26: cathedral, Race Street; was blank"
+    },
+    {
+      "order": 14,
+      "name": "Pennsylvania Academy Of The Fine Arts",
+      "query": "Pennsylvania Academy Of The Fine Arts, North Broad Street, Philadelphia, PA",
+      "lat": 39.955,
+      "lon": -75.163889,
+      "drive_lat": 39.955,
+      "drive_lon": -75.163889,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Pennsylvania_Academy_of_the_Fine_Arts",
+      "note": "verified 2026-09-26: museum, North Broad Street"
+    },
+    {
+      "order": 15,
+      "name": "Masonic Temple",
+      "query": "Masonic Temple, North Broad Street, Philadelphia, PA",
+      "lat": 39.953611,
+      "lon": -75.163056,
+      "drive_lat": 39.953611,
+      "drive_lon": -75.163056,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Masonic_Temple_(Philadelphia,_Pennsylvania)",
+      "note": "verified 2026-09-26: temple, North Broad Street"
+    },
+    {
+      "order": 16,
+      "name": "Philadelphia City Hall",
+      "query": "Philadelphia City Hall, John F Kennedy Boulevard, Philadelphia, PA",
+      "lat": 39.952394,
+      "lon": -75.163597,
+      "drive_lat": 39.952394,
+      "drive_lon": -75.163597,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Philadelphia_City_Hall",
+      "note": "verified 2026-09-26: city hall"
+    },
+    {
+      "order": 17,
+      "name": "51 N 12th St",
+      "query": "51 N 12th St, Philadelphia, PA",
+      "lat": 39.953395,
+      "lon": -75.159008,
+      "drive_lat": 39.953395,
+      "drive_lon": -75.159008,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Reading_Terminal_Market",
+      "note": "verified 2026-09-26: 51 N 12th St is the Reading Terminal Market (named in the blog post)"
+    },
+    {
+      "order": 18,
+      "name": "National Constitution Center",
+      "query": "National Constitution Center, 525 Arch Street, Philadelphia, PA",
+      "lat": 39.9536,
+      "lon": -75.1491,
+      "drive_lat": 39.9536,
+      "drive_lon": -75.1491,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:National_Constitution_Center",
+      "note": "verified 2026-09-26: museum, 525 Arch Street"
+    },
+    {
+      "order": 19,
+      "name": "Fireman's Hall Museum",
+      "query": "Fireman's Hall Museum, North 2nd Street, Philadelphia, PA",
+      "lat": 39.953296,
+      "lon": -75.142806,
+      "drive_lat": 39.953296,
+      "drive_lon": -75.142806,
+      "mode_to_next": "walk",
+      "geocode_source": "osm:way/338550400",
+      "note": "verified 2026-09-26: museum, North 2nd Street"
+    },
+    {
+      "order": 20,
+      "name": "Elfreth's Alley",
+      "query": "Elfreth's Alley, Philadelphia, PA",
+      "lat": 39.9528,
+      "lon": -75.1425,
+      "drive_lat": 39.9528,
+      "drive_lon": -75.1425,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Elfreth's_Alley",
+      "note": "verified 2026-09-26: street"
+    },
+    {
+      "order": 21,
+      "name": "Christ Church",
+      "query": "Christ Church, 20 North American Street, Philadelphia, PA",
+      "lat": 39.950833,
+      "lon": -75.143889,
+      "drive_lat": 39.950833,
+      "drive_lon": -75.143889,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Christ_Church_(Philadelphia)",
+      "note": "verified 2026-09-26: church"
+    },
+    {
+      "order": 22,
+      "name": "National Museum of American Jewish History",
+      "query": "National Museum of American Jewish History, South Independence Ml East, Philadelphia, PA",
+      "lat": 39.950288,
+      "lon": -75.148593,
+      "drive_lat": 39.950288,
+      "drive_lon": -75.148593,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Weitzman_National_Museum_of_American_Jewish_History",
+      "note": "verified 2026-09-26: museum on Independence Mall"
+    },
+    {
+      "order": 23,
+      "name": "Independence National Historical Park",
+      "query": "Independence National Historical Park, Philadelphia, PA",
+      "lat": 39.948889,
+      "lon": -75.15,
+      "drive_lat": 39.948889,
+      "drive_lon": -75.15,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Independence_Hall",
+      "note": "verified 2026-09-26: national historical park (large area): display at Independence Hall, its central landmark; Nominatim point was 300 m north on Independence Mall"
+    },
+    {
+      "order": 24,
+      "name": "Philadelphia's Magic Gardens",
+      "query": "Philadelphia's Magic Gardens, South Street, Philadelphia, PA",
+      "lat": 39.942831,
+      "lon": -75.159324,
+      "drive_lat": 39.942831,
+      "drive_lon": -75.159324,
+      "mode_to_next": "walk",
+      "geocode_source": "wikipedia:en:Philadelphia's_Magic_Gardens",
+      "note": "verified 2026-09-26: museum, South Street"
+    }
+  ],
+  "totals": {
+    "distance_m": 21952.6,
+    "duration_s": 15823.2,
+    "flight_distance_m": 0,
+    "flight_legs": 0
+  },
+  "comparison": {
+    "quoted_distance_m": 19312.0,
+    "our_distance_m": 21952.6,
+    "difference_m": 2640.6,
+    "difference_pct": 13.67,
+    "quoted_duration_s": 14400,
+    "our_duration_s": 15823.2,
+    "duration_difference_pct": 9.88
+  },
+  "warnings": [],
+  "build": {
+    "osm_snapshot": "2026-09-25T20:24:36Z",
+    "osrm_version": "v26.9.0",
+    "built_at": "2026-09-27T22:16:51Z"
+  },
+  "override_note": null,
+  "exports": {
+    "gpx": "route.gpx",
+    "kml": "route.kml",
+    "google_maps": [
+      "https://www.google.com/maps/dir/?api=1&origin=39.989444%2C-75.202778&destination=39.949000%2C-75.191100&waypoints=39.979500%2C-75.209200%7C39.972500%2C-75.196667%7C39.966000%2C-75.181000%7C39.964900%2C-75.180200%7C39.968300%2C-75.172500%7C39.962000%2C-75.174000%7C39.960500%2C-75.172700%7C39.958056%2C-75.173611%7C39.953333%2C-75.176667&travelmode=walking",
+      "https://www.google.com/maps/dir/?api=1&origin=39.949000%2C-75.191100&destination=39.952800%2C-75.142500&waypoints=39.951944%2C-75.193611%7C39.949500%2C-75.171900%7C39.957500%2C-75.168600%7C39.955000%2C-75.163889%7C39.953611%2C-75.163056%7C39.952394%2C-75.163597%7C39.953395%2C-75.159008%7C39.953600%2C-75.149100%7C39.953296%2C-75.142806&travelmode=walking",
+      "https://www.google.com/maps/dir/?api=1&origin=39.952800%2C-75.142500&destination=39.942831%2C-75.159324&waypoints=39.950833%2C-75.143889%7C39.950288%2C-75.148593%7C39.948889%2C-75.150000&travelmode=walking"
+    ],
+    "apple_maps": [
+      "https://maps.apple.com/directions?source=39.989444%2C-75.202778&destination=39.949000%2C-75.191100&waypoint=39.979500%2C-75.209200&waypoint=39.972500%2C-75.196667&waypoint=39.966000%2C-75.181000&waypoint=39.964900%2C-75.180200&waypoint=39.968300%2C-75.172500&waypoint=39.962000%2C-75.174000&waypoint=39.960500%2C-75.172700&waypoint=39.958056%2C-75.173611&waypoint=39.953333%2C-75.176667&mode=walking",
+      "https://maps.apple.com/directions?source=39.949000%2C-75.191100&destination=39.952800%2C-75.142500&waypoint=39.951944%2C-75.193611&waypoint=39.949500%2C-75.171900&waypoint=39.957500%2C-75.168600&waypoint=39.955000%2C-75.163889&waypoint=39.953611%2C-75.163056&waypoint=39.952394%2C-75.163597&waypoint=39.953395%2C-75.159008&waypoint=39.953600%2C-75.149100&waypoint=39.953296%2C-75.142806&mode=walking",
+      "https://maps.apple.com/directions?source=39.952800%2C-75.142500&destination=39.942831%2C-75.159324&waypoint=39.950833%2C-75.143889&waypoint=39.950288%2C-75.148593&waypoint=39.948889%2C-75.150000&mode=walking"
+    ],
+    "geojson": "route.geojson"
+  }
+}

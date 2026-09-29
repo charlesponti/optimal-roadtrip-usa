@@ -1,462 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-  	<meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Randy Olson and Science Friday map a road trip stopping at some of the most interesting science stops in the continental U.S.A.">
-    <meta name="author" content="Randal S. Olson / Science Friday">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The Ultimate Geek Road Trip (restored map)</title>
+<meta name="description" content="The Ultimate Geek Road Trip: 27 stops, 12,218 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="science-road-trip.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"science-road-trip","profile":"car","assets":"assets/","data":"data/science-road-trip/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[{"order":9,"drive":[-86.362628,46.558371],"display":[-86.3213064,46.5614384],"distance_m":3178,"via":"the fixed 2026-09-26: Little Beaver Lake Campground"},{"order":15,"drive":[-106.29863,35.881658],"display":[-106.287162,35.8440582],"distance_m":4307,"via":"the fixed 2026-09-26: Bradbury Science Museum"},{"order":23,"drive":[-113.800404,48.754928],"display":[-113.7870225,48.7596128],"distance_m":1111,"via":""}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The Ultimate Geek Road Trip</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The Ultimate Geek Road Trip</strong>
+      <span class="meta">27 stops · 12,218 mi · 234 hours driving</span><br>
+      <a href="science-road-trip.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>27<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>12,218 mi<small>19,663 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>234 hours<small>9.8 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>27<small>all by road</small></dd></div>
+    </dl>
     
-    <title>The Ultimate Geek Road Trip</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var directionsDisplay1, directionsDisplay2;
-		var directionsDisplay3;
-		var marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10, marker11, marker12, marker13, marker14, marker15, marker16, marker17, marker18, marker19, marker20, marker21, marker22, marker23, marker24, marker25, marker26, marker27;
-		var infoWindows = [];
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png", zIndex: 1};
-		var routeMarkerOptions = {visible: false, zIndex: 0};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: routeMarkerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
-
-		function initialize() {
-		  var center = new google.maps.LatLng(39, -96);
-		  var mapOptions = {
-			zoom: 5,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  directionsDisplay1.setMap(map);
-		  directionsDisplay2.setMap(map);
-		  directionsDisplay3.setMap(map);
-		  marker1.setMap(map); marker2.setMap(map); marker3.setMap(map); marker4.setMap(map); marker5.setMap(map); marker6.setMap(map); marker7.setMap(map); marker8.setMap(map); marker9.setMap(map); marker10.setMap(map); marker11.setMap(map); marker12.setMap(map); marker13.setMap(map); marker14.setMap(map); marker15.setMap(map); marker16.setMap(map); marker17.setMap(map); marker18.setMap(map); marker19.setMap(map); marker20.setMap(map); marker21.setMap(map); marker22.setMap(map); marker23.setMap(map); marker24.setMap(map); marker25.setMap(map); marker26.setMap(map); marker27.setMap(map);
-		}
-
-		function calcRoute(start, end, routes) {
-		  switch (start) {
-		  	case "U.S. Space and Rocket Center, Huntsville, AL":
-		  		directionsDisplay1 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Pictured Rocks National Lakeshore, Munising, MI":
-		  		directionsDisplay2 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "NASA’s Jet Propulsion Laboratory, Pasadena, CA":
-		  		directionsDisplay3 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  }
-		  
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				switch (start) {
-					case "U.S. Space and Rocket Center, Huntsville, AL":
-						directionsDisplay1.setDirections(response);
-						break;
-					case "Pictured Rocks National Lakeshore, Munising, MI":
-						directionsDisplay2.setDirections(response);
-						break;
-					case "NASA’s Jet Propulsion Laboratory, Pasadena, CA":
-						directionsDisplay3.setDirections(response);
-						break;
-				  }
-			}
-		  });
-		}
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-		
-		calcRoute("U.S. Space and Rocket Center, Huntsville, AL", "Pictured Rocks National Lakeshore, Munising, MI", ["Oak Ridge National Laboratory, Oak Ridge, TN", "Steven F. Udvar-Hazy Center, Chantilly, VA", "Chemical Heritage Museum, Philadelphia, PA", "The New England Wireless and Steam Museum, East Greenwich, RI", "French Cable Station Museum, Orleans, MA", "The Museum of Printing, North Andover, MA", "Sleeping Bear Dunes National Lakeshore, Empire, MI", "Headlands Dark Sky Park, Mackinaw City, MI"]);
-
-calcRoute("Pictured Rocks National Lakeshore, Munising, MI", "NASA’s Jet Propulsion Laboratory, Pasadena, CA", ["Missouri Botanical Garden, St. Louis, MO", "Strategic Air & Space Museum, Ashland, NE", "Kansas Cosmosphere & Space Center, Hutchinson, KS", "Dinosaur Valley State Park, Glen Rose, TX", "Garden of the Gods, Colorado Springs, CO", "Los Alamos National Laboratory, Los Alamos, NM", "Lowell Observatory, Flagstaff, AZ", "Steward Observatory Mirror Lab, The University of Arizona, Tucson, AZ"]);
-
-calcRoute("NASA’s Jet Propulsion Laboratory, Pasadena, CA", "U.S. Space and Rocket Center, Huntsville, AL", ["La Brea Tar Pits & Museum, Los Angeles, CA", "Lassen Volcanic National Park, Mineral, CA", "EMP Museum, Seattle, WA", "NOAA Sound Garden, Seattle, WA", "Glacier National Park, West Glacier, MT", "Experimental Breeder Reactor No. 1, Arco, ID", "Craters of the Moon National Monument, Arco, ID", "Kennedy Space Center, FL"]);
-        
-        var infoWindow1 = new google.maps.InfoWindow({ content: "<a href='http://rocketcenter.com/' target='_blank'><h4>U.S. Space and Rocket Center, Huntsville, AL</h4></a>Visit the U.S. Space and Rocket Center in Huntsville to see a REAL Saturn V rocket! Suggested by SciFri’s Christian Skotte."
-        });
-
-        infoWindows.push(infoWindow1);
-        
-        marker1 = new google.maps.Marker({
-                                position: new google.maps.LatLng(34.712069, -86.65548799999999),
-                                options: markerOptions,
-                                title: "U.S. Space and Rocket Center, Huntsville, AL"
-                                });
-
-        google.maps.event.addListener(marker1, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow1.open(map, marker1); });
-
-        var infoWindow2 = new google.maps.InfoWindow({ content: "<a href='http://www.ornl.gov/ornl/visiting-ornl/tours' target='_blank'><h4>Oak Ridge National Laboratory, Oak Ridge, TN</h4></a>Visit the largest science and energy lab in the DOE’s system, home to the Titan supercomputer. Suggested by Clint Weathers (@zenrhino)."
-        });
-
-        infoWindows.push(infoWindow2);
-        
-        marker2 = new google.maps.Marker({
-                                position: new google.maps.LatLng(35.9313167, -84.31041239999999),
-                                options: markerOptions,
-                                title: "Oak Ridge National Laboratory, Oak Ridge, TN"
-                                });
-
-        google.maps.event.addListener(marker2, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow2.open(map, marker2); });
-
-        var infoWindow3 = new google.maps.InfoWindow({ content: "<a href='https://airandspace.si.edu/visit/udvar-hazy-center/' target='_blank'><h4>Steven F. Udvar-Hazy Center, Chantilly, VA</h4></a>Nine Hour Films (@ninehourfilms) says “You would have to hit at least one Smithsonian. I got Udvar-Hazy to visit the space shuttle.”"
-        });
-
-        infoWindows.push(infoWindow3);
-        
-        marker3 = new google.maps.Marker({
-                                position: new google.maps.LatLng(38.9109189, -77.44420749999999),
-                                options: markerOptions,
-                                title: "Steven F. Udvar-Hazy Center, Chantilly, VA"
-                                });
-
-        google.maps.event.addListener(marker3, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow3.open(map, marker3); });
-
-        var infoWindow4 = new google.maps.InfoWindow({ content: "<a href='https://www.chemheritage.org/' target='_blank'><h4>Chemical Heritage Museum, Philadelphia, PA</h4></a>Ben Gross @bhgross144 says “add some history of science to your SciFri Road Trip with a visit to the Chemical Heritage Museum.”"
-        });
-
-        infoWindows.push(infoWindow4);
-        
-        marker4 = new google.maps.Marker({
-                                position: new google.maps.LatLng(39.9490235, -75.1464426),
-                                options: markerOptions,
-                                title: "Chemical Heritage Museum, Philadelphia, PA"
-                                });
-
-        google.maps.event.addListener(marker4, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow4.open(map, marker4); });
-
-        var infoWindow5 = new google.maps.InfoWindow({ content: "<a href='http://www.newsm.org/ ' target='_blank'><h4>The New England Wireless and Steam Museum, East Greenwich, RI</h4></a>The New England Wireless and Steam Museum is home to the oldest surviving working wireless station in the world. Suggested by William Ricker (@n1vux)."
-        });
-
-        infoWindows.push(infoWindow5);
-        
-        marker5 = new google.maps.Marker({
-                                position: new google.maps.LatLng(41.624269, -71.51302),
-                                options: markerOptions,
-                                title: "The New England Wireless and Steam Museum, East Greenwich, RI"
-                                });
-
-        google.maps.event.addListener(marker5, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow5.open(map, marker5); });
-
-        var infoWindow6 = new google.maps.InfoWindow({ content: "<a href='http://www.frenchcablestationmuseum.org/index.htm' target='_blank'><h4>French Cable Station Museum, Orleans, MA</h4></a>Visit this collection of original Atlantic undersea telegraph cables, instruments, and maps. Suggested by William Ricker (@n1vux)."
-        });
-
-        infoWindows.push(infoWindow6);
-        
-        marker6 = new google.maps.Marker({
-                                position: new google.maps.LatLng(41.7878424, -69.9874963),
-                                options: markerOptions,
-                                title: "French Cable Station Museum, Orleans, MA"
-                                });
-
-        google.maps.event.addListener(marker6, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow6.open(map, marker6); });
-
-        var infoWindow7 = new google.maps.InfoWindow({ content: "<a href='http://www.museumofprinting.org/' target='_blank'><h4>The Museum of Printing, North Andover, MA</h4></a>The Museum of Printing preserves the history and tools of printing, including many typesetting and bindery machines. Suggested by William Ricker (@n1vux)."
-        });
-
-        infoWindows.push(infoWindow7);
-        
-        marker7 = new google.maps.Marker({
-                                position: new google.maps.LatLng(42.6848891, -71.11373979999999),
-                                options: markerOptions,
-                                title: "The Museum of Printing, North Andover, MA"
-                                });
-
-        google.maps.event.addListener(marker7, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow7.open(map, marker7); });
-
-        var infoWindow8 = new google.maps.InfoWindow({ content: "<a href='http://www.nps.gov/SLBE/planyourvisit/index.htm' target='_blank'><h4>Sleeping Bear Dunes National Lakeshore, Empire, MI</h4></a>Look out onto Lake Michigan from towering dunes and 450 feet bluffs. Suggested by Kevin Bunch (@ubersaurus)."
-        });
-
-        infoWindows.push(infoWindow8);
-        
-        marker8 = new google.maps.Marker({
-                                position: new google.maps.LatLng(44.8840923, -86.04773089999999),
-                                options: markerOptions,
-                                title: "Sleeping Bear Dunes National Lakeshore, Empire, MI"
-                                });
-
-        google.maps.event.addListener(marker8, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow8.open(map, marker8); });
-
-        var infoWindow9 = new google.maps.InfoWindow({ content: "<a href='http://www.midarkskypark.org/about/location/ ' target='_blank'><h4>Headlands Dark Sky Park, Mackinaw City, MI</h4></a>Stargaze on the straits of Mackinac. Suggested by Kevin Bunch (@ubersaurus)."
-        });
-
-        infoWindows.push(infoWindow9);
-        
-        marker9 = new google.maps.Marker({
-                                position: new google.maps.LatLng(45.7774987, -84.72714649999999),
-                                options: markerOptions,
-                                title: "Headlands Dark Sky Park, Mackinaw City, MI"
-                                });
-
-        google.maps.event.addListener(marker9, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow9.open(map, marker9); });
-
-        var infoWindow10 = new google.maps.InfoWindow({ content: "<a href='http://www.nps.gov/piro/index.htm' target='_blank'><h4>Pictured Rocks National Lakeshore, Munising, MI</h4></a>Bowman (@MBowmanScience) suggests we head out to Pictured Rocks National Lakeshore to “go outdoors and ponder the age of the earth.”"
-        });
-
-        infoWindows.push(infoWindow10);
-        
-        marker10 = new google.maps.Marker({
-                                position: new google.maps.LatLng(46.5614384, -86.3213064),
-                                options: markerOptions,
-                                title: "Pictured Rocks National Lakeshore, Munising, MI"
-                                });
-
-        google.maps.event.addListener(marker10, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow10.open(map, marker10); });
-
-        var infoWindow11 = new google.maps.InfoWindow({ content: "<a href='http://www.missouribotanicalgarden.org/' target='_blank'><h4>Missouri Botanical Garden, St. Louis, MO</h4></a>Step inside the rainforest within Missouri Botanical Garden’s “Climatron.” Suggested by SciFri’s own Jennifer Fenwick (@jentunefenwick)."
-        });
-
-        infoWindows.push(infoWindow11);
-        
-        marker11 = new google.maps.Marker({
-                                position: new google.maps.LatLng(38.6127672, -90.25937979999999),
-                                options: markerOptions,
-                                title: "Missouri Botanical Garden, St. Louis, MO"
-                                });
-
-        google.maps.event.addListener(marker11, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow11.open(map, marker11); });
-
-        var infoWindow12 = new google.maps.InfoWindow({ content: "<a href='http://sasmuseum.com/' target='_blank'><h4>Strategic Air & Space Museum, Ashland, NE</h4></a>Will England (@wingland) suggests the Strategic Air & Space Museum in Nebraska, a collection that started with the aircraft of the SAC during the Cold War."
-        });
-
-        infoWindows.push(infoWindow12);
-        
-        marker12 = new google.maps.Marker({
-                                position: new google.maps.LatLng(41.018036, -96.31999800000001),
-                                options: markerOptions,
-                                title: "Strategic Air & Space Museum, Ashland, NE"
-                                });
-
-        google.maps.event.addListener(marker12, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow12.open(map, marker12); });
-
-        var infoWindow13 = new google.maps.InfoWindow({ content: "<a href='http://www.cosmo.org/' target='_blank'><h4>Kansas Cosmosphere & Space Center, Hutchinson, KS</h4></a>The Kansas Cosmosphere & Space Center houses the largest collection of Russian space artifacts outside of Moscow. Suggested by Will England (@wingland)."
-        });
-
-        infoWindows.push(infoWindow13);
-        
-        marker13 = new google.maps.Marker({
-                                position: new google.maps.LatLng(38.0657986, -97.92153379999999),
-                                options: markerOptions,
-                                title: "Kansas Cosmosphere & Space Center, Hutchinson, KS"
-                                });
-
-        google.maps.event.addListener(marker13, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow13.open(map, marker13); });
-
-        var infoWindow14 = new google.maps.InfoWindow({ content: "<a href='http://tpwd.texas.gov/state-parks/dinosaur-valley' target='_blank'><h4>Dinosaur Valley State Park, Glen Rose, TX</h4></a>SciFri producer Alexa Lim’s top science pitstop: “Dinosaur Valley State Park in TX. Follow the preserved dino tracks in the riverbed!”"
-        });
-
-        infoWindows.push(infoWindow14);
-        
-        marker14 = new google.maps.Marker({
-                                position: new google.maps.LatLng(32.2534016, -97.8096037),
-                                options: markerOptions,
-                                title: "Dinosaur Valley State Park, Glen Rose, TX"
-                                });
-
-        google.maps.event.addListener(marker14, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow14.open(map, marker14); });
-
-        var infoWindow15 = new google.maps.InfoWindow({ content: "<a href='http://www.gardenofgods.com/home/index.cfm' target='_blank'><h4>Garden of the Gods, Colorado Springs, CO</h4></a>Ira says, “Loved my #SciFriRoadTrip to Garden Of The Gods in Colorado Springs. Geology: Fantastic! So were the rocks.”"
-        });
-
-        infoWindows.push(infoWindow15);
-        
-        marker15 = new google.maps.Marker({
-                                position: new google.maps.LatLng(38.8738411, -104.8866641),
-                                options: markerOptions,
-                                title: "Garden of the Gods, Colorado Springs, CO"
-                                });
-
-        google.maps.event.addListener(marker15, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow15.open(map, marker15); });
-
-        var infoWindow16 = new google.maps.InfoWindow({ content: "<a href='http://www.lanl.gov/museum/index.php' target='_blank'><h4>Los Alamos National Laboratory, Los Alamos, NM</h4></a>@LosAlamosNatLab suggests, “How about a #SciFriRoadTrip to Los Alamos? Next week is the 70th anniversary of the #TrinityTest!”"
-        });
-
-        infoWindows.push(infoWindow16);
-        
-        marker16 = new google.maps.Marker({
-                                position: new google.maps.LatLng(35.8440582, -106.287162),
-                                options: markerOptions,
-                                title: "Los Alamos National Laboratory, Los Alamos, NM"
-                                });
-
-        google.maps.event.addListener(marker16, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow16.open(map, marker16); });
-
-        var infoWindow17 = new google.maps.InfoWindow({ content: "<a href='http://lowell.edu/' target='_blank'><h4>Lowell Observatory, Flagstaff, AZ</h4></a>Jeffrey Moores (@JeffroBazinga) says, “The Lowell Observatory, of course! Where the search for Pluto began.”"
-        });
-
-        infoWindows.push(infoWindow17);
-        
-        marker17 = new google.maps.Marker({
-                                position: new google.maps.LatLng(35.2028951, -111.6646428),
-                                options: markerOptions,
-                                title: "Lowell Observatory, Flagstaff, AZ"
-                                });
-
-        google.maps.event.addListener(marker17, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow17.open(map, marker17); });
-
-        var infoWindow18 = new google.maps.InfoWindow({ content: "<a href='http://mirrorlab.as.arizona.edu/tours' target='_blank'><h4>Steward Observatory Mirror Lab, The University of Arizona, Tucson, AZ</h4></a>Chris Merle (@clmerle) says, “consider the Steward Observatory Mirror Lab at the University of Arizona in Tucson. Those mirrors are ginormous.”"
-        });
-
-        infoWindows.push(infoWindow18);
-        
-        marker18 = new google.maps.Marker({
-                                position: new google.maps.LatLng(32.2286959, -110.9474333),
-                                options: markerOptions,
-                                title: "Steward Observatory Mirror Lab, The University of Arizona, Tucson, AZ"
-                                });
-
-        google.maps.event.addListener(marker18, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow18.open(map, marker18); });
-
-        var infoWindow19 = new google.maps.InfoWindow({ content: "<a href='http://www.jpl.nasa.gov/events/tours/views/' target='_blank'><h4>NASA’s Jet Propulsion Laboratory, Pasadena, CA</h4></a>SciFri producer (@annieminoff) says, “The fake Mars field at NASA's JPL! Those rovers gotta learn to drive somewhere…”"
-        });
-
-        infoWindows.push(infoWindow19);
-        
-        marker19 = new google.maps.Marker({
-                                position: new google.maps.LatLng(34.1477849, -118.1445155),
-                                options: markerOptions,
-                                title: "NASA’s Jet Propulsion Laboratory, Pasadena, CA"
-                                });
-
-        google.maps.event.addListener(marker19, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow19.open(map, marker19); });
-
-        var infoWindow20 = new google.maps.InfoWindow({ content: "<a href='http://www.tarpits.org/visit' target='_blank'><h4>La Brea Tar Pits & Museum, Los Angeles, CA</h4></a>SciFri video producer Luke Groskin says, “@labreatarpits (the perfect dead end.)”"
-        });
-
-        infoWindows.push(infoWindow20);
-        
-        marker20 = new google.maps.Marker({
-                                position: new google.maps.LatLng(34.0522342, -118.2436849),
-                                options: markerOptions,
-                                title: "La Brea Tar Pits & Museum, Los Angeles, CA"
-                                });
-
-        google.maps.event.addListener(marker20, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow20.open(map, marker20); });
-
-        var infoWindow21 = new google.maps.InfoWindow({ content: "<a href='http://www.nps.gov/lavo/index.htm' target=_blank'><h4>Lassen Volcanic National Park, Mineral, CA</h4></a>Volcanologist Charles B. Connor says, “visit Lassen Volcanic National Park and absorb the spectacular geology left in the wake of the 1915 eruption -- the most recent major eruption in California. When it happens next, a lot of people will be shocked!”"
-        });
-
-        infoWindows.push(infoWindow21);
-        
-        marker21 = new google.maps.Marker({
-                                position: new google.maps.LatLng(40.49766, -121.4206552),
-                                options: markerOptions,
-                                title: "Lassen Volcanic National Park, Mineral, CA"
-                                });
-
-        google.maps.event.addListener(marker21, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow21.open(map, marker21); });
-
-        var infoWindow22 = new google.maps.InfoWindow({ content: "<a href='http://www.empmuseum.org/' target='_blank'><h4>EMP Museum, Seattle, WA</h4></a>James Taoist (@Taoist_Skeptic) suggests Paul Allen’s Sci Fi Museum (now EMP) in Seattle. “Real movie tech from Star Trek to hydraulic cargo lifter from Alien.”"
-        });
-
-        infoWindows.push(infoWindow22);
-        
-        marker22 = new google.maps.Marker({
-                                position: new google.maps.LatLng(47.6214824, -122.3481245),
-                                options: markerOptions,
-                                title: "EMP Museum, Seattle, WA"
-                                });
-
-        google.maps.event.addListener(marker22, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow22.open(map, marker22); });
-
-        var infoWindow23 = new google.maps.InfoWindow({ content: "<a href='http://www.seattle.gov/parks/magnuson/art.htm' target='_blank'><h4>NOAA Sound Garden, Seattle, WA</h4></a>SciFri web producer Chau Tu’s #SciFriRoadTrip pick: “The awesome sound garden at @NOAA in Seattle. h/t to @atlasobscura!”"
-        });
-
-        infoWindows.push(infoWindow23);
-        
-        marker23 = new google.maps.Marker({
-                                position: new google.maps.LatLng(47.6854393, -122.2499612),
-                                options: markerOptions,
-                                title: "NOAA Sound Garden, Seattle, WA"
-                                });
-
-        google.maps.event.addListener(marker23, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow23.open(map, marker23); });
-
-        var infoWindow24 = new google.maps.InfoWindow({ content: "<a href='http://www.nps.gov/glac/index.htm' target='_blank'><h4>Glacier National Park, West Glacier, MT</h4></a>SciFri’s Ariel Zych (@arieloquent) says, “Glacier National Park has it all: geology, climatology, ecology, animal behavior, and WILDFLOWERS!”"
-        });
-
-        infoWindows.push(infoWindow24);
-        
-        marker24 = new google.maps.Marker({
-                                position: new google.maps.LatLng(48.7596128, -113.7870225),
-                                options: markerOptions,
-                                title: "Glacier National Park, West Glacier, MT"
-                                });
-
-        google.maps.event.addListener(marker24, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow24.open(map, marker24); });
-
-        var infoWindow25 = new google.maps.InfoWindow({ content: "<a href='http://www4vip.inl.gov/ebr/' target='_blank'><h4>Experimental Breeder Reactor No. 1, Arco, ID</h4></a>Mrs. Devoti (@mrs_devoti) suggests, “Arco, Idaho, first city in the world to be lit by atomic power, AND near Craters of the Moon NP!”"
-        });
-
-        infoWindows.push(infoWindow25);
-        
-        marker25 = new google.maps.Marker({
-                                position: new google.maps.LatLng(43.6365693, -113.3002844),
-                                options: markerOptions,
-                                title: "Experimental Breeder Reactor No. 1, Arco, ID"
-                                });
-
-        google.maps.event.addListener(marker25, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow25.open(map, marker25); });
-
-        var infoWindow26 = new google.maps.InfoWindow({ content: "<a href='http://www.nps.gov/crmo/index.htm' target='_blank'><h4>Craters of the Moon National Monument, Arco, ID</h4></a>Explore lava flows and cinder cones created by eruptions 15,000 to 2,000 years ago. Suggested by Mrs. Devoti (@mrs_devoti)."
-        });
-
-        infoWindows.push(infoWindow26);
-        
-        marker26 = new google.maps.Marker({
-                                position: new google.maps.LatLng(43.41665, -113.5166497),
-                                options: markerOptions,
-                                title: "Craters of the Moon National Monument, Arco, ID"
-                                });
-
-        google.maps.event.addListener(marker26, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow26.open(map, marker26); });
-
-        var infoWindow27 = new google.maps.InfoWindow({ content: "<a href='https://www.kennedyspacecenter.com/' target='_blank'><h4>Kennedy Space Center, FL</h4></a>Visit the launch pad that all of the Space Shuttles launched from between 1981-2011. Also home to Space Shuttle Atlantis, which was the last shuttle to fly in space before the fleet was retired in 2011. Suggested by Randy Olson (@randal_olson)."
-        });
-
-        infoWindows.push(infoWindow27);
-        
-        marker27 = new google.maps.Marker({
-                                position: new google.maps.LatLng(28.5728722, -80.64898079999999),
-                                options: markerOptions,
-                                title: "Kennedy Space Center, FL"
-                                });
-
-        google.maps.event.addListener(marker27, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow27.open(map, marker27); });
-        
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    
+
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/science-road-trip/route.gpx" download>GPX<small>837 KB</small></a><a class="btn" href="data/science-road-trip/route.kml" download>KML<small>1.9 MB</small></a><a class="btn" href="data/science-road-trip/route.geojson" download>GeoJSON<small>569 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=34.712069%2C-86.655488&amp;destination=38.612767%2C-90.259380&amp;waypoints=35.931317%2C-84.310412%7C38.910919%2C-77.444207%7C39.949024%2C-75.146443%7C41.624269%2C-71.513020%7C41.787842%2C-69.987496%7C42.684889%2C-71.113740%7C44.884092%2C-86.047731%7C45.777641%2C-84.780893%7C46.558371%2C-86.362628&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=38.612767%2C-90.259380&amp;destination=40.497660%2C-121.420655&amp;waypoints=41.018036%2C-96.319998%7C38.065799%2C-97.921534%7C32.248076%2C-97.816723%7C38.877804%2C-104.870768%7C35.881658%2C-106.298630%7C35.202895%2C-111.664643%7C32.228696%2C-110.947433%7C34.201389%2C-118.172500%7C34.063056%2C-118.355833&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=40.497660%2C-121.420655&amp;destination=34.712069%2C-86.655488&amp;waypoints=47.621482%2C-122.348124%7C47.685439%2C-122.249961%7C48.754928%2C-113.800404%7C43.511300%2C-113.006000%7C43.461700%2C-113.563000%7C28.572872%2C-80.648981&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=34.712069%2C-86.655488&amp;destination=38.612767%2C-90.259380&amp;waypoint=35.931317%2C-84.310412&amp;waypoint=38.910919%2C-77.444207&amp;waypoint=39.949024%2C-75.146443&amp;waypoint=41.624269%2C-71.513020&amp;waypoint=41.787842%2C-69.987496&amp;waypoint=42.684889%2C-71.113740&amp;waypoint=44.884092%2C-86.047731&amp;waypoint=45.777641%2C-84.780893&amp;waypoint=46.558371%2C-86.362628&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=38.612767%2C-90.259380&amp;destination=40.497660%2C-121.420655&amp;waypoint=41.018036%2C-96.319998&amp;waypoint=38.065799%2C-97.921534&amp;waypoint=32.248076%2C-97.816723&amp;waypoint=38.877804%2C-104.870768&amp;waypoint=35.881658%2C-106.298630&amp;waypoint=35.202895%2C-111.664643&amp;waypoint=32.228696%2C-110.947433&amp;waypoint=34.201389%2C-118.172500&amp;waypoint=34.063056%2C-118.355833&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=40.497660%2C-121.420655&amp;destination=34.712069%2C-86.655488&amp;waypoint=47.621482%2C-122.348124&amp;waypoint=47.685439%2C-122.249961&amp;waypoint=48.754928%2C-113.800404&amp;waypoint=43.511300%2C-113.006000&amp;waypoint=43.461700%2C-113.563000&amp;waypoint=28.572872%2C-80.648981&amp;mode=driving" rel="noopener" target="_blank">Part 3</a></p>
+
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">U.S. Space and Rocket Center, Huntsville, AL</span><span class="stop-leg">201 mi (324 km), 3 h 57 min driving to 2. Oak Ridge National Laboratory, Oak Ridge, TN</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Oak Ridge National Laboratory, Oak Ridge, TN</span><span class="stop-leg">496 mi (798 km), 9 h 14 min driving to 3. Steven F. Udvar-Hazy Center, Chantilly, VA</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Steven F. Udvar-Hazy Center, Chantilly, VA</span><span class="stop-leg">164 mi (263 km), 3 h 29 min driving to 4. Chemical Heritage Museum, Philadelphia, PA</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Chemical Heritage Museum, Philadelphia, PA</span><span class="stop-leg">261 mi (420 km), 5 h 39 min driving to 5. The New England Wireless and Steam Museum, East Greenwich, RI</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">The New England Wireless and Steam Museum, East Greenwich, RI</span><span class="stop-leg">108 mi (174 km), 2 h 28 min driving to 6. French Cable Station Museum, Orleans, MA</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">French Cable Station Museum, Orleans, MA</span><span class="stop-leg">115 mi (186 km), 2 h 36 min driving to 7. The Museum of Printing, North Andover, MA</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">The Museum of Printing, North Andover, MA</span><span class="stop-leg">947 mi (1,524 km), 18 h 30 min driving to 8. Sleeping Bear Dunes National Lakeshore, Empire, MI</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Sleeping Bear Dunes National Lakeshore, Empire, MI</span><span class="stop-leg">151 mi (243 km), 3 h 21 min driving to 9. Headlands Dark Sky Park, Mackinaw City, MI</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Headlands Dark Sky Park, Mackinaw City, MI</span><span class="stop-leg">133 mi (215 km), 3 h driving to 10. Pictured Rocks National Lakeshore, Munising, MI</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Pictured Rocks National Lakeshore, Munising, MI</span><span class="stop-via">Reached via the fixed 2026-09-26: Little Beaver Lake Campground (2 mi away)</span><span class="stop-leg">686 mi (1,105 km), 13 h 32 min driving to 11. Missouri Botanical Garden, St. Louis, MO</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Missouri Botanical Garden, St. Louis, MO</span><span class="stop-leg">441 mi (710 km), 8 h 18 min driving to 12. Strategic Air &amp; Space Museum, Ashland, NE</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">Strategic Air &amp; Space Museum, Ashland, NE</span><span class="stop-leg">277 mi (446 km), 5 h 1 min driving to 13. Kansas Cosmosphere &amp; Space Center, Hutchinson, KS</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">Kansas Cosmosphere &amp; Space Center, Hutchinson, KS</span><span class="stop-leg">465 mi (748 km), 8 h 24 min driving to 14. Dinosaur Valley State Park, Glen Rose, TX</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Dinosaur Valley State Park, Glen Rose, TX</span><span class="stop-leg">764 mi (1,229 km), 13 h 53 min driving to 15. Garden of the Gods, Colorado Springs, CO</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Garden of the Gods, Colorado Springs, CO</span><span class="stop-leg">286 mi (460 km), 6 h 23 min driving to 16. Los Alamos National Laboratory, Los Alamos, NM</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Los Alamos National Laboratory, Los Alamos, NM</span><span class="stop-via">Reached via the fixed 2026-09-26: Bradbury Science Museum (2.7 mi away)</span><span class="stop-leg">416 mi (670 km), 7 h 25 min driving to 17. Lowell Observatory, Flagstaff, AZ</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Lowell Observatory, Flagstaff, AZ</span><span class="stop-leg">259 mi (416 km), 4 h 39 min driving to 18. Steward Observatory Mirror Lab, The University of Arizona, Tucson, AZ</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Steward Observatory Mirror Lab, The University of Arizona, Tucson, AZ</span><span class="stop-leg">489 mi (787 km), 8 h 49 min driving to 19. NASA’s Jet Propulsion Laboratory, Pasadena, CA</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">NASA’s Jet Propulsion Laboratory, Pasadena, CA</span><span class="stop-leg">20 mi (33 km), 35 min driving to 20. La Brea Tar Pits &amp; Museum, Los Angeles, CA</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">La Brea Tar Pits &amp; Museum, Los Angeles, CA</span><span class="stop-leg">554 mi (891 km), 10 h 51 min driving to 21. Lassen Volcanic National Park, Mineral, CA</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Lassen Volcanic National Park, Mineral, CA</span><span class="stop-leg">640 mi (1,030 km), 12 h 52 min driving to 22. EMP Museum, Seattle, WA</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">EMP Museum, Seattle, WA</span><span class="stop-leg">8.1 mi (13 km), 23 min driving to 23. NOAA Sound Garden, Seattle, WA</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">NOAA Sound Garden, Seattle, WA</span><span class="stop-leg">581 mi (935 km), 11 h 58 min driving to 24. Glacier National Park, West Glacier, MT</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">Glacier National Park, West Glacier, MT</span><span class="stop-via">Reached by road via a separate drive point 0.7 mi away</span><span class="stop-leg">513 mi (825 km), 9 h 27 min driving to 25. Experimental Breeder Reactor No. 1, Arco, ID</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Experimental Breeder Reactor No. 1, Arco, ID</span><span class="stop-leg">39 mi (63 km), 52 min driving to 26. Craters of the Moon National Monument, Arco, ID</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">Craters of the Moon National Monument, Arco, ID</span><span class="stop-leg">2,528 mi (4,069 km), 45 h 33 min driving to 27. Kennedy Space Center, FL</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">Kennedy Space Center, FL</span><span class="stop-leg">676 mi (1,088 km), 13 h 4 min driving to 1. U.S. Space and Rocket Center, Huntsville, AL</span></span></button></li>
+    </ol>
+
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

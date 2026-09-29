@@ -1,0 +1,156 @@
+{
+  "id": "chevrolet-family-road-trip-texas",
+  "title": "The Texas Family Road Trip by Chevrolet",
+  "legacy_url": "https://rhiever.github.io/optimal-roadtrip-usa/chevrolet-family-road-trip-texas.html",
+  "post_url": null,
+  "profile": "car",
+  "closed_loop": false,
+  "quoted_total": null,
+  "stops": [
+    {
+      "order": 0,
+      "name": "The Rory Meyers Children's Adventure Garden - Dallas Arboretum and Botanical Garden",
+      "query": "8525 Garland Rd, Dallas, TX 75218",
+      "lat": 32.8211475,
+      "lon": -96.716681,
+      "drive_lat": 32.8211475,
+      "drive_lon": -96.716681,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 1,
+      "name": "Moody Gardens",
+      "query": "1 Hope Blvd, Galveston, TX 77554",
+      "lat": 29.2730284,
+      "lon": -94.8506598,
+      "drive_lat": 29.2730284,
+      "drive_lon": -94.8506598,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 2,
+      "name": "Space Center Houston",
+      "query": "1601 E NASA Pkwy, Houston, TX 77058",
+      "lat": 29.549782,
+      "lon": -95.0957914,
+      "drive_lat": 29.549782,
+      "drive_lon": -95.0957914,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 3,
+      "name": "Children\u2019s Museum of Houston",
+      "query": "1500 Binz St, Houston, TX 77004",
+      "lat": 29.7225935,
+      "lon": -95.3850803,
+      "drive_lat": 29.7225935,
+      "drive_lon": -95.3850803,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 4,
+      "name": "Schlitterbahn Waterpark",
+      "query": "588 S Union Ave, New Braunfels, TX 78130",
+      "lat": 29.706318,
+      "lon": -98.1173013,
+      "drive_lat": 29.706318,
+      "drive_lon": -98.1173013,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 5,
+      "name": "The Alamo",
+      "query": "300 Alamo Plaza, San Antonio, TX 78205",
+      "lat": 29.425745,
+      "lon": -98.4861562,
+      "drive_lat": 29.425745,
+      "drive_lon": -98.4861562,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 6,
+      "name": "Sea World",
+      "query": "10500 Sea World Dr, San Antonio, TX\u200e",
+      "lat": 29.4583528,
+      "lon": -98.7001956,
+      "drive_lat": 29.4583528,
+      "drive_lon": -98.7001956,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 7,
+      "name": "Dinosaur Valley State Park",
+      "query": "1629 Park Rd 59, Glen Rose, TX 76043",
+      "lat": 32.2480584,
+      "lon": -97.8167426,
+      "drive_lat": 32.2480584,
+      "drive_lon": -97.8167426,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 8,
+      "name": "Fort Worth Zoo",
+      "query": "1989 Colonial Pkwy, Fort Worth, TX 76110",
+      "lat": 32.7210971,
+      "lon": -97.3560292,
+      "drive_lat": 32.7210971,
+      "drive_lon": -97.3560292,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 9,
+      "name": "Six Flags Over Texas",
+      "query": "2201 E Road to Six Flags St, Arlington, TX 76010",
+      "lat": 32.7524928,
+      "lon": -97.0699775,
+      "drive_lat": 32.7524928,
+      "drive_lon": -97.0699775,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    }
+  ],
+  "totals": {
+    "distance_m": 1408942.1,
+    "duration_s": 62566.1,
+    "flight_distance_m": 0,
+    "flight_legs": 0
+  },
+  "comparison": null,
+  "warnings": [],
+  "build": {
+    "osm_snapshot": "2026-09-25T20:24:36Z",
+    "osrm_version": "v26.9.0",
+    "built_at": "2026-09-27T22:16:44Z"
+  },
+  "override_note": null,
+  "exports": {
+    "gpx": "route.gpx",
+    "kml": "route.kml",
+    "google_maps": [
+      "https://www.google.com/maps/dir/?api=1&origin=32.821148%2C-96.716681&destination=32.752493%2C-97.069977&waypoints=29.273028%2C-94.850660%7C29.549782%2C-95.095791%7C29.722593%2C-95.385080%7C29.706318%2C-98.117301%7C29.425745%2C-98.486156%7C29.458353%2C-98.700196%7C32.248058%2C-97.816743%7C32.721097%2C-97.356029&travelmode=driving"
+    ],
+    "apple_maps": [
+      "https://maps.apple.com/directions?source=32.821148%2C-96.716681&destination=32.752493%2C-97.069977&waypoint=29.273028%2C-94.850660&waypoint=29.549782%2C-95.095791&waypoint=29.722593%2C-95.385080&waypoint=29.706318%2C-98.117301&waypoint=29.425745%2C-98.486156&waypoint=29.458353%2C-98.700196&waypoint=32.248058%2C-97.816743&waypoint=32.721097%2C-97.356029&mode=driving"
+    ],
+    "geojson": "route.geojson"
+  }
+}

@@ -1,133 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="An optimized road trip to the most beautiful places in the USA.">
-    <meta name="author" content="Thrillist">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Thrillist - An optimized road trip to the most beautiful places in the USA (restored map)</title>
+<meta name="description" content="Thrillist - An optimized road trip to the most beautiful places in the USA: 48 stops, 14,869 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="thrillist-us-beautiful-places.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"thrillist-us-beautiful-places","profile":"car","assets":"assets/","data":"data/thrillist-us-beautiful-places/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[{"order":4,"drive":[-81.063332,37.830478],"display":[-81.0775981,37.8756699],"distance_m":5179,"via":"the fixed 2026-09-26: Grandview Visitor Center"},{"order":7,"drive":[-75.098318,38.784155],"display":[-75.0958,38.7667],"distance_m":1953,"via":"the fixed 2026-09-26: Seaside Nature Center"},{"order":11,"drive":[-68.184,44.331],"display":[-68.2154787,44.3563115],"distance_m":3767,"via":"the fixed 2026-09-26: Sand Beach lot on the Park Loop Road"},{"order":14,"drive":[-72.878247,42.622709],"display":[-72.8701858,42.6143907],"distance_m":1136,"via":""},{"order":23,"drive":[-91.500032,47.987263],"display":[-91.1081923,48.0692916],"distance_m":30533,"via":""},{"order":25,"drive":[-101.941664,43.749012],"display":[-102.3616629,43.5271059],"distance_m":41847,"via":"the fixed 2026-09-26: Ben Reifel Visitor Center at Cedar Pass"},{"order":27,"drive":[-110.574225,44.415762],"display":[-110.2591656,44.1070334],"distance_m":42520,"via":"the fixed 2026-09-26: West Thumb Geyser Basin parking"},{"order":31,"drive":[-122.14349,42.91119],"display":[-122.0987714,42.9415231],"distance_m":4963,"via":"the fixed 2026-09-26: Rim Village Visitor Center"},{"order":32,"drive":[-119.931263,39.198399],"display":[-120.0503528,39.0885405],"distance_m":15959,"via":"the fixed 2026-09-26: Sand Harbor Visitor Center"},{"order":35,"drive":[-112.169642,37.640387],"display":[-112.1855939,37.5707948],"distance_m":7865,"via":"the fixed 2026-09-26: Bryce Canyon Visitor Center on UT 63"},{"order":42,"drive":[-93.458082,35.898332],"display":[-93.4404159,35.8909797],"distance_m":1789,"via":""}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>Thrillist - An optimized road trip to the most beautiful places in the USA</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>Thrillist - An optimized road trip to the most beautiful places in the USA</strong>
+      <span class="meta">48 stops · 14,869 mi · 306 hours driving</span><br>
+      <a href="thrillist-us-beautiful-places.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>48<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>14,869 mi<small>23,929 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>306 hours<small>12.8 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>48<small>all by road</small></dd></div>
+    </dl>
     
-    <title>Thrillist - An optimized road trip to the most beautiful places in the USA</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&language=en"></script>
-    <script>
-		var directionsDisplay1, directionsDisplay2;
-		var directionsDisplay3, directionsDisplay4;
-		var directionsDisplay5, directionsDisplay6;
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: markerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+    
 
-		function initialize() {
-		  var center = new google.maps.LatLng(39, -96);
-		  var mapOptions = {
-			zoom: 5,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  directionsDisplay1.setMap(map);
-		  directionsDisplay2.setMap(map);
-		  directionsDisplay3.setMap(map);
-		  directionsDisplay4.setMap(map);
-		  directionsDisplay5.setMap(map);
-		  directionsDisplay6.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/thrillist-us-beautiful-places/route.gpx" download>GPX<small>1.2 MB</small></a><a class="btn" href="data/thrillist-us-beautiful-places/route.kml" download>KML<small>2.6 MB</small></a><a class="btn" href="data/thrillist-us-beautiful-places/route.geojson" download>GeoJSON<small>835 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=35.116700%2C-82.600000&amp;destination=41.489983%2C-71.313771&amp;waypoints=35.692500%2C-82.384722%7C35.018900%2C-85.339500%7C37.777500%2C-83.693600%7C37.830478%2C-81.063332%7C38.029900%2C-78.479000%7C38.768826%2C-76.206767%7C38.784155%2C-75.098318%7C40.915541%2C-74.180529%7C41.576246%2C-72.642729&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=41.489983%2C-71.313771&amp;destination=42.118791%2C-90.778872&amp;waypoints=44.331000%2C-68.184000%7C44.271560%2C-71.540182%7C44.430062%2C-71.976367%7C42.622709%2C-72.878247%7C43.084841%2C-79.070179%7C40.430903%2C-80.010331%7C39.110003%2C-84.537802%7C41.658749%2C-87.055250%7C41.878738%2C-87.635961&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.118791%2C-90.778872&amp;destination=45.643735%2C-121.105892&amp;waypoints=46.423714%2C-86.623827%7C46.813015%2C-90.820528%7C47.987263%2C-91.500032%7C46.895449%2C-103.381578%7C43.749012%2C-101.941664%7C41.589261%2C-103.104643%7C44.415762%2C-110.574225%7C45.511685%2C-110.579741%7C42.596006%2C-114.402162&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=45.643735%2C-121.105892&amp;destination=37.367264%2C-96.188604&amp;waypoints=42.911190%2C-122.143490%7C39.198399%2C-119.931263%7C36.585240%2C-121.884203%7C35.782488%2C-113.072145%7C37.640387%2C-112.169642%7C39.072211%2C-107.188938%7C35.169761%2C-106.372690%7C29.165470%2C-103.612120%7C34.500600%2C-96.972200&amp;travelmode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=37.367264%2C-96.188604&amp;destination=35.116700%2C-82.600000&amp;waypoints=36.625554%2C-93.411194%7C35.898332%2C-93.458082%7C34.600939%2C-88.178295%7C30.534628%2C-91.739257%7C30.271122%2C-87.689383%7C24.694802%2C-81.184122%7C32.074653%2C-81.092445&amp;travelmode=driving" rel="noopener" target="_blank">Part 5</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=35.116700%2C-82.600000&amp;destination=41.489983%2C-71.313771&amp;waypoint=35.692500%2C-82.384722&amp;waypoint=35.018900%2C-85.339500&amp;waypoint=37.777500%2C-83.693600&amp;waypoint=37.830478%2C-81.063332&amp;waypoint=38.029900%2C-78.479000&amp;waypoint=38.768826%2C-76.206767&amp;waypoint=38.784155%2C-75.098318&amp;waypoint=40.915541%2C-74.180529&amp;waypoint=41.576246%2C-72.642729&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=41.489983%2C-71.313771&amp;destination=42.118791%2C-90.778872&amp;waypoint=44.331000%2C-68.184000&amp;waypoint=44.271560%2C-71.540182&amp;waypoint=44.430062%2C-71.976367&amp;waypoint=42.622709%2C-72.878247&amp;waypoint=43.084841%2C-79.070179&amp;waypoint=40.430903%2C-80.010331&amp;waypoint=39.110003%2C-84.537802&amp;waypoint=41.658749%2C-87.055250&amp;waypoint=41.878738%2C-87.635961&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=42.118791%2C-90.778872&amp;destination=45.643735%2C-121.105892&amp;waypoint=46.423714%2C-86.623827&amp;waypoint=46.813015%2C-90.820528&amp;waypoint=47.987263%2C-91.500032&amp;waypoint=46.895449%2C-103.381578&amp;waypoint=43.749012%2C-101.941664&amp;waypoint=41.589261%2C-103.104643&amp;waypoint=44.415762%2C-110.574225&amp;waypoint=45.511685%2C-110.579741&amp;waypoint=42.596006%2C-114.402162&amp;mode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://maps.apple.com/directions?source=45.643735%2C-121.105892&amp;destination=37.367264%2C-96.188604&amp;waypoint=42.911190%2C-122.143490&amp;waypoint=39.198399%2C-119.931263&amp;waypoint=36.585240%2C-121.884203&amp;waypoint=35.782488%2C-113.072145&amp;waypoint=37.640387%2C-112.169642&amp;waypoint=39.072211%2C-107.188938&amp;waypoint=35.169761%2C-106.372690&amp;waypoint=29.165470%2C-103.612120&amp;waypoint=34.500600%2C-96.972200&amp;mode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://maps.apple.com/directions?source=37.367264%2C-96.188604&amp;destination=35.116700%2C-82.600000&amp;waypoint=36.625554%2C-93.411194&amp;waypoint=35.898332%2C-93.458082&amp;waypoint=34.600939%2C-88.178295&amp;waypoint=30.534628%2C-91.739257&amp;waypoint=30.271122%2C-87.689383&amp;waypoint=24.694802%2C-81.184122&amp;waypoint=32.074653%2C-81.092445&amp;mode=driving" rel="noopener" target="_blank">Part 5</a></p>
 
-		function calcRoute(start, end, routes) {
-		  switch (start) {
-		  	case "Ceasar's Head State Park, 8155 Geer Hwy, Cleveland, SC 29635":
-		  		directionsDisplay1 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Brownstone Exploration & Discovery Park, 161 Brownstone Ave, Portland, CT 06480":
-		  		directionsDisplay2 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Indiana Dunes State Park, 1600 N 25 East, Chesterton, IN 46304":
-		  		directionsDisplay3 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Yellowstone National Park, Wyoming 82190":
-		  		directionsDisplay4 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Marble, Colorado":
-		  		directionsDisplay5 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Gulf Shores, Alabama":
-		  		directionsDisplay6 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  }
-		  
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				switch (start) {
-					case "Ceasar's Head State Park, 8155 Geer Hwy, Cleveland, SC 29635":
-						directionsDisplay1.setDirections(response);
-						break;
-					case "Brownstone Exploration & Discovery Park, 161 Brownstone Ave, Portland, CT 06480":
-						directionsDisplay2.setDirections(response);
-						break;
-					case "Indiana Dunes State Park, 1600 N 25 East, Chesterton, IN 46304":
-						directionsDisplay3.setDirections(response);
-						break;
-					case "Yellowstone National Park, Wyoming 82190":
-						directionsDisplay4.setDirections(response);
-						break;
-					case "Marble, Colorado":
-						directionsDisplay5.setDirections(response);
-						break;
-                    case "Gulf Shores, Alabama":
-                        directionsDisplay6.setDirections(response);
-                        break;
-				  }
-			}
-		  });
-		}
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Ceasar&#39;s Head State Park</span><span class="stop-leg">70 mi (113 km), 1 h 53 min driving to 2. Craggy Gardens</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Craggy Gardens</span><span class="stop-leg">247 mi (397 km), 5 h 1 min driving to 3. Ruby Falls</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Ruby Falls</span><span class="stop-leg">268 mi (432 km), 5 h 25 min driving to 4. Natural Bridge State Park</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Natural Bridge State Park</span><span class="stop-leg">218 mi (350 km), 4 h 24 min driving to 5. New River Gorge National River</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">New River Gorge National River</span><span class="stop-via">Reached via the fixed 2026-09-26: Grandview Visitor Center (3.2 mi away)</span><span class="stop-leg">183 mi (295 km), 3 h 26 min driving to 6. Monticello Wine Trail</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Monticello Wine Trail</span><span class="stop-leg">194 mi (312 km), 4 h 33 min driving to 7. St. Michaels Inn</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">St. Michaels Inn</span><span class="stop-leg">72 mi (116 km), 2 h driving to 8. Cape Henlopen State Park</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Cape Henlopen State Park</span><span class="stop-via">Reached via the fixed 2026-09-26: Seaside Nature Center (1.2 mi away)</span><span class="stop-leg">211 mi (339 km), 4 h 29 min driving to 9. Paterson Great Falls National Historical Park</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Paterson Great Falls National Historical Park</span><span class="stop-leg">110 mi (178 km), 2 h 34 min driving to 10. Brownstone Exploration &amp; Discovery Park</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Brownstone Exploration &amp; Discovery Park</span><span class="stop-leg">81 mi (130 km), 2 h 1 min driving to 11. Newport</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Newport</span><span class="stop-leg">340 mi (548 km), 7 h 31 min driving to 12. Acadia National Park</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">Acadia National Park</span><span class="stop-via">Reached via the fixed 2026-09-26: Sand Beach lot on the Park Loop Road (2.3 mi away)</span><span class="stop-leg">219 mi (353 km), 5 h 39 min driving to 13. Cog Railway</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">Cog Railway</span><span class="stop-leg">30 mi (49 km), 44 min driving to 14. Northeast Kingdom</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Northeast Kingdom</span><span class="stop-leg">163 mi (263 km), 3 h 19 min driving to 15. 66 Thunder Mountain Rd</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">66 Thunder Mountain Rd</span><span class="stop-via">Reached by road via a separate drive point 0.7 mi away</span><span class="stop-leg">362 mi (582 km), 7 h 48 min driving to 16. Niagara Falls</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Niagara Falls</span><span class="stop-leg">238 mi (382 km), 4 h 52 min driving to 17. Mount Washington</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Mount Washington</span><span class="stop-leg">289 mi (465 km), 5 h 39 min driving to 18. Cincinnati Museum Center</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Cincinnati Museum Center</span><span class="stop-leg">277 mi (446 km), 5 h 17 min driving to 19. Indiana Dunes State Park</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">Indiana Dunes State Park</span><span class="stop-leg">50 mi (80 km), 1 h 14 min driving to 20. Willis Tower</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">Willis Tower</span><span class="stop-leg">191 mi (308 km), 3 h 59 min driving to 21. Maquoketa Caves State Park</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Maquoketa Caves State Park</span><span class="stop-leg">435 mi (701 km), 9 h 5 min driving to 22. Pictured Rocks National Lakeshore</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">Pictured Rocks National Lakeshore</span><span class="stop-leg">250 mi (402 km), 5 h 34 min driving to 23. Apostle Islands National Lakeshore</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">Apostle Islands National Lakeshore</span><span class="stop-leg">218 mi (351 km), 5 h 9 min driving to 24. Boundary Waters Canoe Area Wilderness</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">Boundary Waters Canoe Area Wilderness</span><span class="stop-via">Reached by road via a separate drive point 19 mi away</span><span class="stop-leg">634 mi (1,021 km), 12 h 22 min driving to 25. Painted Canyon Visitor Center</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Painted Canyon Visitor Center</span><span class="stop-leg">319 mi (514 km), 6 h 4 min driving to 26. Badlands National Park</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">Badlands National Park</span><span class="stop-via">Reached via the fixed 2026-09-26: Ben Reifel Visitor Center at Cedar Pass (26 mi away)</span><span class="stop-leg">245 mi (394 km), 4 h 57 min driving to 27. Courthouse Rock</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">Courthouse Rock</span><span class="stop-leg">518 mi (833 km), 10 h 24 min driving to 28. Yellowstone National Park</span></span></button></li>
+        <li data-order="27"><button type="button"><span class="num">28</span><span><span class="stop-name">Yellowstone National Park</span><span class="stop-via">Reached via the fixed 2026-09-26: West Thumb Geyser Basin parking (26 mi away)</span><span class="stop-leg">118 mi (190 km), 3 h 13 min driving to 29. Paradise Valley</span></span></button></li>
+        <li data-order="28"><button type="button"><span class="num">29</span><span><span class="stop-name">Paradise Valley</span><span class="stop-leg">371 mi (597 km), 7 h 25 min driving to 30. Shoshone Falls</span></span></button></li>
+        <li data-order="29"><button type="button"><span class="num">30</span><span><span class="stop-name">Shoshone Falls</span><span class="stop-leg">473 mi (761 km), 8 h 26 min driving to 31. Columbia River Gorge</span></span></button></li>
+        <li data-order="30"><button type="button"><span class="num">31</span><span><span class="stop-name">Columbia River Gorge</span><span class="stop-leg">239 mi (384 km), 5 h 31 min driving to 32. Crater Lake</span></span></button></li>
+        <li data-order="31"><button type="button"><span class="num">32</span><span><span class="stop-name">Crater Lake</span><span class="stop-via">Reached via the fixed 2026-09-26: Rim Village Visitor Center (3.1 mi away)</span><span class="stop-leg">351 mi (565 km), 7 h 50 min driving to 33. Lake Tahoe</span></span></button></li>
+        <li data-order="32"><button type="button"><span class="num">33</span><span><span class="stop-name">Lake Tahoe</span><span class="stop-via">Reached via the fixed 2026-09-26: Sand Harbor Visitor Center (9.9 mi away)</span><span class="stop-leg">310 mi (499 km), 6 h 14 min driving to 34. CA-1</span></span></button></li>
+        <li data-order="33"><button type="button"><span class="num">34</span><span><span class="stop-name">CA-1</span><span class="stop-leg">636 mi (1,023 km), 12 h 11 min driving to 35. Frazier Wells</span></span></button></li>
+        <li data-order="34"><button type="button"><span class="num">35</span><span><span class="stop-name">Frazier Wells</span><span class="stop-leg">414 mi (666 km), 8 h 24 min driving to 36. Bryce Canyon National Park</span></span></button></li>
+        <li data-order="35"><button type="button"><span class="num">36</span><span><span class="stop-name">Bryce Canyon National Park</span><span class="stop-via">Reached via the fixed 2026-09-26: Bryce Canyon Visitor Center on UT 63 (4.9 mi away)</span><span class="stop-leg">450 mi (725 km), 8 h 25 min driving to 37. Marble</span></span></button></li>
+        <li data-order="36"><button type="button"><span class="num">37</span><span><span class="stop-name">Marble</span><span class="stop-leg">433 mi (697 km), 9 h 51 min driving to 38. Sandia Mountains</span></span></button></li>
+        <li data-order="37"><button type="button"><span class="num">38</span><span><span class="stop-name">Sandia Mountains</span><span class="stop-leg">548 mi (882 km), 11 h 29 min driving to 39. Santa Elena Canyon</span></span></button></li>
+        <li data-order="38"><button type="button"><span class="num">39</span><span><span class="stop-name">Santa Elena Canyon</span><span class="stop-leg">709 mi (1,141 km), 13 h 20 min driving to 40. Chickasaw National Recreation Area</span></span></button></li>
+        <li data-order="39"><button type="button"><span class="num">40</span><span><span class="stop-name">Chickasaw National Recreation Area</span><span class="stop-leg">254 mi (409 km), 5 h 11 min driving to 41. Elk Falls</span></span></button></li>
+        <li data-order="40"><button type="button"><span class="num">41</span><span><span class="stop-name">Elk Falls</span><span class="stop-leg">204 mi (329 km), 4 h 52 min driving to 42. Table Rock Lake</span></span></button></li>
+        <li data-order="41"><button type="button"><span class="num">42</span><span><span class="stop-name">Table Rock Lake</span><span class="stop-leg">76 mi (122 km), 2 h 14 min driving to 43. Whitaker Point Trail (Hawksbill Crag)</span></span></button></li>
+        <li data-order="42"><button type="button"><span class="num">43</span><span><span class="stop-name">Whitaker Point Trail (Hawksbill Crag)</span><span class="stop-via">Reached by road via a separate drive point 1.1 mi away</span><span class="stop-leg">404 mi (650 km), 8 h 23 min driving to 44. Tishomingo State Park</span></span></button></li>
+        <li data-order="43"><button type="button"><span class="num">44</span><span><span class="stop-name">Tishomingo State Park</span><span class="stop-leg">453 mi (729 km), 9 h 7 min driving to 45. Atchafalaya National Wildpark Refuge</span></span></button></li>
+        <li data-order="44"><button type="button"><span class="num">45</span><span><span class="stop-name">Atchafalaya National Wildpark Refuge</span><span class="stop-leg">283 mi (456 km), 5 h 34 min driving to 46. Gulf Shores</span></span></button></li>
+        <li data-order="45"><button type="button"><span class="num">46</span><span><span class="stop-name">Gulf Shores</span><span class="stop-leg">825 mi (1,328 km), 15 h 57 min driving to 47. Seven Mile Bridge</span></span></button></li>
+        <li data-order="46"><button type="button"><span class="num">47</span><span><span class="stop-name">Seven Mile Bridge</span><span class="stop-leg">598 mi (963 km), 11 h 38 min driving to 48. Savannah Historic District</span></span></button></li>
+        <li data-order="47"><button type="button"><span class="num">48</span><span><span class="stop-name">Savannah Historic District</span><span class="stop-leg">287 mi (462 km), 5 h 44 min driving to 1. Ceasar&#39;s Head State Park</span></span></button></li>
+    </ol>
 
-		google.maps.event.addDomListener(window, 'load', initialize);
-		
-calcRoute("Ceasar's Head State Park, 8155 Geer Hwy, Cleveland, SC 29635", "Brownstone Exploration & Discovery Park, 161 Brownstone Ave, Portland, CT 06480", ["Craggy Gardens, 364 Blue Ridge Pkwy, Black Mountain, NC 28711", "Ruby Falls, 1720 Scenic Hwy, Chattanooga, TN 37409", "Natural Bridge State Park, 2135 Natural Bridge Rd, Slade, KY 40376", "New River Gorge National River, Glen Jean, WV 25846", "Monticello Wine Trail, Charlottesville, VA, 22902 ", "St. Michaels Inn, 1228 S Talbot St, St Michaels, MD 21663", "Cape Henlopen State Park, 15099 Cape Henlopen Dr, Lewes, DE 19958", "Paterson Great Falls National Historical Park, 72 McBride Ave, Paterson, NJ 07501"]);
-
-calcRoute("Brownstone Exploration & Discovery Park, 161 Brownstone Ave, Portland, CT 06480", "Indiana Dunes State Park, 1600 N 25 East, Chesterton, IN 46304", ["Newport, Rhode Island", "Acadia National Park, Maine", "Cog Railway, Mount Washington, 3168 Base Station Rd, Mount Washington, NH 03575", "Northeast Kingdom, 2000 Memorial Dr, St Johnsbury, VT 05819", "66 Thunder Mountain Rd, Charlemont, MA 01339", "Niagara Falls, NY", "Mount Washington, Pittsburgh, Pennsylvania, 15211", "Cincinnati Museum Center, 1301 Western Ave, Cincinnati, OH 45203"]);
-
-calcRoute("Indiana Dunes State Park, 1600 N 25 East, Chesterton, IN 46304", "Yellowstone National Park, Wyoming 82190", ["Willis Tower, 233 S Wacker Dr, Chicago, IL 60606", "Maquoketa Caves State Park, 10970 98th St, Maquoketa, IA 52060", "Pictured Rocks National Lakeshore, Munising, MI 49862", "Apostle Islands National Lakeshore, 415 Washington Ave, Bayfield, WI 54814", "Boundary Waters Canoe Area Wilderness, Duluth, MN 55808", "Painted Canyon Visitor Center, Exit 32, Belfield, ND 58622", "Badlands National Park, SD", "Courthouse Rock, East Camp Clarke, NE 69336"]);
-
-calcRoute("Yellowstone National Park, Wyoming 82190", "Marble, Colorado", ["Paradise Valley, MT 59047", "Shoshone Falls, Idaho", "Columbia River Gorge, 754 Silica Road Northwest, George, WA 98848", "Crater Lake, Oregon", "Lake Tahoe, Nevada", "CA-1, Monterey, CA 93940", "Frazier Wells, AZ", "Bryce Canyon National Park, Utah"]);
-
-calcRoute("Marble, Colorado", "Gulf Shores, Alabama", ["Sandia Mountains, New Mexico, 87122", "Santa Elena Canyon, Big Bend National Park, Terlingua, TX 79852", "Chickasaw National Recreation Area, 901 W 1st St, Sulphur, OK 73086", "Elk Falls, Kansas, 67345", "Table Rock Lake, Missouri", "Whitaker Point Trail (Hawksbill Crag), Co Rd 5, Kingston, AR 72742", "Tishomingo State Park, 105 Co Rd 90, Tishomingo, MS 38873", "Atchafalaya National Wildpark Refuge, highway 190 & interstate 10, Lottie, LA 70756"]);
-
-calcRoute("Gulf Shores, Alabama", "Ceasar's Head State Park, 8155 Geer Hwy, Cleveland, SC 29635", ["Seven Mile Bridge, Florida", "Savannah Historic District, Georgia, 31401"]);
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

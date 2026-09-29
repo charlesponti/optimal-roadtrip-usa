@@ -1,243 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-  	<meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="The Florida Family Road Trip by Chevrolet.">
-    <meta name="author" content="Chevrolet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The Florida Family Road Trip by Chevrolet (restored map)</title>
+<meta name="description" content="The Florida Family Road Trip by Chevrolet: 11 stops, 708 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="chevrolet-family-road-trip-se.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"chevrolet-family-road-trip-se","profile":"car","assets":"assets/","data":"data/chevrolet-family-road-trip-se/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The Florida Family Road Trip by Chevrolet</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The Florida Family Road Trip by Chevrolet</strong>
+      <span class="meta">11 stops · 708 mi · 15.3 hours driving</span><br>
+      <a href="chevrolet-family-road-trip-se.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>11<small>one way</small></dd></div>
+      <div><dt>Distance</dt><dd>708 mi<small>1,139 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>15.3 hours<small>0.6 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>10<small>all by road</small></dd></div>
+    </dl>
     
-    <title>The Florida Family Road Trip by Chevrolet</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var routes_list = [];
-		
-		var marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10, marker11;
-		var infoWindows = [];
-		
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var routeMarkerOptions = {visible: false, zIndex: 0};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: routeMarkerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+    
 
-		function initialize() {
-		  var center = new google.maps.LatLng(27.482861, -81.462625);
-		  var mapOptions = {
-			zoom: 8,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  for (i=0; i<routes_list.length; i++) {
-		  	routes_list[i].setMap(map);
-		  }
-		  marker1.setMap(map); marker2.setMap(map); marker3.setMap(map); marker4.setMap(map); marker5.setMap(map); marker6.setMap(map); marker7.setMap(map); marker8.setMap(map); marker9.setMap(map); marker10.setMap(map); marker11.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/chevrolet-family-road-trip-se/route.gpx" download>GPX<small>39 KB</small></a><a class="btn" href="data/chevrolet-family-road-trip-se/route.kml" download>KML<small>133 KB</small></a><a class="btn" href="data/chevrolet-family-road-trip-se/route.geojson" download>GeoJSON<small>27 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=28.370346%2C-81.522086&amp;destination=29.232968%2C-81.010007&amp;waypoints=28.028151%2C-82.189472%7C27.952586%2C-82.829097%7C26.634312%2C-81.879271%7C26.375166%2C-81.603401%7C25.744452%2C-80.210406%7C25.765648%2C-80.218896%7C26.268582%2C-80.171657%7C26.767543%2C-80.245832%7C28.522872%2C-80.681136&amp;travelmode=driving" rel="noopener" target="_blank">Open</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=28.370346%2C-81.522086&amp;destination=29.232968%2C-81.010007&amp;waypoint=28.028151%2C-82.189472&amp;waypoint=27.952586%2C-82.829097&amp;waypoint=26.634312%2C-81.879271&amp;waypoint=26.375166%2C-81.603401&amp;waypoint=25.744452%2C-80.210406&amp;waypoint=25.765648%2C-80.218896&amp;waypoint=26.268582%2C-80.171657&amp;waypoint=26.767543%2C-80.245832&amp;waypoint=28.522872%2C-80.681136&amp;mode=driving" rel="noopener" target="_blank">Open</a></p>
 
-		function calcRoute(start, end, routes) {
-		  
-		  var directionsDisplay = new google.maps.DirectionsRenderer(directionsDisplayOptions);
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Disney World</span><span class="stop-leg">52 mi (83 km), 1 h 2 min driving to 2. Dinosaur World</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Dinosaur World</span><span class="stop-leg">44 mi (71 km), 1 h 7 min driving to 3. Columbia Restaurant</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Columbia Restaurant</span><span class="stop-leg">132 mi (212 km), 2 h 46 min driving to 4. Edison and Ford Winter Estates</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Edison and Ford Winter Estates</span><span class="stop-leg">48 mi (77 km), 1 h 6 min driving to 5. Audubon Corkscrew Swamp Sanctuary (Everglades Ecosystem)</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Audubon Corkscrew Swamp Sanctuary (Everglades Ecosystem)</span><span class="stop-leg">129 mi (207 km), 2 h 40 min driving to 6. Vizcaya Museum and Gardens</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Vizcaya Museum and Gardens</span><span class="stop-leg">3 mi (4.8 km), 8 min driving to 7. Little Havana</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Little Havana</span><span class="stop-leg">39 mi (62 km), 54 min driving to 8. Butterfly World</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Butterfly World</span><span class="stop-leg">49 mi (79 km), 1 h 11 min driving to 9. McCarthy&#39;s Wildlife Sanctuary</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">McCarthy&#39;s Wildlife Sanctuary</span><span class="stop-leg">148 mi (239 km), 3 h 3 min driving to 10. Kennedy Space Center</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Kennedy Space Center</span><span class="stop-leg">64 mi (103 km), 1 h 25 min driving to 11. Daytona Beach Boardwalk</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Daytona Beach Boardwalk</span><span class="stop-leg">Final stop</span></span></button></li>
+    </ol>
 
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				directionsDisplay.setDirections(response);		
-			}
-		  });
-
-		  routes_list.push(directionsDisplay);
-		}
-
-		function createRoutes(route) {
-			// Google's free map API is limited to 10 waypoints so need to break into batches
-			route.push(route[0]);
-			var subset = 0;
-			while (subset < route.length) {
-				var waypointSubset = route.slice(subset, subset + 10);
-
-				var startPoint = waypointSubset[0];
-				var midPoints = waypointSubset.slice(1, waypointSubset.length - 1);
-				var endPoint = waypointSubset[waypointSubset.length - 1];
-
-				calcRoute(startPoint, endPoint, midPoints);
-
-				subset += 9;
-			}
-		}
-
-		optimal_route = ['1486 Buena Vista Dr, Lake Buena Vista, FL 32830', '5145 Harvey Tew Rd, Plant City, FL 33565', '1241 Gulf Blvd, Clearwater, FL 33767', '2350 McGregor Blvd, Ft. Myers, FL 33901', '375 Sanctuary Rd W, Naples, FL 34120', '3251 S Miami Ave, Miami, FL 33129', 'Calle Ocho Walk of Fame, SW 8th St, Miami, FL 33135', 'Butterfly World, West Sample Road, Coconut Creek, FL', '12943 61st St N, West Palm Beach, FL 33412', '28.52330, -80.68190', '12 N Ocean Ave, Daytona Beach, FL 32118']
-		
-		createRoutes(optimal_route);
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-
-        var infoWindow1 = new google.maps.InfoWindow({ content: "<h3>Disney World<br />Orlando, FL 32830</h3>"});
-
-        infoWindows.push(infoWindow1);
-        
-        marker1 = new google.maps.Marker({
-                                position: new google.maps.LatLng(28.3703458, -81.522086),
-                                options: markerOptions,
-                                title: "Disney World"
-                                });
-
-        google.maps.event.addListener(marker1, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow1.open(map, marker1); });
-
-        var infoWindow2 = new google.maps.InfoWindow({ content: "<h3>Dinosaur World<br />5145 Harvey Tew Rd, Plant City, FL 33565</h3>"});
-
-        infoWindows.push(infoWindow2);
-        
-        marker2 = new google.maps.Marker({
-                                position: new google.maps.LatLng(28.028151, -82.189472),
-                                options: markerOptions,
-                                title: "Dinosaur World"
-                                });
-
-        google.maps.event.addListener(marker2, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow2.open(map, marker2); });
-
-        var infoWindow3 = new google.maps.InfoWindow({ content: "<h3>Columbia Restaurant<br />1241 Gulf Blvd, Clearwater, FL 33767</h3>"});
-
-        infoWindows.push(infoWindow3);
-        
-        marker3 = new google.maps.Marker({
-                                position: new google.maps.LatLng(27.9525864, -82.82909719999999),
-                                options: markerOptions,
-                                title: "Columbia Restaurant"
-                                });
-
-        google.maps.event.addListener(marker3, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow3.open(map, marker3); });
-
-        var infoWindow4 = new google.maps.InfoWindow({ content: "<h3>Edison and Ford Winter Estates<br />2350 McGregor Blvd, Ft. Myers, FL 33901</h3>"});
-
-        infoWindows.push(infoWindow4);
-        
-        marker4 = new google.maps.Marker({
-                                position: new google.maps.LatLng(26.6343116, -81.87927119999999),
-                                options: markerOptions,
-                                title: "Edison and Ford Winter Estates"
-                                });
-
-        google.maps.event.addListener(marker4, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow4.open(map, marker4); });
-
-        var infoWindow5 = new google.maps.InfoWindow({ content: "<h3>Audubon Corkscrew Swamp Sanctuary (Everglades Ecosystem)<br />375 Sanctuary Rd W, Naples, FL 34120</h3>"});
-
-        infoWindows.push(infoWindow5);
-        
-        marker5 = new google.maps.Marker({
-                                position: new google.maps.LatLng(26.375166, -81.60340099999999),
-                                options: markerOptions,
-                                title: "Audubon Corkscrew Swamp Sanctuary (Everglades Ecosystem)"
-                                });
-
-        google.maps.event.addListener(marker5, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow5.open(map, marker5); });
-
-        var infoWindow6 = new google.maps.InfoWindow({ content: "<h3>Vizcaya Museum and Gardens<br />3251 S Miami Ave, Miami, FL 33129</h3>"});
-
-        infoWindows.push(infoWindow6);
-        
-        marker6 = new google.maps.Marker({
-                                position: new google.maps.LatLng(25.7444524, -80.21040649999999),
-                                options: markerOptions,
-                                title: "Vizcaya Museum and Gardens"
-                                });
-
-        google.maps.event.addListener(marker6, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow6.open(map, marker6); });
-
-        var infoWindow7 = new google.maps.InfoWindow({ content: "<h3>Little Havana<br />Calle Ocho (between 17th and 12th), Miami, FL 33135</h3>"});
-
-        infoWindows.push(infoWindow7);
-        
-        marker7 = new google.maps.Marker({
-                                position: new google.maps.LatLng(25.7656481, -80.2188956),
-                                options: markerOptions,
-                                title: "Little Havana"
-                                });
-
-        google.maps.event.addListener(marker7, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow7.open(map, marker7); });
-
-        var infoWindow8 = new google.maps.InfoWindow({ content: "<h3>Butterfly World<br />3600 W Sample Rd, Coconut Creek, FL 33073</h3>"});
-
-        infoWindows.push(infoWindow8);
-        
-        marker8 = new google.maps.Marker({
-                                position: new google.maps.LatLng(26.2685822, -80.17165709999999),
-                                options: markerOptions,
-                                title: "Butterfly World"
-                                });
-
-        google.maps.event.addListener(marker8, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow8.open(map, marker8); });
-
-        var infoWindow9 = new google.maps.InfoWindow({ content: "<h3>McCarthy's Wildlife Sanctuary<br />12943 61st St N, West Palm Beach, FL 33412</h3>"});
-
-        infoWindows.push(infoWindow9);
-        
-        marker9 = new google.maps.Marker({
-                                position: new google.maps.LatLng(26.7675426, -80.2458322),
-                                options: markerOptions,
-                                title: "McCarthy's Wildlife Sanctuary"
-                                });
-
-        google.maps.event.addListener(marker9, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow9.open(map, marker9); });
-
-        var infoWindow10 = new google.maps.InfoWindow({ content: "<h3>Kennedy Space Center<br />Kennedy Space Center, SR 405, Titusville, FL 32899</h3>"});
-
-        infoWindows.push(infoWindow10);
-        
-        marker10 = new google.maps.Marker({
-                                position: new google.maps.LatLng(28.5228717, -80.6811361),
-                                options: markerOptions,
-                                title: "Kennedy Space Center"
-                                });
-
-        google.maps.event.addListener(marker10, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow10.open(map, marker10); });
-
-        var infoWindow11 = new google.maps.InfoWindow({ content: "<h3>Daytona Beach Boardwalk<br />12 N Ocean Ave, Daytona Beach, FL 32118</h3>"});
-
-        infoWindows.push(infoWindow11);
-        
-        marker11 = new google.maps.Marker({
-                                position: new google.maps.LatLng(29.23296819999999, -81.0100071),
-                                options: markerOptions,
-                                title: "Daytona Beach Boardwalk"
-                                });
-
-        google.maps.event.addListener(marker11, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow11.open(map, marker11); });
-
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-    <!-- <a href="https://www.chevrolet.com/"><img src="images/chevrolet-logo.png" width="400px"  style="position: absolute; bottom: 35px; left: 7px;" /></a> -->
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

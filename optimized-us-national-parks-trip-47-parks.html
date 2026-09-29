@@ -1,94 +1,105 @@
-        <!DOCTYPE html>
-        <html lang="en">
-          <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-            <meta name="description" content="Randy Olson uses machine learning to find the optimal road trip to the U.S. National Parks">
-            <meta name="author" content="Randal S. Olson">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The optimal road trip across the U.S. stopping at the U.S. National Parks (restored map)</title>
+<meta name="description" content="The optimal road trip across the U.S. stopping at the U.S. National Parks: 47 stops, 15,315 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="optimized-us-national-parks-trip-47-parks.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"optimized-us-national-parks-trip-47-parks","profile":"car","assets":"assets/","data":"data/optimized-us-national-parks-trip-47-parks/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[{"order":10,"drive":[-81.79908,24.56266],"display":[-82.872646,24.627896],"distance_m":108786,"via":"Key West ferry terminal, Grinnell St"},{"order":14,"drive":[-68.184,44.331],"display":[-68.21667,44.35],"distance_m":3349,"via":"Sand Beach on the Park Loop Road"},{"order":16,"drive":[-88.563677,47.122936],"display":[-88.90929,47.99587],"distance_m":100470,"via":"Houghton Visitor Center and Ranger III ferry dock"}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The optimal road trip across the U.S. stopping at the U.S. National Parks</h1>
+    <p class="restored">Restored in 2026 with open data. Originally published July 30, 2016. <a href="https://www.randalolson.com/2016/07/30/the-optimal-u-s-national-parks-centennial-road-trip/">Read the original post</a>. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The optimal road trip across the U.S. stopping at the U.S. National Parks</strong>
+      <span class="meta">47 stops · 15,315 mi · 319 hours driving</span><br>
+      <a href="optimized-us-national-parks-trip-47-parks.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>47<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>15,315 mi<small>24,647 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>319 hours<small>13.3 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>47<small>all by road</small></dd></div>
+    </dl>
+    
+    <p class="note">The original post quoted 14,498 mi.</p>
 
-            <title>The optimal road trip across the U.S. stopping at the U.S. National Parks</title>
-            <style>
-              html, body, #map-canvas {
-                  height: 100%;
-                  margin: 0px;
-                  padding: 0px
-              }
-              #panel {
-                  position: absolute;
-                  top: 5px;
-                  left: 50%;
-                  margin-left: -180px;
-                  z-index: 5;
-                  background-color: #fff;
-                  padding: 10px;
-                  border: 1px solid #999;
-              }
-            </style>
-            <script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
-            <script>
-                var routesList = [];
-                var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-                var directionsDisplayOptions = {preserveViewport: true,
-                                                markerOptions: markerOptions};
-                var directionsService = new google.maps.DirectionsService();
-                var map;
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/optimized-us-national-parks-trip-47-parks/route.gpx" download>GPX<small>1.4 MB</small></a><a class="btn" href="data/optimized-us-national-parks-trip-47-parks/route.kml" download>KML<small>2.9 MB</small></a><a class="btn" href="data/optimized-us-national-parks-trip-47-parks/route.geojson" download>GeoJSON<small>955 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=36.059210%2C-112.109283&amp;destination=24.562660%2C-81.799080&amp;waypoints=35.065578%2C-109.781577%7C32.254482%2C-111.197318%7C31.893622%2C-104.822060%7C32.175481%2C-104.444223%7C29.327827%2C-103.205889%7C34.513763%2C-93.053406%7C37.187022%2C-86.101071%7C35.685629%2C-83.536602%7C25.395312%2C-80.583106&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=24.562660%2C-81.799080&amp;destination=43.556565%2C-103.478306&amp;waypoints=25.464444%2C-80.334822%7C33.829619%2C-80.823373%7C38.517870%2C-78.436811%7C44.331000%2C-68.184000%7C41.262588%2C-81.560308%7C47.122936%2C-88.563677%7C48.584709%2C-93.161146%7C46.916498%2C-103.526209%7C43.511612%2C-102.496561&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=43.556565%2C-103.478306&amp;destination=39.005691%2C-114.219904&amp;waypoints=40.366231%2C-105.560969%7C37.733207%2C-105.512129%7C38.554991%2C-107.686584%7C37.335973%2C-108.408172%7C38.459906%2C-109.820995%7C38.616568%2C-109.620042%7C38.291473%2C-111.262040%7C37.640387%2C-112.169642%7C37.200079%2C-112.986889&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=39.005691%2C-114.219904&amp;destination=37.748737%2C-119.587165&amp;waypoints=43.653381%2C-110.718606%7C44.658344%2C-111.099275%7C48.523107%2C-113.988484%7C48.666300%2C-121.266745%7C46.785858%2C-121.736708%7C48.099411%2C-123.425757%7C42.896876%2C-122.134316%7C41.286809%2C-124.090935%7C40.437778%2C-121.533838&amp;travelmode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=37.748737%2C-119.587165&amp;destination=36.059210%2C-112.109283&amp;waypoints=36.740015%2C-118.963420%7C36.491072%2C-118.825591%7C36.493762%2C-121.146472%7C34.248454%2C-119.266582%7C34.128678%2C-116.037618%7C36.461796%2C-116.866673&amp;travelmode=driving" rel="noopener" target="_blank">Part 5</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=36.059210%2C-112.109283&amp;destination=24.562660%2C-81.799080&amp;waypoint=35.065578%2C-109.781577&amp;waypoint=32.254482%2C-111.197318&amp;waypoint=31.893622%2C-104.822060&amp;waypoint=32.175481%2C-104.444223&amp;waypoint=29.327827%2C-103.205889&amp;waypoint=34.513763%2C-93.053406&amp;waypoint=37.187022%2C-86.101071&amp;waypoint=35.685629%2C-83.536602&amp;waypoint=25.395312%2C-80.583106&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=24.562660%2C-81.799080&amp;destination=43.556565%2C-103.478306&amp;waypoint=25.464444%2C-80.334822&amp;waypoint=33.829619%2C-80.823373&amp;waypoint=38.517870%2C-78.436811&amp;waypoint=44.331000%2C-68.184000&amp;waypoint=41.262588%2C-81.560308&amp;waypoint=47.122936%2C-88.563677&amp;waypoint=48.584709%2C-93.161146&amp;waypoint=46.916498%2C-103.526209&amp;waypoint=43.511612%2C-102.496561&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=43.556565%2C-103.478306&amp;destination=39.005691%2C-114.219904&amp;waypoint=40.366231%2C-105.560969&amp;waypoint=37.733207%2C-105.512129&amp;waypoint=38.554991%2C-107.686584&amp;waypoint=37.335973%2C-108.408172&amp;waypoint=38.459906%2C-109.820995&amp;waypoint=38.616568%2C-109.620042&amp;waypoint=38.291473%2C-111.262040&amp;waypoint=37.640387%2C-112.169642&amp;waypoint=37.200079%2C-112.986889&amp;mode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://maps.apple.com/directions?source=39.005691%2C-114.219904&amp;destination=37.748737%2C-119.587165&amp;waypoint=43.653381%2C-110.718606&amp;waypoint=44.658344%2C-111.099275&amp;waypoint=48.523107%2C-113.988484&amp;waypoint=48.666300%2C-121.266745&amp;waypoint=46.785858%2C-121.736708&amp;waypoint=48.099411%2C-123.425757&amp;waypoint=42.896876%2C-122.134316&amp;waypoint=41.286809%2C-124.090935&amp;waypoint=40.437778%2C-121.533838&amp;mode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://maps.apple.com/directions?source=37.748737%2C-119.587165&amp;destination=36.059210%2C-112.109283&amp;waypoint=36.740015%2C-118.963420&amp;waypoint=36.491072%2C-118.825591&amp;waypoint=36.493762%2C-121.146472&amp;waypoint=34.248454%2C-119.266582&amp;waypoint=34.128678%2C-116.037618&amp;waypoint=36.461796%2C-116.866673&amp;mode=driving" rel="noopener" target="_blank">Part 5</a></p>
 
-                function initialize() {
-                    var center = new google.maps.LatLng(39, -96);
-                    var mapOptions = {
-                        zoom: 5,
-                        center: center
-                    };
-                    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-                    for (var i = 0; i < routesList.length; i++) {
-                        routesList[i].setMap(map); 
-                    }
-                }
-                function calcRoute(start, end, routes) {
-                    var directionsDisplay = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-                    var waypts = [];
-                    for (var i = 0; i < routes.length; i++) {
-                        waypts.push({
-                            location:routes[i],
-                            stopover:true});
-                        }
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Mather Point</span><span class="stop-leg">203 mi (327 km), 3 h 47 min driving to 2. Petrified Forest National Park</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Petrified Forest National Park</span><span class="stop-leg">274 mi (440 km), 6 h driving to 3. Saguaro National Park Visitor Center</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Saguaro National Park Visitor Center</span><span class="stop-leg">441 mi (710 km), 7 h 57 min driving to 4. Guadalupe Mountains National Park</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Guadalupe Mountains National Park</span><span class="stop-leg">42 mi (68 km), 54 min driving to 5. Carlsbad Caverns National Park</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Carlsbad Caverns National Park</span><span class="stop-leg">275 mi (443 km), 5 h 33 min driving to 6. Big Bend National Park</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Big Bend National Park</span><span class="stop-leg">860 mi (1,384 km), 15 h 13 min driving to 7. Hot Springs National Park</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Hot Springs National Park</span><span class="stop-leg">491 mi (790 km), 9 h driving to 8. Mammoth Cave National Park</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Mammoth Cave National Park</span><span class="stop-leg">243 mi (390 km), 4 h 59 min driving to 9. Great Smoky Mountains National Park</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Great Smoky Mountains National Park</span><span class="stop-leg">905 mi (1,456 km), 17 h 16 min driving to 10. Ernest F. Coe Visitor Center</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Ernest F. Coe Visitor Center</span><span class="stop-leg">136 mi (219 km), 3 h 38 min driving to 11. Dry Tortugas National Park</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Dry Tortugas National Park</span><span class="stop-via">Reached via Key West ferry terminal, Grinnell St (68 mi away)</span><span class="stop-leg">137 mi (220 km), 3 h 38 min driving to 12. Biscayne National Park - Dante Fascell Visitor Center</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">Biscayne National Park - Dante Fascell Visitor Center</span><span class="stop-leg">663 mi (1,067 km), 12 h 40 min driving to 13. Congaree National Park</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">Congaree National Park</span><span class="stop-leg">433 mi (697 km), 8 h 44 min driving to 14. Shenandoah National Park</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Shenandoah National Park</span><span class="stop-leg">801 mi (1,289 km), 17 h 17 min driving to 15. Acadia National Park</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Acadia National Park</span><span class="stop-via">Reached via Sand Beach on the Park Loop Road (2.1 mi away)</span><span class="stop-leg">908 mi (1,462 km), 18 h 13 min driving to 16. Cuyahoga Valley National Park</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Cuyahoga Valley National Park</span><span class="stop-leg">712 mi (1,146 km), 13 h 32 min driving to 17. Isle Royale National Park</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Isle Royale National Park</span><span class="stop-via">Reached via Houghton Visitor Center and Ranger III ferry dock (62 mi away)</span><span class="stop-leg">391 mi (629 km), 8 h 47 min driving to 18. Voyageurs National Park</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Voyageurs National Park</span><span class="stop-leg">591 mi (951 km), 11 h 10 min driving to 19. South Unit Visitor Center</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">South Unit Visitor Center</span><span class="stop-leg">309 mi (498 km), 6 h 47 min driving to 20. White River Visitor Center</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">White River Visitor Center</span><span class="stop-leg">102 mi (164 km), 2 h 37 min driving to 21. Wind Cave National Park Visitor Center</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Wind Cave National Park Visitor Center</span><span class="stop-leg">350 mi (563 km), 6 h 45 min driving to 22. Rocky Mountain National Park</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">Rocky Mountain National Park</span><span class="stop-leg">304 mi (490 km), 6 h 18 min driving to 23. Great Sand Dunes National Park and Preserve</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">Great Sand Dunes National Park and Preserve</span><span class="stop-leg">196 mi (316 km), 4 h 52 min driving to 24. 9800 CO-347</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">9800 CO-347</span><span class="stop-leg">157 mi (252 km), 3 h 50 min driving to 25. Mesa Verde Visitor and Research Center</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Mesa Verde Visitor and Research Center</span><span class="stop-leg">157 mi (252 km), 3 h 39 min driving to 26. Canyonlands National Park</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">Canyonlands National Park</span><span class="stop-leg">29 mi (46 km), 49 min driving to 27. Arches National Park Visitor Center</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">Arches National Park Visitor Center</span><span class="stop-leg">142 mi (229 km), 2 h 50 min driving to 28. Capitol Reef National Park Visitor Center</span></span></button></li>
+        <li data-order="27"><button type="button"><span class="num">28</span><span><span class="stop-name">Capitol Reef National Park Visitor Center</span><span class="stop-leg">123 mi (198 km), 3 h 4 min driving to 29. Bryce Canyon National Park</span></span></button></li>
+        <li data-order="28"><button type="button"><span class="num">29</span><span><span class="stop-name">Bryce Canyon National Park</span><span class="stop-leg">85 mi (137 km), 2 h 11 min driving to 30. Zion National Park</span></span></button></li>
+        <li data-order="29"><button type="button"><span class="num">30</span><span><span class="stop-name">Zion National Park</span><span class="stop-leg">201 mi (323 km), 4 h 8 min driving to 31. Great Basin National Park</span></span></button></li>
+        <li data-order="30"><button type="button"><span class="num">31</span><span><span class="stop-name">Great Basin National Park</span><span class="stop-leg">496 mi (799 km), 10 h 11 min driving to 32. Grand Teton National Park</span></span></button></li>
+        <li data-order="31"><button type="button"><span class="num">32</span><span><span class="stop-name">Grand Teton National Park</span><span class="stop-leg">114 mi (184 km), 3 h 18 min driving to 33. West Yellowstone Visitor Information Center</span></span></button></li>
+        <li data-order="32"><button type="button"><span class="num">33</span><span><span class="stop-name">West Yellowstone Visitor Information Center</span><span class="stop-leg">393 mi (633 km), 7 h 20 min driving to 34. Glacier National Park</span></span></button></li>
+        <li data-order="33"><button type="button"><span class="num">34</span><span><span class="stop-name">Glacier National Park</span><span class="stop-leg">539 mi (867 km), 11 h 50 min driving to 35. North Cascades National Park</span></span></button></li>
+        <li data-order="34"><button type="button"><span class="num">35</span><span><span class="stop-name">North Cascades National Park</span><span class="stop-leg">217 mi (350 km), 5 h 31 min driving to 36. Mount Rainier National Park</span></span></button></li>
+        <li data-order="35"><button type="button"><span class="num">36</span><span><span class="stop-name">Mount Rainier National Park</span><span class="stop-leg">179 mi (287 km), 4 h 33 min driving to 37. Olympic National Park</span></span></button></li>
+        <li data-order="36"><button type="button"><span class="num">37</span><span><span class="stop-name">Olympic National Park</span><span class="stop-leg">480 mi (772 km), 10 h 39 min driving to 38. Crater Lake National Park</span></span></button></li>
+        <li data-order="37"><button type="button"><span class="num">38</span><span><span class="stop-name">Crater Lake National Park</span><span class="stop-leg">220 mi (354 km), 5 h 15 min driving to 39. Redwood National and State Parks</span></span></button></li>
+        <li data-order="38"><button type="button"><span class="num">39</span><span><span class="stop-name">Redwood National and State Parks</span><span class="stop-leg">250 mi (403 km), 5 h 4 min driving to 40. Lassen Volcanic National Park</span></span></button></li>
+        <li data-order="39"><button type="button"><span class="num">40</span><span><span class="stop-name">Lassen Volcanic National Park</span><span class="stop-leg">321 mi (516 km), 7 h 22 min driving to 41. Yosemite National Park</span></span></button></li>
+        <li data-order="40"><button type="button"><span class="num">41</span><span><span class="stop-name">Yosemite National Park</span><span class="stop-leg">147 mi (237 km), 3 h 45 min driving to 42. Kings Canyon National Park</span></span></button></li>
+        <li data-order="41"><button type="button"><span class="num">42</span><span><span class="stop-name">Kings Canyon National Park</span><span class="stop-leg">46 mi (74 km), 1 h 40 min driving to 43. Sequoia National Park</span></span></button></li>
+        <li data-order="42"><button type="button"><span class="num">43</span><span><span class="stop-name">Sequoia National Park</span><span class="stop-leg">172 mi (276 km), 4 h 1 min driving to 44. Pinnacles National Park</span></span></button></li>
+        <li data-order="43"><button type="button"><span class="num">44</span><span><span class="stop-name">Pinnacles National Park</span><span class="stop-leg">247 mi (398 km), 5 h 6 min driving to 45. The Robert J. Lagomarsino Visitor Center at Channel Islands National Park</span></span></button></li>
+        <li data-order="44"><button type="button"><span class="num">45</span><span><span class="stop-name">The Robert J. Lagomarsino Visitor Center at Channel Islands National Park</span><span class="stop-leg">210 mi (338 km), 4 h 15 min driving to 46. Joshua Tree National Park</span></span></button></li>
+        <li data-order="45"><button type="button"><span class="num">46</span><span><span class="stop-name">Joshua Tree National Park</span><span class="stop-leg">237 mi (381 km), 5 h 40 min driving to 47. Furnace Creek Visitor Center</span></span></button></li>
+        <li data-order="46"><button type="button"><span class="num">47</span><span><span class="stop-name">Furnace Creek Visitor Center</span><span class="stop-leg">386 mi (621 km), 7 h 40 min driving to 1. Mather Point</span></span></button></li>
+    </ol>
 
-                    var request = {
-                        origin: start,
-                        destination: end,
-                        waypoints: waypts,
-                        optimizeWaypoints: false,
-                        travelMode: google.maps.TravelMode.DRIVING
-                    };
-                    directionsService.route(request, function(response, status) {
-                        if (status == google.maps.DirectionsStatus.OK) {
-                            directionsDisplay.setDirections(response);
-                            directionsDisplay.setMap(map);
-                        }
-                    });
-
-                    routesList.push(directionsDisplay);
-                }
-                function createRoutes(route) {
-                    // Google's free map API is limited to 10 waypoints so need to break into batches
-                    var subset = 0;
-                    while (subset < route.length) {
-                        var waypointSubset = route.slice(subset, subset + 10);
-                        var startPoint = waypointSubset[0];
-                        var midPoints = waypointSubset.slice(1, waypointSubset.length - 1);
-                        var endPoint = waypointSubset[waypointSubset.length - 1];
-                        calcRoute(startPoint, endPoint, midPoints);
-                        subset += 9;
-                    }
-                }
-
-                optimized_route = ['Mather Point, Rim Trail, Grand Canyon Village, Arizona', 'Petrified Forest National Park, Arizona', 'Saguaro National Park Visitor Center, North Kinney Road, Tucson, Arizona', 'Guadalupe Mountains National Park, Texas', 'Carlsbad Caverns National Park, New Mexico', 'Big Bend National Park, Texas', 'Hot Springs National Park, Hot Springs, Arizona 71901', 'Mammoth Cave National Park, Kentucky', 'Great Smoky Mountains National Park, Tennessee', 'Ernest F. Coe Visitor Center, 40001 State Hwy 9336, Homestead, FL 33034', 'Dry Tortugas National Park, Florida', 'Biscayne National Park - Dante Fascell Visitor Center, 9700 SW 328th St, Homestead, FL 33033', 'Congaree National Park, South Carolina', 'Shenandoah National Park, Virginia', 'Acadia National Park, Maine', 'Cuyahoga Valley National Park, Ohio', 'Isle Royale National Park, Michigan', 'Voyageurs National Park, International Falls, Minnesota 56649', 'South Unit Visitor Center, Medora, ND 58645', 'White River Visitor Center, Porcupine, SD 57772', 'Wind Cave National Park Visitor Center, Hot Springs, South Dakota', 'Rocky Mountain National Park, Colorado', 'Great Sand Dunes National Park and Preserve, Colorado', '9800 CO-347, Montrose, CO 81401', 'Mesa Verde Visitor and Research Center, Mancos, CO 81328', 'Canyonlands National Park, Utah', 'Arches National Park Visitor Center, Moab, UT 84532', 'Capitol Reef National Park Visitor Center, UT-24, Torrey, UT 84775', 'Bryce Canyon National Park, Utah', 'Zion National Park, Utah', 'Great Basin National Park, Nevada', 'Grand Teton National Park, Wyoming', 'West Yellowstone Visitor Information Center, 30 Yellowstone Ave, West Yellowstone, MT 59758', 'Glacier National Park, Montana', 'North Cascades National Park, Washington', 'Mount Rainier National Park, Washington', 'Olympic National Park, Washington', 'Crater Lake National Park, Oregon', 'Redwood National and State Parks, California', 'Lassen Volcanic National Park, California', 'Yosemite National Park, California', 'Kings Canyon National Park, California', 'Sequoia National Park, California', 'Pinnacles National Park, California', 'The Robert J. Lagomarsino Visitor Center at Channel Islands National Park, 1901 Spinnaker Drive, Ventura, California 93001', 'Joshua Tree National Park, Twentynine Palms Highway, Twentynine Palms, California', 'Furnace Creek Visitor Center, Furnace Creek, CA 92328', 'Mather Point, Rim Trail, Grand Canyon Village, Arizona'];
-                createRoutes(optimized_route);
-                google.maps.event.addDomListener(window, "load", initialize);
-            </script>
-          </head>
-          <body>
-            <div id="map-canvas"></div>
-          </body>
-        </html>
-        
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
+</html>

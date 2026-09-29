@@ -1,133 +1,108 @@
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="An optimized road trip across Germany.">
-    <meta name="author" content="TRAVELBOOK.de">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>TRAVELBOOK.de - An optimized road trip across Germany according to machine learning (restored map)</title>
+<meta name="description" content="TRAVELBOOK.de - An optimized road trip across Germany according to machine learning: 50 stops, 3,213 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="travelbook-germany-trip.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"travelbook-germany-trip","profile":"car","assets":"assets/","data":"data/travelbook-germany-trip/","basemap":{"region":"europe","url":"assets/basemaps/europe.pmtiles","maxzoom":7},"connectors":[{"order":6,"drive":[9.183381,47.699476],"display":[9.194444,47.705556],"distance_m":1069,"via":"the Mainau-Parkplatz on the mainland"},{"order":11,"drive":[11.866667,48.916667],"display":[11.830278,48.900278],"distance_m":3224,"via":"Kelheim"},{"order":27,"drive":[10.664722,51.763889],"display":[10.617222,51.800556],"distance_m":5225,"via":"Schierke (Brocken railway and trail base)"},{"order":31,"drive":[13.634792,54.560602],"display":[13.6625,54.573056],"distance_m":2260,"via":"the Hagen car park"},{"order":34,"drive":[8.5703,55.086207],"display":[8.40144,55.052931],"distance_m":11370,"via":"the Sildfaergen ferry terminal at Havneby, Romo (Denmark)"}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>TRAVELBOOK.de - An optimized road trip across Germany according to machine learning</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>TRAVELBOOK.de - An optimized road trip across Germany according to machine learning</strong>
+      <span class="meta">50 stops · 3,213 mi · 67 hours driving</span><br>
+      <a href="travelbook-germany-trip.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>50<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>3,213 mi<small>5,171 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>67 hours<small>2.8 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>50<small>47 road, 3 flight or ferry</small></dd></div>
+    </dl>
+    <p class="note">Plus 3 flight or ferry legs (242 mi straight line, dashed on the map), not counted above.</p>
     
-    <title>TRAVELBOOK.de - An optimized road trip across Germany according to machine learning</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&language=de"></script>
-    <script>
-		var directionsDisplay1, directionsDisplay2;
-		var directionsDisplay3, directionsDisplay4;
-		var directionsDisplay5, directionsDisplay6;
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: markerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
 
-		function initialize() {
-		  var center = new google.maps.LatLng(52, 11);
-		  var mapOptions = {
-			zoom: 6,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  directionsDisplay1.setMap(map);
-		  directionsDisplay2.setMap(map);
-		  directionsDisplay3.setMap(map);
-		  directionsDisplay4.setMap(map);
-		  directionsDisplay5.setMap(map);
-		  directionsDisplay6.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/travelbook-germany-trip/route.gpx" download>GPX<small>448 KB</small></a><a class="btn" href="data/travelbook-germany-trip/route.kml" download>KML<small>916 KB</small></a><a class="btn" href="data/travelbook-germany-trip/route.geojson" download>GeoJSON<small>309 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=48.760278%2C8.236389&amp;destination=48.137300%2C11.575500&amp;waypoints=48.268333%2C7.720833%7C48.136212%2C8.214237%7C48.519350%2C9.055680%7C48.778056%2C9.181944%7C48.398611%2C9.992500%7C47.699476%2C9.183381%7C47.400193%2C10.241160%7C47.557181%2C10.738969%7C47.590000%2C12.990000&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=48.137300%2C11.575500&amp;destination=51.053056%2C13.733889&amp;waypoints=48.916667%2C11.866667%7C49.377224%2C10.178487%7C49.454042%2C11.070778%7C49.960000%2C11.579722%7C50.635000%2C11.341389%7C50.965659%2C10.318155%7C50.975900%2C11.023300%7C50.977545%2C11.328695%7C51.339200%2C12.380800&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=51.053056%2C13.733889&amp;destination=54.145405%2C11.843285&amp;waypoints=50.918729%2C14.149948%7C51.153148%2C14.987505%7C51.866667%2C13.966667%7C52.516300%2C13.377700%7C52.403260%2C13.038630%7C51.839440%2C12.227370%7C51.763889%2C10.664722%7C52.427500%2C10.809722%7C53.624167%2C11.418889&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=54.145405%2C11.843285&amp;destination=51.223056%2C6.779167&amp;waypoints=54.560602%2C13.634792%7C53.866200%2C10.679700%7C54.866667%2C8.683333%7C55.086207%2C8.570300%7C53.546111%2C9.966667%7C53.545278%2C8.574167%7C53.076181%2C8.807528%7C51.963056%2C7.625556%7C51.486528%2C7.044083&amp;travelmode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=51.223056%2C6.779167&amp;destination=48.760278%2C8.236389&amp;waypoints=50.941389%2C6.958333%7C50.736944%2C7.101389%7C50.364500%2C7.606000%7C49.759722%2C6.643889%7C49.501111%2C6.549444%7C50.139444%2C7.728889%7C50.084722%2C8.247500%7C50.110278%2C8.681667%7C49.410556%2C8.715833&amp;travelmode=driving" rel="noopener" target="_blank">Part 5</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=48.760278%2C8.236389&amp;destination=48.137300%2C11.575500&amp;waypoint=48.268333%2C7.720833&amp;waypoint=48.136212%2C8.214237&amp;waypoint=48.519350%2C9.055680&amp;waypoint=48.778056%2C9.181944&amp;waypoint=48.398611%2C9.992500&amp;waypoint=47.699476%2C9.183381&amp;waypoint=47.400193%2C10.241160&amp;waypoint=47.557181%2C10.738969&amp;waypoint=47.590000%2C12.990000&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=48.137300%2C11.575500&amp;destination=51.053056%2C13.733889&amp;waypoint=48.916667%2C11.866667&amp;waypoint=49.377224%2C10.178487&amp;waypoint=49.454042%2C11.070778&amp;waypoint=49.960000%2C11.579722&amp;waypoint=50.635000%2C11.341389&amp;waypoint=50.965659%2C10.318155&amp;waypoint=50.975900%2C11.023300&amp;waypoint=50.977545%2C11.328695&amp;waypoint=51.339200%2C12.380800&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=51.053056%2C13.733889&amp;destination=54.145405%2C11.843285&amp;waypoint=50.918729%2C14.149948&amp;waypoint=51.153148%2C14.987505&amp;waypoint=51.866667%2C13.966667&amp;waypoint=52.516300%2C13.377700&amp;waypoint=52.403260%2C13.038630&amp;waypoint=51.839440%2C12.227370&amp;waypoint=51.763889%2C10.664722&amp;waypoint=52.427500%2C10.809722&amp;waypoint=53.624167%2C11.418889&amp;mode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://maps.apple.com/directions?source=54.145405%2C11.843285&amp;destination=51.223056%2C6.779167&amp;waypoint=54.560602%2C13.634792&amp;waypoint=53.866200%2C10.679700&amp;waypoint=54.866667%2C8.683333&amp;waypoint=55.086207%2C8.570300&amp;waypoint=53.546111%2C9.966667&amp;waypoint=53.545278%2C8.574167&amp;waypoint=53.076181%2C8.807528&amp;waypoint=51.963056%2C7.625556&amp;waypoint=51.486528%2C7.044083&amp;mode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://maps.apple.com/directions?source=51.223056%2C6.779167&amp;destination=48.760278%2C8.236389&amp;waypoint=50.941389%2C6.958333&amp;waypoint=50.736944%2C7.101389&amp;waypoint=50.364500%2C7.606000&amp;waypoint=49.759722%2C6.643889&amp;waypoint=49.501111%2C6.549444&amp;waypoint=50.139444%2C7.728889&amp;waypoint=50.084722%2C8.247500&amp;waypoint=50.110278%2C8.681667&amp;waypoint=49.410556%2C8.715833&amp;mode=driving" rel="noopener" target="_blank">Part 5</a></p>
 
-		function calcRoute(start, end, routes) {
-		  switch (start) {
-		  	case "Casino Baden-Baden":
-		  		directionsDisplay1 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Königssee, Schönau":
-		  		directionsDisplay2 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Goethe-Nationalmuseum, Weimar":
-		  		directionsDisplay3 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Brocken, Harz":
-		  		directionsDisplay4 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Auswandererhaus, Bremerhaven":
-		  		directionsDisplay5 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Saarschleife, Mettlach":
-		  		directionsDisplay6 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  }
-		  
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				switch (start) {
-					case "Casino Baden-Baden":
-						directionsDisplay1.setDirections(response);
-						break;
-					case "Königssee, Schönau":
-						directionsDisplay2.setDirections(response);
-						break;
-					case "Goethe-Nationalmuseum, Weimar":
-						directionsDisplay3.setDirections(response);
-						break;
-					case "Brocken, Harz":
-						directionsDisplay4.setDirections(response);
-						break;
-					case "Auswandererhaus, Bremerhaven":
-						directionsDisplay5.setDirections(response);
-						break;
-                    case "Saarschleife, Mettlach":
-                        directionsDisplay6.setDirections(response);
-                        break;
-				  }
-			}
-		  });
-		}
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Casino Baden-Baden</span><span class="stop-leg">51 mi (83 km), 1 h driving to 2. Europa Park Rust</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Europa Park Rust</span><span class="stop-leg">56 mi (90 km), 1 h 25 min driving to 3. Weltgrößte Kuckucksuhr</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Weltgrößte Kuckucksuhr</span><span class="stop-leg">71 mi (114 km), 1 h 32 min driving to 4. Hölderlinturm</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Hölderlinturm</span><span class="stop-leg">26 mi (42 km), 37 min driving to 5. Neues Schloss</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Neues Schloss</span><span class="stop-leg">58 mi (93 km), 1 h 10 min driving to 6. Ulmer Münster</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Ulmer Münster</span><span class="stop-leg">77 mi (124 km), 2 h 4 min driving to 7. Insel Mainau</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Insel Mainau</span><span class="stop-via">Reached via the Mainau-Parkplatz on the mainland (0.7 mi away)</span><span class="stop-leg">78 mi (126 km), 2 h 11 min driving to 8. Breitachklamm</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Breitachklamm</span><span class="stop-leg">49 mi (79 km), 1 h driving to 9. Schloss Neuschwanstein</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Schloss Neuschwanstein</span><span class="stop-leg">147 mi (236 km), 3 h 13 min driving to 10. Königssee</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Königssee</span><span class="stop-leg">100 mi (161 km), 1 h 54 min driving to 11. Marienplatz</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Marienplatz</span><span class="stop-leg">68 mi (110 km), 1 h 25 min driving to 12. Donaudurchbruch</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">Donaudurchbruch</span><span class="stop-via">Reached via Kelheim (2 mi away)</span><span class="stop-leg">131 mi (210 km), 2 h 15 min driving to 13. Altstadt Rothenburg ob der Tauber</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">Altstadt Rothenburg ob der Tauber</span><span class="stop-leg">66 mi (106 km), 1 h 13 min driving to 14. Kettensteg</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Kettensteg</span><span class="stop-leg">54 mi (87 km), 1 h 5 min driving to 15. Bayreuther Festspiele</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Bayreuther Festspiele</span><span class="stop-leg">76 mi (123 km), 1 h 44 min driving to 16. Feengrotte</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Feengrotte</span><span class="stop-leg">70 mi (113 km), 1 h 25 min driving to 17. Wartburg</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Wartburg</span><span class="stop-leg">51 mi (82 km), 56 min driving to 18. Erfurter Dom</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Erfurter Dom</span><span class="stop-leg">16 mi (25 km), 31 min driving to 19. Goethe-Nationalmuseum</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">Goethe-Nationalmuseum</span><span class="stop-leg">81 mi (130 km), 1 h 29 min driving to 20. Augustplatz Leipzig</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">Augustplatz Leipzig</span><span class="stop-leg">69 mi (111 km), 1 h 18 min driving to 21. Zwinger</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Zwinger</span><span class="stop-leg">29 mi (46 km), 48 min driving to 22. Nationalpark Sächsische Schweiz (Elbsandsteingebirge)</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">Nationalpark Sächsische Schweiz (Elbsandsteingebirge)</span><span class="stop-leg">101 mi (163 km), 1 h 59 min driving to 23. Marienplatz</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">Marienplatz</span><span class="stop-leg">78 mi (126 km), 1 h 57 min driving to 24. Spreewald</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">Spreewald</span><span class="stop-leg">60 mi (96 km), 1 h 15 min driving to 25. Brandenburger Tor</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Brandenburger Tor</span><span class="stop-leg">22 mi (36 km), 40 min driving to 26. Schloss Sanssouci</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">Schloss Sanssouci</span><span class="stop-leg">63 mi (101 km), 1 h 12 min driving to 27. Bauhaus</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">Bauhaus</span><span class="stop-leg">84 mi (136 km), 1 h 48 min driving to 28. Brocken</span></span></button></li>
+        <li data-order="27"><button type="button"><span class="num">28</span><span><span class="stop-name">Brocken</span><span class="stop-via">Reached via Schierke (Brocken railway and trail base) (3.2 mi away)</span><span class="stop-leg">67 mi (108 km), 1 h 26 min driving to 29. VW-Museum</span></span></button></li>
+        <li data-order="28"><button type="button"><span class="num">29</span><span><span class="stop-name">VW-Museum</span><span class="stop-leg">115 mi (186 km), 2 h 56 min driving to 30. Schloss Schwerin</span></span></button></li>
+        <li data-order="29"><button type="button"><span class="num">30</span><span><span class="stop-name">Schloss Schwerin</span><span class="stop-leg">52 mi (83 km), 1 h 15 min driving to 31. Seebrücke Heiligendamm</span></span></button></li>
+        <li data-order="30"><button type="button"><span class="num">31</span><span><span class="stop-name">Seebrücke Heiligendamm</span><span class="stop-leg">117 mi (189 km), 2 h 21 min driving to 32. Königsstuhl</span></span></button></li>
+        <li data-order="31"><button type="button"><span class="num">32</span><span><span class="stop-name">Königsstuhl</span><span class="stop-via">Reached via the Hagen car park (1.4 mi away)</span><span class="stop-leg">169 mi (272 km), 2 h 56 min driving to 33. Holstentor</span></span></button></li>
+        <li data-order="32"><button type="button"><span class="num">33</span><span><span class="stop-name">Holstentor</span><span class="stop-leg flight">Flight or ferry to 34. 25924 Rodenäs, 106 mi straight line</span></span></button></li>
+        <li data-order="33"><button type="button"><span class="num">34</span><span><span class="stop-name">25924 Rodenäs</span><span class="stop-leg flight">Flight or ferry to 35. Leuchtturm am Ellenbogen, 16 mi straight line</span></span></button></li>
+        <li data-order="34"><button type="button"><span class="num">35</span><span><span class="stop-name">Leuchtturm am Ellenbogen</span><span class="stop-via">Reached via the Sildfaergen ferry terminal at Havneby, Romo (Denmark) (7.1 mi away)</span><span class="stop-leg flight">Flight or ferry to 36. Landungsbrücken, 120 mi straight line</span></span></button></li>
+        <li data-order="35"><button type="button"><span class="num">36</span><span><span class="stop-name">Landungsbrücken</span><span class="stop-leg">112 mi (181 km), 1 h 55 min driving to 37. Auswandererhaus</span></span></button></li>
+        <li data-order="36"><button type="button"><span class="num">37</span><span><span class="stop-name">Auswandererhaus</span><span class="stop-leg">40 mi (65 km), 46 min driving to 38. Bremer Stadtmusikanten</span></span></button></li>
+        <li data-order="37"><button type="button"><span class="num">38</span><span><span class="stop-name">Bremer Stadtmusikanten</span><span class="stop-leg">106 mi (171 km), 1 h 46 min driving to 39. St.-Paulus-Dom</span></span></button></li>
+        <li data-order="38"><button type="button"><span class="num">39</span><span><span class="stop-name">St.-Paulus-Dom</span><span class="stop-leg">53 mi (85 km), 1 h driving to 40. Zeche Zollverein</span></span></button></li>
+        <li data-order="39"><button type="button"><span class="num">40</span><span><span class="stop-name">Zeche Zollverein</span><span class="stop-leg">26 mi (42 km), 38 min driving to 41. Königsallee</span></span></button></li>
+        <li data-order="40"><button type="button"><span class="num">41</span><span><span class="stop-name">Königsallee</span><span class="stop-leg">24 mi (39 km), 34 min driving to 42. Kölner Dom</span></span></button></li>
+        <li data-order="41"><button type="button"><span class="num">42</span><span><span class="stop-name">Kölner Dom</span><span class="stop-leg">18 mi (29 km), 30 min driving to 43. Beethovenhaus</span></span></button></li>
+        <li data-order="42"><button type="button"><span class="num">43</span><span><span class="stop-name">Beethovenhaus</span><span class="stop-leg">52 mi (83 km), 1 h driving to 44. Deutsches Eck</span></span></button></li>
+        <li data-order="43"><button type="button"><span class="num">44</span><span><span class="stop-name">Deutsches Eck</span><span class="stop-leg">79 mi (128 km), 1 h 20 min driving to 45. Porta Nigra</span></span></button></li>
+        <li data-order="44"><button type="button"><span class="num">45</span><span><span class="stop-name">Porta Nigra</span><span class="stop-leg">33 mi (53 km), 58 min driving to 46. Saarschleife</span></span></button></li>
+        <li data-order="45"><button type="button"><span class="num">46</span><span><span class="stop-name">Saarschleife</span><span class="stop-leg">139 mi (224 km), 2 h 38 min driving to 47. Loreley</span></span></button></li>
+        <li data-order="46"><button type="button"><span class="num">47</span><span><span class="stop-name">Loreley</span><span class="stop-leg">36 mi (57 km), 59 min driving to 48. Kurhaus Wiesbaden</span></span></button></li>
+        <li data-order="47"><button type="button"><span class="num">48</span><span><span class="stop-name">Kurhaus Wiesbaden</span><span class="stop-leg">25 mi (40 km), 33 min driving to 49. Römer</span></span></button></li>
+        <li data-order="48"><button type="button"><span class="num">49</span><span><span class="stop-name">Römer</span><span class="stop-leg">58 mi (94 km), 1 h 10 min driving to 50. Schloss Heidelberg</span></span></button></li>
+        <li data-order="49"><button type="button"><span class="num">50</span><span><span class="stop-name">Schloss Heidelberg</span><span class="stop-leg">59 mi (95 km), 1 h 12 min driving to 1. Casino Baden-Baden</span></span></button></li>
+    </ol>
 
-		google.maps.event.addDomListener(window, 'load', initialize);
-		
-calcRoute("Casino Baden-Baden", "Königssee, Schönau", ["Europa Park Rust", "Weltgrößte Kuckucksuhr, Schonach im Schwarzwald", "Hölderlinturm, Tübingen", "Neues Schloss, Stuttgart", "Ulmer Münster, Ulm", "Insel Mainau, Konstanz", "Breitachklamm, Allgäu", "Schloss Neuschwanstein, Schongau"]);
-
-calcRoute("Königssee, Schönau", "Goethe-Nationalmuseum, Weimar", ["Marienplatz, München", "Donaudurchbruch, Kelheim", "Altstadt Rothenburg ob der Tauber", "Kettensteg, Nürnberg", "Bayreuther Festspiele", "Feengrotte, Saalfeld", "Wartburg, Eisenach", "Erfurter Dom"]);
-
-calcRoute("Goethe-Nationalmuseum, Weimar", "Brocken, Harz", ["Augustplatz Leipzig", "Zwinger, Dresden", "Nationalpark Sächsische Schweiz (Elbsandsteingebirge)", "Marienplatz, Görlitz", "Spreewald, Brandenburg", "Brandenburger Tor, Berlin", "Schloss Sanssouci, Potsdam", "Bauhaus, Dessau"]);
-
-calcRoute("Brocken, Harz", "Auswandererhaus, Bremerhaven", ["VW-Museum, Wolfsburg", "Schloss Schwerin", "Seebrücke Heiligendamm", "Königsstuhl, Rügen", "Holstentor, Lübeck", "25924 Rodenäs, Germany", "Leuchtturm am Ellenbogen, Sylt", "Landungsbrücken, Hamburg"]);
-
-calcRoute("Auswandererhaus, Bremerhaven", "Saarschleife, Mettlach", ["Bremer Stadtmusikanten, Bremen", "St.-Paulus-Dom, Münster", "Zeche Zollverein, essen", "Königsallee, Düsseldorf", "Kölner Dom, Köln", "Beethovenhaus, Bonn", "Deutsches Eck, Koblenz", "Porta Nigra, Trier"]);
-
-calcRoute("Saarschleife, Mettlach", "Casino Baden-Baden", ["Loreley, Sankt Goarshausen", "Kurhaus Wiesbaden", "Römer, Frankfurt", "Schloss Heidelberg"]);
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

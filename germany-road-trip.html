@@ -1,308 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Die Uber Deutsch Road Trip">
-    <meta name="author" content="Thilo Mischke and Randal S. Olson">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Die Uber Deutsch Road Trip (restored map)</title>
+<meta name="description" content="Die Uber Deutsch Road Trip: 16 stops, 2,101 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="germany-road-trip.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"germany-road-trip","profile":"car","assets":"assets/","data":"data/germany-road-trip/","basemap":{"region":"europe","url":"assets/basemaps/europe.pmtiles","maxzoom":7},"connectors":[{"order":11,"drive":[13.634792,54.560602],"display":[13.66009,54.57338],"distance_m":2163,"via":"the Hagen car park"}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>Die Uber Deutsch Road Trip</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>Die Uber Deutsch Road Trip</strong>
+      <span class="meta">16 stops · 2,101 mi · 39.7 hours driving</span><br>
+      <a href="germany-road-trip.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>16<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>2,101 mi<small>3,381 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>39.7 hours<small>1.7 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>16<small>all by road</small></dd></div>
+    </dl>
     
-    <title>Die Uber Deutsch Road Trip</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&language=de"></script>
-    <script>
-        var directionsDisplay1, directionsDisplay2;
-        var marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10, marker11, marker12, marker13, marker14, marker15, marker16;
-        var infoWindows = [];
-        var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png", zIndex: 1};
-        var routeMarkerOptions = {visible: false, zIndex: 0};
-        var directionsDisplayOptions = {preserveViewport: true,
-                                        markerOptions: routeMarkerOptions};
-        var directionsService = new google.maps.DirectionsService();
-        var map;
+    
 
-        function initialize() {
-          var center = new google.maps.LatLng(50.888367, 10.037517);
-          var mapOptions = {
-            zoom: 6,
-            center: center
-          };
-          map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-          directionsDisplay1.setMap(map);
-          directionsDisplay2.setMap(map);
-          marker1.setMap(map); marker2.setMap(map); marker3.setMap(map); marker4.setMap(map); marker5.setMap(map); marker6.setMap(map); marker7.setMap(map); marker8.setMap(map); marker9.setMap(map); marker10.setMap(map); marker11.setMap(map); marker12.setMap(map); marker13.setMap(map); marker14.setMap(map); marker15.setMap(map); marker16.setMap(map);
-        }
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/germany-road-trip/route.gpx" download>GPX<small>264 KB</small></a><a class="btn" href="data/germany-road-trip/route.kml" download>KML<small>480 KB</small></a><a class="btn" href="data/germany-road-trip/route.geojson" download>GeoJSON<small>177 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=48.266019%2C7.722008&amp;destination=53.866258%2C10.679627&amp;waypoints=49.473067%2C6.385100%7C50.941278%2C6.958281%7C50.154722%2C7.715278%7C49.978388%2C7.920775%7C50.965659%2C10.318155%7C51.836811%2C10.784427%7C53.075866%2C8.807301%7C53.859336%2C8.687906%7C53.544631%2C9.939849&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=53.866258%2C10.679627&amp;destination=48.266019%2C7.722008&amp;waypoints=54.560602%2C13.634792%7C52.505022%2C13.439695%7C52.404202%2C13.038500%7C51.051873%2C13.741522%7C47.557181%2C10.738969&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=48.266019%2C7.722008&amp;destination=53.866258%2C10.679627&amp;waypoint=49.473067%2C6.385100&amp;waypoint=50.941278%2C6.958281&amp;waypoint=50.154722%2C7.715278&amp;waypoint=49.978388%2C7.920775&amp;waypoint=50.965659%2C10.318155&amp;waypoint=51.836811%2C10.784427&amp;waypoint=53.075866%2C8.807301&amp;waypoint=53.859336%2C8.687906&amp;waypoint=53.544631%2C9.939849&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=53.866258%2C10.679627&amp;destination=48.266019%2C7.722008&amp;waypoint=54.560602%2C13.634792&amp;waypoint=52.505022%2C13.439695&amp;waypoint=52.404202%2C13.038500&amp;waypoint=51.051873%2C13.741522&amp;waypoint=47.557181%2C10.738969&amp;mode=driving" rel="noopener" target="_blank">Part 2</a></p>
 
-        function calcRoute(start, end, routes) {
-          switch (start) {
-              case "Europa-Park, Europa-Park-Straße, Rust":
-                  directionsDisplay1 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-                  break;
-              case "Altona Fischmarkt, Große Elbstraße, Hamburg":
-                  directionsDisplay2 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-                  break;
-          }
-          
-          var waypts = [];
-          for (var i = 0; i < routes.length; i++) {
-              waypts.push({
-                location:routes[i],
-                stopover:true});
-              }
-          
-          var request = {
-              origin: start,
-              destination: end,
-              waypoints: waypts,
-              optimizeWaypoints: false,
-              travelMode: google.maps.TravelMode.DRIVING
-          };
-          directionsService.route(request, function(response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                switch (start) {
-                    case "Europa-Park, Europa-Park-Straße, Rust":
-                        directionsDisplay1.setDirections(response);
-                        break;
-                    case "Altona Fischmarkt, Große Elbstraße, Hamburg":
-                        directionsDisplay2.setDirections(response);
-                        break;
-                  }
-            }
-          });
-        }
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Europa-Park, Europa-Park-Straße, Rust</span><span class="stop-leg">150 mi (241 km), 2 h 47 min driving to 2. Perl, Deutschland</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Perl, Deutschland</span><span class="stop-leg">133 mi (215 km), 2 h 51 min driving to 3. Kölner Dom, Domkloster, Köln</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Kölner Dom, Domkloster, Köln</span><span class="stop-leg">89 mi (143 km), 1 h 53 min driving to 4. Sankt Goarshausen, Deutschland</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Sankt Goarshausen, Deutschland</span><span class="stop-leg">18 mi (30 km), 29 min driving to 5. Drosselgasse 65385, Rüdesheim</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Drosselgasse 65385, Rüdesheim</span><span class="stop-leg">155 mi (249 km), 2 h 47 min driving to 6. Wartburg, Auf der Wartburg, Eisenach</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Wartburg, Auf der Wartburg, Eisenach</span><span class="stop-leg">94 mi (152 km), 2 h 36 min driving to 7. Wernigerode, Deutschland</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Wernigerode, Deutschland</span><span class="stop-leg">145 mi (233 km), 2 h 33 min driving to 8. Roland, Am Markt, Bremen</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Roland, Am Markt, Bremen</span><span class="stop-leg">63 mi (101 km), 1 h 9 min driving to 9. Cuxhaven, Deutschland</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Cuxhaven, Deutschland</span><span class="stop-leg">81 mi (130 km), 2 h 12 min driving to 10. Altona Fischmarkt, Große Elbstraße, Hamburg</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Altona Fischmarkt, Große Elbstraße, Hamburg</span><span class="stop-leg">43 mi (69 km), 55 min driving to 11. Museum Holstentor, Holstentorplatz, Lübeck</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Museum Holstentor, Holstentorplatz, Lübeck</span><span class="stop-leg">168 mi (271 km), 2 h 58 min driving to 12. Nationalpark-Zentrum Königsstuhl, Stubbenkammer, Sassnitz</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">Nationalpark-Zentrum Königsstuhl, Stubbenkammer, Sassnitz</span><span class="stop-via">Reached via the Hagen car park (1.3 mi away)</span><span class="stop-leg">202 mi (325 km), 3 h 35 min driving to 13. East Side Gallery, Mühlenstraße, Berlin</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">East Side Gallery, Mühlenstraße, Berlin</span><span class="stop-leg">29 mi (47 km), 48 min driving to 14. Schloss Sanssouci, Maulbeerallee, Potsdam</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Schloss Sanssouci, Maulbeerallee, Potsdam</span><span class="stop-leg">128 mi (206 km), 2 h 17 min driving to 15. Frauenkirche Dresden, Neumarkt, Dresden</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Frauenkirche Dresden, Neumarkt, Dresden</span><span class="stop-leg">360 mi (579 km), 6 h driving to 16. Schloss Neuschwanstein, Neuschwansteinstraße 20, 87645, Schwangau</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Schloss Neuschwanstein, Neuschwansteinstraße 20, 87645, Schwangau</span><span class="stop-leg">243 mi (390 km), 3 h 53 min driving to 1. Europa-Park, Europa-Park-Straße, Rust</span></span></button></li>
+    </ol>
 
-        google.maps.event.addDomListener(window, 'load', initialize);
-        
-        calcRoute("Europa-Park, Europa-Park-Straße, Rust", "Altona Fischmarkt, Große Elbstraße, Hamburg", ["Perl, Deutschland", "Kölner Dom, Domkloster, Köln", "Sankt Goarshausen, Deutschland", "Drosselgasse 65385, Rüdesheim", "Wartburg, Auf der Wartburg, Eisenach", "Wernigerode, Deutschland", "Roland, Am Markt, Bremen", "Cuxhaven, Deutschland"]);
-
-        calcRoute("Altona Fischmarkt, Große Elbstraße, Hamburg", "Europa-Park, Europa-Park-Straße, Rust", ["Museum Holstentor, Holstentorplatz, Lübeck", "Nationalpark-Zentrum Königsstuhl, Stubbenkammer, Sassnitz", "East Side Gallery, Mühlenstraße, Berlin", "Schloss Sanssouci, Maulbeerallee, Potsdam", "Frauenkirche Dresden, Neumarkt, Dresden", "Schloss Neuschwanstein, Neuschwansteinstraße 20, 87645, Schwangau"]);
-        
-        var infoWindow1 = new google.maps.InfoWindow({ content: "<h3>Europa-Park, Europa-Park-Straße, Rust</h3><strong>km to Schloss Neuschwanstein, Neuschwansteinstraße 20, 87645, Schwangau:</strong> 381<br /><strong>km to Perl, Deutschland:</strong> 243<br /><br />Europa-Park, Europa-Park-Straße, Rust"
-        });
-
-        infoWindows.push(infoWindow1);
-        
-        marker1 = new google.maps.Marker({
-                                position: new google.maps.LatLng(48.2660194, 7.7220076),
-                                options: markerOptions,
-                                title: "Europa-Park, Europa-Park-Straße, Rust"
-                                });
-
-        google.maps.event.addListener(marker1, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow1.open(map, marker1); });
-
-        var infoWindow2 = new google.maps.InfoWindow({ content: "<h3>Perl, Deutschland</h3><strong>km to Europa-Park, Europa-Park-Straße, Rust:</strong> 243<br /><strong>km to Kölner Dom, Domkloster, Köln:</strong> 218<br /><br />Perl, Deutschland"
-        });
-
-        infoWindows.push(infoWindow2);
-        
-        marker2 = new google.maps.Marker({
-                                position: new google.maps.LatLng(49.4730674, 6.3851003),
-                                options: markerOptions,
-                                title: "Perl, Deutschland"
-                                });
-
-        google.maps.event.addListener(marker2, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow2.open(map, marker2); });
-
-        var infoWindow3 = new google.maps.InfoWindow({ content: "<h3>Kölner Dom, Domkloster, Köln</h3><strong>km to Perl, Deutschland:</strong> 218<br /><strong>km to Sankt Goarshausen, Deutschland:</strong> 135<br /><br />Kölner Dom, Domkloster, Köln"
-        });
-
-        infoWindows.push(infoWindow3);
-        
-        marker3 = new google.maps.Marker({
-                                position: new google.maps.LatLng(50.94127839999999, 6.9582814),
-                                options: markerOptions,
-                                title: "Kölner Dom, Domkloster, Köln"
-                                });
-
-        google.maps.event.addListener(marker3, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow3.open(map, marker3); });
-
-        var infoWindow4 = new google.maps.InfoWindow({ content: "<h3>Sankt Goarshausen, Deutschland</h3><strong>km to Kölner Dom, Domkloster, Köln:</strong> 135<br /><strong>km to Drosselgasse 65385, Rüdesheim:</strong> 29<br /><br />Sankt Goarshausen, Deutschland"
-        });
-
-        infoWindows.push(infoWindow4);
-        
-        marker4 = new google.maps.Marker({
-                                position: new google.maps.LatLng(50.154722, 7.715277999999999),
-                                options: markerOptions,
-                                title: "Sankt Goarshausen, Deutschland"
-                                });
-
-        google.maps.event.addListener(marker4, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow4.open(map, marker4); });
-
-        var infoWindow5 = new google.maps.InfoWindow({ content: "<h3>Drosselgasse 65385, Rüdesheim</h3><strong>km to Sankt Goarshausen, Deutschland:</strong> 29<br /><strong>km to Wartburg, Auf der Wartburg, Eisenach:</strong> 250<br /><br />Drosselgasse 65385, Rüdesheim"
-        });
-
-        infoWindows.push(infoWindow5);
-        
-        marker5 = new google.maps.Marker({
-                                position: new google.maps.LatLng(49.9783876, 7.9207746),
-                                options: markerOptions,
-                                title: "Drosselgasse 65385, Rüdesheim"
-                                });
-
-        google.maps.event.addListener(marker5, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow5.open(map, marker5); });
-
-        var infoWindow6 = new google.maps.InfoWindow({ content: "<h3>Wartburg, Auf der Wartburg, Eisenach</h3><strong>km to Drosselgasse 65385, Rüdesheim:</strong> 250<br /><strong>km to Wernigerode, Deutschland:</strong> 140<br /><br />Wartburg, Auf der Wartburg, Eisenach"
-        });
-
-        infoWindows.push(infoWindow6);
-        
-        marker6 = new google.maps.Marker({
-                                position: new google.maps.LatLng(50.9663423, 10.3063424),
-                                options: markerOptions,
-                                title: "Wartburg, Auf der Wartburg, Eisenach"
-                                });
-
-        google.maps.event.addListener(marker6, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow6.open(map, marker6); });
-
-        var infoWindow7 = new google.maps.InfoWindow({ content: "<h3>Wernigerode, Deutschland</h3><strong>km to Wartburg, Auf der Wartburg, Eisenach:</strong> 140<br /><strong>km to Roland, Am Markt, Bremen:</strong> 233<br /><br />Wernigerode, Deutschland"
-        });
-
-        infoWindows.push(infoWindow7);
-        
-        marker7 = new google.maps.Marker({
-                                position: new google.maps.LatLng(51.8368113, 10.7844266),
-                                options: markerOptions,
-                                title: "Wernigerode, Deutschland"
-                                });
-
-        google.maps.event.addListener(marker7, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow7.open(map, marker7); });
-
-        var infoWindow8 = new google.maps.InfoWindow({ content: "<h3>Roland, Am Markt, Bremen</h3><strong>km to Wernigerode, Deutschland:</strong> 233<br /><strong>km to Cuxhaven, Deutschland:</strong> 100<br /><br />Roland, Am Markt, Bremen"
-        });
-
-        infoWindows.push(infoWindow8);
-        
-        marker8 = new google.maps.Marker({
-                                position: new google.maps.LatLng(53.07586569999999, 8.8073005),
-                                options: markerOptions,
-                                title: "Roland, Am Markt, Bremen"
-                                });
-
-        google.maps.event.addListener(marker8, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow8.open(map, marker8); });
-
-        var infoWindow9 = new google.maps.InfoWindow({ content: "<h3>Cuxhaven, Deutschland</h3><strong>km to Roland, Am Markt, Bremen:</strong> 100<br /><strong>km to Altona Fischmarkt, Große Elbstraße, Hamburg:</strong> 119<br /><br />Cuxhaven, Deutschland"
-        });
-
-        infoWindows.push(infoWindow9);
-        
-        marker9 = new google.maps.Marker({
-                                position: new google.maps.LatLng(53.859336, 8.6879057),
-                                options: markerOptions,
-                                title: "Cuxhaven, Deutschland"
-                                });
-
-        google.maps.event.addListener(marker9, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow9.open(map, marker9); });
-
-        var infoWindow10 = new google.maps.InfoWindow({ content: "<h3>Altona Fischmarkt, Große Elbstraße, Hamburg</h3><strong>km to Cuxhaven, Deutschland:</strong> 119<br /><strong>km to Museum Holstentor, Holstentorplatz, Lübeck:</strong> 71<br /><br />Altona Fischmarkt, Große Elbstraße, Hamburg"
-        });
-
-        infoWindows.push(infoWindow10);
-        
-        marker10 = new google.maps.Marker({
-                                position: new google.maps.LatLng(53.5446307, 9.9398495),
-                                options: markerOptions,
-                                title: "Altona Fischmarkt, Große Elbstraße, Hamburg"
-                                });
-
-        google.maps.event.addListener(marker10, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow10.open(map, marker10); });
-
-        var infoWindow11 = new google.maps.InfoWindow({ content: "<h3>Museum Holstentor, Holstentorplatz, Lübeck</h3><strong>km to Altona Fischmarkt, Große Elbstraße, Hamburg:</strong> 71<br /><strong>km to Nationalpark-Zentrum Königsstuhl, Stubbenkammer, Sassnitz:</strong> 271<br /><br />Museum Holstentor, Holstentorplatz, Lübeck"
-        });
-
-        infoWindows.push(infoWindow11);
-        
-        marker11 = new google.maps.Marker({
-                                position: new google.maps.LatLng(53.8662577, 10.6796268),
-                                options: markerOptions,
-                                title: "Museum Holstentor, Holstentorplatz, Lübeck"
-                                });
-
-        google.maps.event.addListener(marker11, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow11.open(map, marker11); });
-
-        var infoWindow12 = new google.maps.InfoWindow({ content: "<h3>Nationalpark-Zentrum Königsstuhl, Stubbenkammer, Sassnitz</h3><strong>km to Museum Holstentor, Holstentorplatz, Lübeck:</strong> 271<br /><strong>km to East Side Gallery, Mühlenstraße, Berlin:</strong> 319<br /><br />Nationalpark-Zentrum Königsstuhl, Stubbenkammer, Sassnitz"
-        });
-
-        infoWindows.push(infoWindow12);
-        
-        marker12 = new google.maps.Marker({
-                                position: new google.maps.LatLng(54.57338, 13.66009),
-                                options: markerOptions,
-                                title: "Nationalpark-Zentrum Königsstuhl, Stubbenkammer, Sassnitz"
-                                });
-
-        google.maps.event.addListener(marker12, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow12.open(map, marker12); });
-
-        var infoWindow13 = new google.maps.InfoWindow({ content: "<h3>East Side Gallery, Mühlenstraße, Berlin</h3><strong>km to Nationalpark-Zentrum Königsstuhl, Stubbenkammer, Sassnitz:</strong> 319<br /><strong>km to Schloss Sanssouci, Maulbeerallee, Potsdam:</strong> 43<br /><br />East Side Gallery, Mühlenstraße, Berlin"
-        });
-
-        infoWindows.push(infoWindow13);
-        
-        marker13 = new google.maps.Marker({
-                                position: new google.maps.LatLng(52.50502239999999, 13.4396953),
-                                options: markerOptions,
-                                title: "East Side Gallery, Mühlenstraße, Berlin"
-                                });
-
-        google.maps.event.addListener(marker13, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow13.open(map, marker13); });
-
-        var infoWindow14 = new google.maps.InfoWindow({ content: "<h3>Schloss Sanssouci, Maulbeerallee, Potsdam</h3><strong>km to East Side Gallery, Mühlenstraße, Berlin:</strong> 43<br /><strong>km to Frauenkirche Dresden, Neumarkt, Dresden:</strong> 205<br /><br />Schloss Sanssouci, Maulbeerallee, Potsdam"
-        });
-
-        infoWindows.push(infoWindow14);
-        
-        marker14 = new google.maps.Marker({
-                                position: new google.maps.LatLng(52.40420169999999, 13.0384999),
-                                options: markerOptions,
-                                title: "Schloss Sanssouci, Maulbeerallee, Potsdam"
-                                });
-
-        google.maps.event.addListener(marker14, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow14.open(map, marker14); });
-
-        var infoWindow15 = new google.maps.InfoWindow({ content: "<h3>Frauenkirche Dresden, Neumarkt, Dresden</h3><strong>km to Schloss Sanssouci, Maulbeerallee, Potsdam:</strong> 205<br /><strong>km to Schloss Neuschwanstein, Neuschwansteinstraße 20, 87645, Schwangau:</strong> 579<br /><br />Frauenkirche Dresden, Neumarkt, Dresden"
-        });
-
-        infoWindows.push(infoWindow15);
-        
-        marker15 = new google.maps.Marker({
-                                position: new google.maps.LatLng(51.0518734, 13.7415216),
-                                options: markerOptions,
-                                title: "Frauenkirche Dresden, Neumarkt, Dresden"
-                                });
-
-        google.maps.event.addListener(marker15, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow15.open(map, marker15); });
-
-        var infoWindow16 = new google.maps.InfoWindow({ content: "<h3>Schloss Neuschwanstein, Neuschwansteinstraße 20, 87645, Schwangau</h3><strong>km to Frauenkirche Dresden, Neumarkt, Dresden:</strong> 579<br /><strong>km to Europa-Park, Europa-Park-Straße, Rust:</strong> 381<br /><br />Schloss Neuschwanstein, Neuschwansteinstraße 20, 87645, Schwangau"
-        });
-
-        infoWindows.push(infoWindow16);
-        
-        marker16 = new google.maps.Marker({
-                                position: new google.maps.LatLng(47.557574, 10.7498004),
-                                options: markerOptions,
-                                title: "Schloss Neuschwanstein, Neuschwansteinstraße 20, 87645, Schwangau"
-                                });
-
-        google.maps.event.addListener(marker16, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow16.open(map, marker16); });
-
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

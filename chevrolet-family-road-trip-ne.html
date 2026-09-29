@@ -1,231 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-  	<meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="The Northeast Family Road Trip by Chevrolet.">
-    <meta name="author" content="Chevrolet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The Northeast Family Road Trip by Chevrolet (restored map)</title>
+<meta name="description" content="The Northeast Family Road Trip by Chevrolet: 10 stops, 1,492 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="chevrolet-family-road-trip-ne.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"chevrolet-family-road-trip-ne","profile":"car","assets":"assets/","data":"data/chevrolet-family-road-trip-ne/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The Northeast Family Road Trip by Chevrolet</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The Northeast Family Road Trip by Chevrolet</strong>
+      <span class="meta">10 stops · 1,492 mi · 32.4 hours driving</span><br>
+      <a href="chevrolet-family-road-trip-ne.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>10<small>one way</small></dd></div>
+      <div><dt>Distance</dt><dd>1,492 mi<small>2,401 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>32.4 hours<small>1.3 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>9<small>all by road</small></dd></div>
+    </dl>
     
-    <title>The Northeast Family Road Trip by Chevrolet</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var routes_list = [];
-		
-		var marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10;
-		var infoWindows = [];
-		
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var routeMarkerOptions = {visible: false, zIndex: 0};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: routeMarkerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+    
 
-		function initialize() {
-		  var center = new google.maps.LatLng(40.727675, -73.985174);
-		  var mapOptions = {
-			zoom: 7,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  for (i=0; i<routes_list.length; i++) {
-		  	routes_list[i].setMap(map);
-		  }
-		  marker1.setMap(map); marker2.setMap(map); marker3.setMap(map); marker4.setMap(map); marker5.setMap(map); marker6.setMap(map); marker7.setMap(map); marker8.setMap(map); marker9.setMap(map); marker10.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/chevrolet-family-road-trip-ne/route.gpx" download>GPX<small>145 KB</small></a><a class="btn" href="data/chevrolet-family-road-trip-ne/route.kml" download>KML<small>357 KB</small></a><a class="btn" href="data/chevrolet-family-road-trip-ne/route.geojson" download>GeoJSON<small>99 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.345844%2C-71.098782&amp;destination=41.475015%2C-71.307233&amp;waypoints=42.523651%2C-70.891092%7C43.623104%2C-70.208112%7C39.950743%2C-75.150375%7C37.270756%2C-76.705580%7C38.931927%2C-77.052440%7C38.935113%2C-74.906005%7C40.850288%2C-73.878611%7C41.427166%2C-72.428672&amp;travelmode=driving" rel="noopener" target="_blank">Open</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=42.345844%2C-71.098782&amp;destination=41.475015%2C-71.307233&amp;waypoint=42.523651%2C-70.891092&amp;waypoint=43.623104%2C-70.208112&amp;waypoint=39.950743%2C-75.150375&amp;waypoint=37.270756%2C-76.705580&amp;waypoint=38.931927%2C-77.052440&amp;waypoint=38.935113%2C-74.906005&amp;waypoint=40.850288%2C-73.878611&amp;waypoint=41.427166%2C-72.428672&amp;mode=driving" rel="noopener" target="_blank">Open</a></p>
 
-		function calcRoute(start, end, routes) {
-		  
-		  var directionsDisplay = new google.maps.DirectionsRenderer(directionsDisplayOptions);
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Fenway Park</span><span class="stop-leg">18 mi (29 km), 33 min driving to 2. Salem Witch Museum</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Salem Witch Museum</span><span class="stop-leg">97 mi (157 km), 2 h 3 min driving to 3. Portland Head Light and Fort Williams Park</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Portland Head Light and Fort Williams Park</span><span class="stop-leg">407 mi (655 km), 8 h 31 min driving to 4. Liberty Bell</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Liberty Bell</span><span class="stop-leg">291 mi (468 km), 5 h 55 min driving to 5. Colonial Williamsburg</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Colonial Williamsburg</span><span class="stop-leg">155 mi (250 km), 3 h 5 min driving to 6. National Zoo</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">National Zoo</span><span class="stop-leg">185 mi (298 km), 4 h 11 min driving to 7. Cape May</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Cape May</span><span class="stop-leg">167 mi (269 km), 3 h 32 min driving to 8. The Bronx Zoo</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">The Bronx Zoo</span><span class="stop-leg">98 mi (158 km), 2 h 36 min driving to 9. Gillette Castle State Park</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Gillette Castle State Park</span><span class="stop-leg">73 mi (118 km), 1 h 54 min driving to 10. Newport Mansions</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Newport Mansions</span><span class="stop-leg">Final stop</span></span></button></li>
+    </ol>
 
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				directionsDisplay.setDirections(response);		
-			}
-		  });
-
-		  routes_list.push(directionsDisplay);
-		}
-
-		function createRoutes(route) {
-			// Google's free map API is limited to 10 waypoints so need to break into batches
-			route.push(route[0]);
-			var subset = 0;
-			while (subset < route.length) {
-				var waypointSubset = route.slice(subset, subset + 10);
-
-				var startPoint = waypointSubset[0];
-				var midPoints = waypointSubset.slice(1, waypointSubset.length - 1);
-				var endPoint = waypointSubset[waypointSubset.length - 1];
-
-				calcRoute(startPoint, endPoint, midPoints);
-
-				subset += 9;
-			}
-		}
-
-		optimal_route = ['4 Yawkey Way, Boston, MA 02215', '19 1/2 Washington Square, Salem, MA 01970', '12 Captain Strout Cir, Cape Elizabeth, ME 04107 ', 'N 6th St & Market St, Philadelphia, PA 19106', '101 S Henry St, Williamsburg, VA 23185', '3001 Connecticut Ave NW, Washington, DC 20008', 'Cape May, New Jersey 08204', '2300 Southern Blvd, Bronx, NY 10460', ' 67 River Rd, East Haddam, CT 06423', '424 Bellevue Ave, Newport, RI 02840']
-		
-		createRoutes(optimal_route);
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-		
-        var infoWindow1 = new google.maps.InfoWindow({ content: "<h3>Fenway Park<br />4 Yawkey Way, Boston, MA 02215</h3>"});
-
-        infoWindows.push(infoWindow1);
-        
-        marker1 = new google.maps.Marker({
-                                position: new google.maps.LatLng(42.34584359999999, -71.09878189999999),
-                                options: markerOptions,
-                                title: "Fenway Park"
-                                });
-
-        google.maps.event.addListener(marker1, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow1.open(map, marker1); });
-
-        var infoWindow2 = new google.maps.InfoWindow({ content: "<h3>Salem Witch Museum<br />19 1/2 Washington Square, Salem, MA 01970</h3>"});
-
-        infoWindows.push(infoWindow2);
-        
-        marker2 = new google.maps.Marker({
-                                position: new google.maps.LatLng(42.523651, -70.8910922),
-                                options: markerOptions,
-                                title: "Salem Witch Museum"
-                                });
-
-        google.maps.event.addListener(marker2, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow2.open(map, marker2); });
-
-        var infoWindow3 = new google.maps.InfoWindow({ content: "<h3>Portland Head Light and Fort Williams Park<br />12 Captain Strout Cir, Cape Elizabeth, ME 04107 </h3>"});
-
-        infoWindows.push(infoWindow3);
-        
-        marker3 = new google.maps.Marker({
-                                position: new google.maps.LatLng(43.623104, -70.2081123),
-                                options: markerOptions,
-                                title: "Portland Head Light and Fort Williams Park"
-                                });
-
-        google.maps.event.addListener(marker3, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow3.open(map, marker3); });
-
-        var infoWindow4 = new google.maps.InfoWindow({ content: "<h3>Liberty Bell<br />N 6th St & Market St, Philadelphia, PA 19106</h3>"});
-
-        infoWindows.push(infoWindow4);
-        
-        marker4 = new google.maps.Marker({
-                                position: new google.maps.LatLng(39.9507426, -75.15037459999999),
-                                options: markerOptions,
-                                title: "Liberty Bell"
-                                });
-
-        google.maps.event.addListener(marker4, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow4.open(map, marker4); });
-
-        var infoWindow5 = new google.maps.InfoWindow({ content: "<h3>Colonial Williamsburg<br />101 S Henry St, Williamsburg, VA 23185</h3>"});
-
-        infoWindows.push(infoWindow5);
-        
-        marker5 = new google.maps.Marker({
-                                position: new google.maps.LatLng(37.2707562, -76.7055796),
-                                options: markerOptions,
-                                title: "Colonial Williamsburg"
-                                });
-
-        google.maps.event.addListener(marker5, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow5.open(map, marker5); });
-
-        var infoWindow6 = new google.maps.InfoWindow({ content: "<h3>National Zoo<br />3001 Connecticut Ave NW, Washington, DC 20008</h3>"});
-
-        infoWindows.push(infoWindow6);
-        
-        marker6 = new google.maps.Marker({
-                                position: new google.maps.LatLng(38.9319273, -77.0524404),
-                                options: markerOptions,
-                                title: "National Zoo"
-                                });
-
-        google.maps.event.addListener(marker6, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow6.open(map, marker6); });
-
-        var infoWindow7 = new google.maps.InfoWindow({ content: "<h3>Cape May<br />Cape May, New Jersey 08204</h3>"});
-
-        infoWindows.push(infoWindow7);
-        
-        marker7 = new google.maps.Marker({
-                                position: new google.maps.LatLng(38.9351125, -74.90600529999999),
-                                options: markerOptions,
-                                title: "Cape May"
-                                });
-
-        google.maps.event.addListener(marker7, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow7.open(map, marker7); });
-
-        var infoWindow8 = new google.maps.InfoWindow({ content: "<h3>The Bronx Zoo<br />2300 Southern Blvd, Bronx, NY 10460</h3>"});
-
-        infoWindows.push(infoWindow8);
-        
-        marker8 = new google.maps.Marker({
-                                position: new google.maps.LatLng(40.8502883, -73.8786113),
-                                options: markerOptions,
-                                title: "The Bronx Zoo"
-                                });
-
-        google.maps.event.addListener(marker8, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow8.open(map, marker8); });
-
-        var infoWindow9 = new google.maps.InfoWindow({ content: "<h3>Gillette Castle State Park<br />67 River Rd, East Haddam, CT 06423</h3>"});
-
-        infoWindows.push(infoWindow9);
-        
-        marker9 = new google.maps.Marker({
-                                position: new google.maps.LatLng(41.4271657, -72.4286718),
-                                options: markerOptions,
-                                title: "Gillette Castle State Park"
-                                });
-
-        google.maps.event.addListener(marker9, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow9.open(map, marker9); });
-
-        var infoWindow10 = new google.maps.InfoWindow({ content: "<h3>Newport Mansions<br />424 Bellevue Ave, Newport, RI 02840</h3>"});
-
-        infoWindows.push(infoWindow10);
-        
-        marker10 = new google.maps.Marker({
-                                position: new google.maps.LatLng(41.4750152, -71.3072335),
-                                options: markerOptions,
-                                title: "Newport Mansions"
-                                });
-
-        google.maps.event.addListener(marker10, "mouseover", function() { for (var i = 0; i < infoWindows.length; i++) { infoWindows[i].close(); }; infoWindow10.open(map, marker10); });
-
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-    <!-- <a href="https://www.chevrolet.com/"><img src="images/chevrolet-logo.png" width="400px"  style="position: absolute; bottom: 35px; left: 7px;" /></a> -->
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

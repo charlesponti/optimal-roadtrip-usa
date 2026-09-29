@@ -1,108 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Randy Olson uses machine learning to find the optimal road trip across the world">
-    <meta name="author" content="Randal S. Olson">
-
-    <title>The optimal road trip across the U.S.A. according to machine learning</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
-    </style>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The restored optimal road trip maps</title>
+<meta name="description" content="Every interactive optimal road trip map from 2015 to 2018, restored in 2026 on OpenStreetMap data with no Google Maps dependency.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Optimized road trips</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1>Optimal road trips across the world<br/><br/>according to machine learning</h1>
-                <br /><br />
-                <p class="lead">Use the links below to look up the different kinds of road trips.</p>
-                <br />
-				<h3><a href="major-landmarks.html">Major U.S. landmarks</a></h3>
-				<br />
-				<h3><a href="popular-cities.html">Popular U.S. cities</a></h3>
-				<br />
-				<h3><a href="mlb-ballparks.html">All 30 MLB ballparks</a></h3>
-				<br />
-				<h3><a href="pure-michigan.html">Pure Michigan</a></h3>
-				<br />
-				<h3><a href="nyc-walking-tour.html">New York City walking tour</a></h3>
-				<br />
-				<h3><a href="philly-walking-tour.html">Philadelphia walking tour</a></h3>
-				<br />
-				<h3><a href="canada-trip.html">Canada</a></h3>
-				<br />
-				<h3><a href="canada-trip-landmarks.html">Major Canadian landmarks</a></h3>
-				<br />
-				<h3><a href="europe-trip.html">Europe</a></h3>
-				<br />
-				<h3><a href="europe-trip2.html">Europe (again)</a></h3>
-				<br />
-				<h3><a href="south-america-trip.html">South America</a></h3>
-				<br />
-				<h3><a href="major-landmarks-india.html">Major Indian landmarks</a></h3>
-				<br />
-				<br />
-				<h3><a href="france-trip.html">France</a></h3>
-				<br />
-				<br />
-				<h3><a href="optimized-us-national-parks-trip-47-parks.html">47 U.S. National Parks</a></h3>
-				<br />
-            </div>
-            <h1></h1>
-        </div>
-        <!-- /.row -->
-
+<body class="ix">
+<div class="ix-page">
+  <header class="ix-head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The restored optimal road trip maps</h1>
+    <p class="ix-lede">Between 2015 and 2018 I published a series of road trips with the stop order optimized by computer, each with an interactive map of the route. Every one of those maps works again.</p>
+    <div class="ix-intro">
+      <p><strong>Why they broke.</strong> The original pages asked the Google Maps JavaScript API to draw each route live in your browser. Google later required an API key and billing for every request, so the maps loaded without their routes.</p>
+      <p><strong>How they were restored.</strong> In 2026 every stop was re-verified against Wikidata, Wikipedia and other sources. The routes were recomputed on OpenStreetMap data with OSRM, keeping the stops and their order exactly as published. The maps, fonts and route files are served from this site, with no calls to Google or any other outside service. Road data has changed since 2015, so distances can differ from the original posts.</p>
+      <p>Each map has the stop list, totals, GPX, KML and GeoJSON downloads, and links that open the route in Google Maps or Apple Maps.</p>
     </div>
-    <!-- /.container -->
-
+    <p class="ix-summary">30 maps, 1,052 stops.</p>
+    <nav class="ix-nav" aria-label="Sections"><a href="#posts">From the blog posts</a><a href="#international">Beyond the United States</a><a href="#themed">Themed U.S. trips</a><a href="#chevrolet">Chevrolet family road trips</a></nav>
+  </header>
+  <main class="ix-main">
+    
+    <section class="ix-group" id="posts">
+      <h2>From the blog posts <span class="ix-count">8</span></h2>
+      <p class="ix-blurb">The maps that went with the original posts on randalolson.com.</p>
+      <ul class="ix-list">
+      <li class="ix-item">
+        <a class="ix-link" href="major-landmarks.html">U.S. landmarks</a>
+        <span class="ix-title">The optimal road trip across the U.S. according to machine learning</span>
+        <span class="ix-meta">51 stops · 14,033 mi · 283 hours driving · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="popular-cities.html">U.S. popular cities</a>
+        <span class="ix-title">The optimal road trip across the USA according to machine learning</span>
+        <span class="ix-meta">47 stops · 12,245 mi · 235 hours driving · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="europe-trip.html">Europe</a>
+        <span class="ix-title">An optimal road trip across Europe according to machine learning</span>
+        <span class="ix-meta">45 stops · 14,184 mi · 294 hours driving · 4 flight or ferry legs · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="south-america-trip.html">South America</a>
+        <span class="ix-title">An optimal road trip across South America according to machine learning</span>
+        <span class="ix-meta">36 stops · 18,222 mi · 443 hours driving · 2 flight or ferry legs · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="pure-michigan.html">Pure Michigan</a>
+        <span class="ix-title">Pure Michigan road trip, optimized</span>
+        <span class="ix-meta">43 stops · 2,117 mi · 47.2 hours driving · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="nyc-walking-tour.html">New York City walking tour</a>
+        <span class="ix-title">An optimized walking tour around NYC</span>
+        <span class="ix-meta">27 stops · 14 mi · 4.6 hours walking · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="philly-walking-tour.html">Philadelphia walking tour</a>
+        <span class="ix-title">An optimized walking tour around Philadelphia</span>
+        <span class="ix-meta">25 stops · 14 mi · 4.4 hours walking · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="optimized-us-national-parks-trip-47-parks.html">U.S. national parks</a>
+        <span class="ix-title">The optimal road trip across the U.S. stopping at the U.S. National Parks</span>
+        <span class="ix-meta">47 stops · 15,315 mi · 319 hours driving · round trip</span>
+        
+      </li>
+      </ul>
+    </section>
+    <section class="ix-group" id="international">
+      <h2>Beyond the United States <span class="ix-count">10</span></h2>
+      <p class="ix-blurb">Canada, Europe, India and a London walking tour.</p>
+      <ul class="ix-list">
+      <li class="ix-item">
+        <a class="ix-link" href="canada-trip-landmarks.html">Canada: landmarks</a>
+        <span class="ix-title">An optimal road trip across Canada according to machine learning</span>
+        <span class="ix-meta">25 stops · 10,560 mi · 244 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="canada-trip.html">Canada: towns</a>
+        <span class="ix-title">An optimal road trip across Canada according to machine learning</span>
+        <span class="ix-meta">29 stops · 7,942 mi · 178 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="c-london-walking-tour.html">Central London walking tour</a>
+        <span class="ix-title">Optimized walking tour of Central London top spots</span>
+        <span class="ix-meta">25 stops · 20 mi · 6.6 hours walking · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="europe-trip-dk.html">Europe (second copy)</a>
+        <span class="ix-title">An optimal road trip across Europe according to machine learning</span>
+        <span class="ix-meta">45 stops · 14,184 mi · 294 hours driving · 4 flight or ferry legs · round trip</span>
+        <span class="ix-note">The same 45 stops as the Europe map, published at a separate URL.</span>
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="europe-trip2.html">Europe: 70-stop grand tour</a>
+        <span class="ix-title">An optimal road trip across Europe according to machine learning</span>
+        <span class="ix-meta">70 stops · 16,878 mi · 351 hours driving · 2 flight or ferry legs · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="europe-trip3.html">Europe: landmarks and heritage sites</a>
+        <span class="ix-title">The optimal trip</span>
+        <span class="ix-meta">55 stops · 17,067 mi · 371 hours driving · 4 flight or ferry legs · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="france-trip.html">France</a>
+        <span class="ix-title">An optimal road trip across France according to machine learning</span>
+        <span class="ix-meta">32 stops · 3,528 mi · 71.3 hours driving · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="travelbook-germany-trip.html">Germany for TRAVELBOOK.de</a>
+        <span class="ix-title">TRAVELBOOK.de - An optimized road trip across Germany according to machine learning</span>
+        <span class="ix-meta">50 stops · 3,213 mi · 67 hours driving · 3 flight or ferry legs · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="germany-road-trip.html">Germany: Die Uber Deutsch Road Trip</a>
+        <span class="ix-title">Die Uber Deutsch Road Trip</span>
+        <span class="ix-meta">16 stops · 2,101 mi · 39.7 hours driving · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="major-landmarks-india.html">India landmarks</a>
+        <span class="ix-title">The optimal road trip across India according to machine learning</span>
+        <span class="ix-meta">36 stops · 8,646 mi · 183 hours driving · round trip</span>
+        
+      </li>
+      </ul>
+    </section>
+    <section class="ix-group" id="themed">
+      <h2>Themed U.S. trips <span class="ix-count">6</span></h2>
+      <p class="ix-blurb">Ballparks, college football, science museums, towns and lakes.</p>
+      <ul class="ix-list">
+      <li class="ix-item">
+        <a class="ix-link" href="optimized-cfb-trip-v1.html">College football, 2018 season</a>
+        <span class="ix-title">Optimized college football trip for the 2018 season</span>
+        <span class="ix-meta">51 stops · 47,460 mi · 874 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="major-lakes-TX.html">Large lakes in Texas</a>
+        <span class="ix-title">The optimal road trip to Large Lakes in Texas according to machine learning</span>
+        <span class="ix-meta">28 stops · 2,472 mi · 55.5 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="mlb-ballparks.html">MLB ballparks</a>
+        <span class="ix-title">An optimal route between all MLB ballparks</span>
+        <span class="ix-meta">30 stops · 10,618 mi · 198 hours driving · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="best-towns.html">The 2015 best towns</a>
+        <span class="ix-title">The Ultimate 2015 Best Towns Road Trip</span>
+        <span class="ix-meta">63 stops · 14,590 mi · 291 hours driving · 2 flight or ferry legs · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="science-road-trip.html">The Ultimate Geek Road Trip</a>
+        
+        <span class="ix-meta">27 stops · 12,218 mi · 234 hours driving · round trip</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="thrillist-us-beautiful-places.html">Thrillist&#39;s most beautiful places in the USA</a>
+        <span class="ix-title">Thrillist - An optimized road trip to the most beautiful places in the USA</span>
+        <span class="ix-meta">48 stops · 14,869 mi · 306 hours driving · round trip</span>
+        
+      </li>
+      </ul>
+    </section>
+    <section class="ix-group" id="chevrolet">
+      <h2>Chevrolet family road trips <span class="ix-count">6</span></h2>
+      <p class="ix-blurb">A national trip and five regional ones, made for Chevrolet.</p>
+      <ul class="ix-list">
+      <li class="ix-item">
+        <a class="ix-link" href="chevrolet-family-road-trip-national.html">National (the American Family Road Trip)</a>
+        
+        <span class="ix-meta">48 stops · 13,261 mi · 261 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="chevrolet-family-road-trip-se.html">Florida</a>
+        
+        <span class="ix-meta">11 stops · 708 mi · 15.3 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="chevrolet-family-road-trip-nc.html">Midwest</a>
+        
+        <span class="ix-meta">10 stops · 1,961 mi · 39.3 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="chevrolet-family-road-trip-ne.html">Northeast</a>
+        
+        <span class="ix-meta">10 stops · 1,492 mi · 32.4 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="chevrolet-family-road-trip-texas.html">Texas</a>
+        
+        <span class="ix-meta">10 stops · 875 mi · 17.4 hours driving · one way</span>
+        
+      </li>
+      <li class="ix-item">
+        <a class="ix-link" href="chevrolet-family-road-trip-west.html">West Coast</a>
+        
+        <span class="ix-meta">12 stops · 2,850 mi · 60 hours driving · one way</span>
+        
+      </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="ix-foot">
+    <p>Map and route data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the Open Database License (ODbL). Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+    <p>Original code MIT, content CC BY 4.0, by Randal S. Olson. Built 2026-09-27, OSM snapshot 2026-09-25.</p>
+  </footer>
+</div>
 </body>
-
 </html>

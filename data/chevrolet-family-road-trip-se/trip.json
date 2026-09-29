@@ -1,0 +1,168 @@
+{
+  "id": "chevrolet-family-road-trip-se",
+  "title": "The Florida Family Road Trip by Chevrolet",
+  "legacy_url": "https://rhiever.github.io/optimal-roadtrip-usa/chevrolet-family-road-trip-se.html",
+  "post_url": null,
+  "profile": "car",
+  "closed_loop": false,
+  "quoted_total": null,
+  "stops": [
+    {
+      "order": 0,
+      "name": "Disney World",
+      "query": "1486 Buena Vista Dr, Lake Buena Vista, FL 32830",
+      "lat": 28.3703458,
+      "lon": -81.522086,
+      "drive_lat": 28.3703458,
+      "drive_lon": -81.522086,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 1,
+      "name": "Dinosaur World",
+      "query": "5145 Harvey Tew Rd, Plant City, FL 33565",
+      "lat": 28.028151,
+      "lon": -82.189472,
+      "drive_lat": 28.028151,
+      "drive_lon": -82.189472,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 2,
+      "name": "Columbia Restaurant",
+      "query": "1241 Gulf Blvd, Clearwater, FL 33767",
+      "lat": 27.9525864,
+      "lon": -82.82909719999999,
+      "drive_lat": 27.9525864,
+      "drive_lon": -82.82909719999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 3,
+      "name": "Edison and Ford Winter Estates",
+      "query": "2350 McGregor Blvd, Ft. Myers, FL 33901",
+      "lat": 26.6343116,
+      "lon": -81.87927119999999,
+      "drive_lat": 26.6343116,
+      "drive_lon": -81.87927119999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 4,
+      "name": "Audubon Corkscrew Swamp Sanctuary (Everglades Ecosystem)",
+      "query": "375 Sanctuary Rd W, Naples, FL 34120",
+      "lat": 26.375166,
+      "lon": -81.60340099999999,
+      "drive_lat": 26.375166,
+      "drive_lon": -81.60340099999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 5,
+      "name": "Vizcaya Museum and Gardens",
+      "query": "3251 S Miami Ave, Miami, FL 33129",
+      "lat": 25.7444524,
+      "lon": -80.21040649999999,
+      "drive_lat": 25.7444524,
+      "drive_lon": -80.21040649999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 6,
+      "name": "Little Havana",
+      "query": "Calle Ocho Walk of Fame, SW 8th St, Miami, FL 33135",
+      "lat": 25.7656481,
+      "lon": -80.2188956,
+      "drive_lat": 25.7656481,
+      "drive_lon": -80.2188956,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 7,
+      "name": "Butterfly World",
+      "query": "Butterfly World, West Sample Road, Coconut Creek, FL",
+      "lat": 26.2685822,
+      "lon": -80.17165709999999,
+      "drive_lat": 26.2685822,
+      "drive_lon": -80.17165709999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 8,
+      "name": "McCarthy's Wildlife Sanctuary",
+      "query": "12943 61st St N, West Palm Beach, FL 33412",
+      "lat": 26.7675426,
+      "lon": -80.2458322,
+      "drive_lat": 26.7675426,
+      "drive_lon": -80.2458322,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 9,
+      "name": "Kennedy Space Center",
+      "query": "28.52330, -80.68190",
+      "lat": 28.5228717,
+      "lon": -80.6811361,
+      "drive_lat": 28.5228717,
+      "drive_lon": -80.6811361,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 10,
+      "name": "Daytona Beach Boardwalk",
+      "query": "12 N Ocean Ave, Daytona Beach, FL 32118",
+      "lat": 29.23296819999999,
+      "lon": -81.0100071,
+      "drive_lat": 29.23296819999999,
+      "drive_lon": -81.0100071,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    }
+  ],
+  "totals": {
+    "distance_m": 1139053.0,
+    "duration_s": 55255.8,
+    "flight_distance_m": 0,
+    "flight_legs": 0
+  },
+  "comparison": null,
+  "warnings": [],
+  "build": {
+    "osm_snapshot": "2026-09-25T20:24:36Z",
+    "osrm_version": "v26.9.0",
+    "built_at": "2026-09-27T22:16:44Z"
+  },
+  "override_note": null,
+  "exports": {
+    "gpx": "route.gpx",
+    "kml": "route.kml",
+    "google_maps": [
+      "https://www.google.com/maps/dir/?api=1&origin=28.370346%2C-81.522086&destination=29.232968%2C-81.010007&waypoints=28.028151%2C-82.189472%7C27.952586%2C-82.829097%7C26.634312%2C-81.879271%7C26.375166%2C-81.603401%7C25.744452%2C-80.210406%7C25.765648%2C-80.218896%7C26.268582%2C-80.171657%7C26.767543%2C-80.245832%7C28.522872%2C-80.681136&travelmode=driving"
+    ],
+    "apple_maps": [
+      "https://maps.apple.com/directions?source=28.370346%2C-81.522086&destination=29.232968%2C-81.010007&waypoint=28.028151%2C-82.189472&waypoint=27.952586%2C-82.829097&waypoint=26.634312%2C-81.879271&waypoint=26.375166%2C-81.603401&waypoint=25.744452%2C-80.210406&waypoint=25.765648%2C-80.218896&waypoint=26.268582%2C-80.171657&waypoint=26.767543%2C-80.245832&waypoint=28.522872%2C-80.681136&mode=driving"
+    ],
+    "geojson": "route.geojson"
+  }
+}

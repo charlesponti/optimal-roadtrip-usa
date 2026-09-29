@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="road-trips-pipeline" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>An optimized walking tour around Philadelphia</name>
+    <desc>An optimized walking tour around Philadelphia. Route data © OpenStreetMap contributors, ODbL 1.0.</desc>
+    <copyright author="OpenStreetMap contributors">
+      <license>https://opendatacommons.org/licenses/odbl/1-0/</license>
+    </copyright>
+    <link href="https://www.randalolson.com/2015/03/25/optimized-walking-tours-of-new-york-city-and-philadelphia/">
+      <text>An optimized walking tour around Philadelphia</text>
+    </link>
+  </metadata>
+  <wpt lat="39.989444" lon="-75.202778">
+    <name>Fairmount Park</name>
+    <desc>verified 2026-09-26: park (large area); enwiki point in East/West Fairmount Park</desc>
+  </wpt>
+  <wpt lat="39.979500" lon="-75.209200">
+    <name>Please Touch Museum</name>
+    <desc>verified 2026-09-26: museum, Memorial Hall</desc>
+  </wpt>
+  <wpt lat="39.972500" lon="-75.196667">
+    <name>Philadelphia Zoo</name>
+    <desc>verified 2026-09-26: zoo, West Girard Avenue</desc>
+  </wpt>
+  <wpt lat="39.966000" lon="-75.181000">
+    <name>Philadelphia Museum of Art</name>
+    <desc>verified 2026-09-26: museum</desc>
+  </wpt>
+  <wpt lat="39.964900" lon="-75.180200">
+    <name>Rocky Steps</name>
+    <desc>verified 2026-09-26: east entrance steps of the museum</desc>
+  </wpt>
+  <wpt lat="39.968300" lon="-75.172500">
+    <name>Eastern State Penitentiary</name>
+    <desc>verified 2026-09-26: museum, Fairmount Avenue</desc>
+  </wpt>
+  <wpt lat="39.962000" lon="-75.174000">
+    <name>Rodin Museum</name>
+    <desc>verified 2026-09-26: museum</desc>
+  </wpt>
+  <wpt lat="39.960500" lon="-75.172700">
+    <name>Barnes Foundation</name>
+    <desc>verified 2026-09-26: museum, 2025 Benjamin Franklin Parkway</desc>
+  </wpt>
+  <wpt lat="39.958056" lon="-75.173611">
+    <name>The Franklin Institute</name>
+    <desc>verified 2026-09-26: museum, North 20th Street; Nominatim had a false match in Columbus, Ohio</desc>
+  </wpt>
+  <wpt lat="39.953333" lon="-75.176667">
+    <name>Mutter Museum</name>
+    <desc>verified 2026-09-26: museum, South 22nd Street</desc>
+  </wpt>
+  <wpt lat="39.949000" lon="-75.191100">
+    <name>Penn Museum</name>
+    <desc>verified 2026-09-26: museum, 3260 South Street</desc>
+  </wpt>
+  <wpt lat="39.951944" lon="-75.193611">
+    <name>University of Pennsylvania</name>
+    <desc>verified 2026-09-26: campus</desc>
+  </wpt>
+  <wpt lat="39.949500" lon="-75.171900">
+    <name>Rittenhouse Square</name>
+    <desc>verified 2026-09-26: park; Nominatim had the neighbourhood point 165 m east</desc>
+  </wpt>
+  <wpt lat="39.957500" lon="-75.168600">
+    <name>Cathedral Basilica of Saints Peter &amp; Paul</name>
+    <desc>verified 2026-09-26: cathedral, Race Street; was blank</desc>
+  </wpt>
+  <wpt lat="39.955000" lon="-75.163889">
+    <name>Pennsylvania Academy Of The Fine Arts</name>
+    <desc>verified 2026-09-26: museum, North Broad Street</desc>
+  </wpt>
+  <wpt lat="39.953611" lon="-75.163056">
+    <name>Masonic Temple</name>
+    <desc>verified 2026-09-26: temple, North Broad Street</desc>
+  </wpt>
+  <wpt lat="39.952394" lon="-75.163597">
+    <name>Philadelphia City Hall</name>
+    <desc>verified 2026-09-26: city hall</desc>
+  </wpt>
+  <wpt lat="39.953395" lon="-75.159008">
+    <name>51 N 12th St</name>
+    <desc>verified 2026-09-26: 51 N 12th St is the Reading Terminal Market (named in the blog post)</desc>
+  </wpt>
+  <wpt lat="39.953600" lon="-75.149100">
+    <name>National Constitution Center</name>
+    <desc>verified 2026-09-26: museum, 525 Arch Street</desc>
+  </wpt>
+  <wpt lat="39.953296" lon="-75.142806">
+    <name>Fireman's Hall Museum</name>
+    <desc>verified 2026-09-26: museum, North 2nd Street</desc>
+  </wpt>
+  <wpt lat="39.952800" lon="-75.142500">
+    <name>Elfreth's Alley</name>
+    <desc>verified 2026-09-26: street</desc>
+  </wpt>
+  <wpt lat="39.950833" lon="-75.143889">
+    <name>Christ Church</name>
+    <desc>verified 2026-09-26: church</desc>
+  </wpt>
+  <wpt lat="39.950288" lon="-75.148593">
+    <name>National Museum of American Jewish History</name>
+    <desc>verified 2026-09-26: museum on Independence Mall</desc>
+  </wpt>
+  <wpt lat="39.948889" lon="-75.150000">
+    <name>Independence National Historical Park</name>
+    <desc>verified 2026-09-26: national historical park (large area): display at Independence Hall, its central landmark; Nominatim point was 300 m north on Independence Mall</desc>
+  </wpt>
+  <wpt lat="39.942831" lon="-75.159324">
+    <name>Philadelphia's Magic Gardens</name>
+    <desc>verified 2026-09-26: museum, South Street</desc>
+  </wpt>
+  <rte>
+    <name>An optimized walking tour around Philadelphia route</name>
+    <rtept lat="39.989444" lon="-75.202778">
+      <name>Fairmount Park</name>
+    </rtept>
+    <rtept lat="39.979500" lon="-75.209200">
+      <name>Please Touch Museum</name>
+    </rtept>
+    <rtept lat="39.972500" lon="-75.196667">
+      <name>Philadelphia Zoo</name>
+    </rtept>
+    <rtept lat="39.966000" lon="-75.181000">
+      <name>Philadelphia Museum of Art</name>
+    </rtept>
+    <rtept lat="39.964900" lon="-75.180200">
+      <name>Rocky Steps</name>
+    </rtept>
+    <rtept lat="39.968300" lon="-75.172500">
+      <name>Eastern State Penitentiary</name>
+    </rtept>
+    <rtept lat="39.962000" lon="-75.174000">
+      <name>Rodin Museum</name>
+    </rtept>
+    <rtept lat="39.960500" lon="-75.172700">
+      <name>Barnes Foundation</name>
+    </rtept>
+    <rtept lat="39.958056" lon="-75.173611">
+      <name>The Franklin Institute</name>
+    </rtept>
+    <rtept lat="39.953333" lon="-75.176667">
+      <name>Mutter Museum</name>
+    </rtept>
+    <rtept lat="39.949000" lon="-75.191100">
+      <name>Penn Museum</name>
+    </rtept>
+    <rtept lat="39.951944" lon="-75.193611">
+      <name>University of Pennsylvania</name>
+    </rtept>
+    <rtept lat="39.949500" lon="-75.171900">
+      <name>Rittenhouse Square</name>
+    </rtept>
+    <rtept lat="39.957500" lon="-75.168600">
+      <name>Cathedral Basilica of Saints Peter &amp; Paul</name>
+    </rtept>
+    <rtept lat="39.955000" lon="-75.163889">
+      <name>Pennsylvania Academy Of The Fine Arts</name>
+    </rtept>
+    <rtept lat="39.953611" lon="-75.163056">
+      <name>Masonic Temple</name>
+    </rtept>
+    <rtept lat="39.952394" lon="-75.163597">
+      <name>Philadelphia City Hall</name>
+    </rtept>
+    <rtept lat="39.953395" lon="-75.159008">
+      <name>51 N 12th St</name>
+    </rtept>
+    <rtept lat="39.953600" lon="-75.149100">
+      <name>National Constitution Center</name>
+    </rtept>
+    <rtept lat="39.953296" lon="-75.142806">
+      <name>Fireman's Hall Museum</name>
+    </rtept>
+    <rtept lat="39.952800" lon="-75.142500">
+      <name>Elfreth's Alley</name>
+    </rtept>
+    <rtept lat="39.950833" lon="-75.143889">
+      <name>Christ Church</name>
+    </rtept>
+    <rtept lat="39.950288" lon="-75.148593">
+      <name>National Museum of American Jewish History</name>
+    </rtept>
+    <rtept lat="39.948889" lon="-75.150000">
+      <name>Independence National Historical Park</name>
+    </rtept>
+    <rtept lat="39.942831" lon="-75.159324">
+      <name>Philadelphia's Magic Gardens</name>
+    </rtept>
+  </rte>
+  <trk>
+    <name>An optimized walking tour around Philadelphia track</name>
+    <trkseg>
+      <trkpt lat="39.989470" lon="-75.202837"/>
+      <trkpt lat="39.985536" lon="-75.205771"/>
+      <trkpt lat="39.982801" lon="-75.206257"/>
+      <trkpt lat="39.981761" lon="-75.207702"/>
+      <trkpt lat="39.980332" lon="-75.206504"/>
+      <trkpt lat="39.978712" lon="-75.206438"/>
+      <trkpt lat="39.979765" lon="-75.207248"/>
+      <trkpt lat="39.980014" lon="-75.209657"/>
+      <trkpt lat="39.979432" lon="-75.210016"/>
+      <trkpt lat="39.979226" lon="-75.209376"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.979226" lon="-75.209376"/>
+      <trkpt lat="39.978775" lon="-75.208535"/>
+      <trkpt lat="39.978475" lon="-75.208555"/>
+      <trkpt lat="39.977386" lon="-75.205363"/>
+      <trkpt lat="39.975936" lon="-75.204276"/>
+      <trkpt lat="39.976382" lon="-75.202427"/>
+      <trkpt lat="39.975996" lon="-75.200649"/>
+      <trkpt lat="39.976286" lon="-75.198503"/>
+      <trkpt lat="39.975662" lon="-75.195244"/>
+      <trkpt lat="39.975064" lon="-75.194789"/>
+      <trkpt lat="39.974453" lon="-75.195667"/>
+      <trkpt lat="39.973638" lon="-75.195304"/>
+      <trkpt lat="39.972652" lon="-75.195675"/>
+      <trkpt lat="39.972615" lon="-75.196648"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.972615" lon="-75.196648"/>
+      <trkpt lat="39.972619" lon="-75.195692"/>
+      <trkpt lat="39.973638" lon="-75.195304"/>
+      <trkpt lat="39.974453" lon="-75.195667"/>
+      <trkpt lat="39.974958" lon="-75.195193"/>
+      <trkpt lat="39.975383" lon="-75.190774"/>
+      <trkpt lat="39.972830" lon="-75.188499"/>
+      <trkpt lat="39.971116" lon="-75.185279"/>
+      <trkpt lat="39.969189" lon="-75.184733"/>
+      <trkpt lat="39.967394" lon="-75.183259"/>
+      <trkpt lat="39.966661" lon="-75.182248"/>
+      <trkpt lat="39.966739" lon="-75.181667"/>
+      <trkpt lat="39.966184" lon="-75.181759"/>
+      <trkpt lat="39.966046" lon="-75.181213"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.966046" lon="-75.181213"/>
+      <trkpt lat="39.966158" lon="-75.181722"/>
+      <trkpt lat="39.965435" lon="-75.182256"/>
+      <trkpt lat="39.964550" lon="-75.181121"/>
+      <trkpt lat="39.965160" lon="-75.180369"/>
+      <trkpt lat="39.964867" lon="-75.180155"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.964867" lon="-75.180155"/>
+      <trkpt lat="39.965097" lon="-75.178154"/>
+      <trkpt lat="39.964650" lon="-75.177763"/>
+      <trkpt lat="39.964424" lon="-75.175969"/>
+      <trkpt lat="39.967255" lon="-75.175335"/>
+      <trkpt lat="39.967370" lon="-75.171460"/>
+      <trkpt lat="39.968220" lon="-75.171483"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.968220" lon="-75.171483"/>
+      <trkpt lat="39.967370" lon="-75.171460"/>
+      <trkpt lat="39.967220" lon="-75.173854"/>
+      <trkpt lat="39.963253" lon="-75.174742"/>
+      <trkpt lat="39.962604" lon="-75.174676"/>
+      <trkpt lat="39.962031" lon="-75.174112"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.962031" lon="-75.174112"/>
+      <trkpt lat="39.960948" lon="-75.172038"/>
+      <trkpt lat="39.960496" lon="-75.171830"/>
+      <trkpt lat="39.960634" lon="-75.172406"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.960634" lon="-75.172406"/>
+      <trkpt lat="39.960433" lon="-75.171902"/>
+      <trkpt lat="39.960715" lon="-75.171536"/>
+      <trkpt lat="39.957500" lon="-75.172224"/>
+      <trkpt lat="39.957634" lon="-75.173488"/>
+      <trkpt lat="39.957905" lon="-75.173431"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.957905" lon="-75.173431"/>
+      <trkpt lat="39.957634" lon="-75.173488"/>
+      <trkpt lat="39.957616" lon="-75.174242"/>
+      <trkpt lat="39.955924" lon="-75.174612"/>
+      <trkpt lat="39.955976" lon="-75.176336"/>
+      <trkpt lat="39.953277" lon="-75.176677"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.953277" lon="-75.176677"/>
+      <trkpt lat="39.952938" lon="-75.176905"/>
+      <trkpt lat="39.953080" lon="-75.178074"/>
+      <trkpt lat="39.952716" lon="-75.178155"/>
+      <trkpt lat="39.953034" lon="-75.181975"/>
+      <trkpt lat="39.951752" lon="-75.182748"/>
+      <trkpt lat="39.951849" lon="-75.185621"/>
+      <trkpt lat="39.950094" lon="-75.187514"/>
+      <trkpt lat="39.950148" lon="-75.188529"/>
+      <trkpt lat="39.949227" lon="-75.189123"/>
+      <trkpt lat="39.948957" lon="-75.189776"/>
+      <trkpt lat="39.949436" lon="-75.190435"/>
+      <trkpt lat="39.949166" lon="-75.190953"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.949166" lon="-75.190953"/>
+      <trkpt lat="39.949627" lon="-75.190869"/>
+      <trkpt lat="39.950358" lon="-75.192520"/>
+      <trkpt lat="39.951217" lon="-75.192426"/>
+      <trkpt lat="39.951316" lon="-75.193219"/>
+      <trkpt lat="39.951644" lon="-75.193157"/>
+      <trkpt lat="39.951718" lon="-75.193716"/>
+      <trkpt lat="39.951946" lon="-75.193627"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.951946" lon="-75.193627"/>
+      <trkpt lat="39.952189" lon="-75.193678"/>
+      <trkpt lat="39.952742" lon="-75.192201"/>
+      <trkpt lat="39.950590" lon="-75.173734"/>
+      <trkpt lat="39.950328" lon="-75.172610"/>
+      <trkpt lat="39.949767" lon="-75.172156"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.949767" lon="-75.172156"/>
+      <trkpt lat="39.955333" lon="-75.171146"/>
+      <trkpt lat="39.955342" lon="-75.170608"/>
+      <trkpt lat="39.956224" lon="-75.170413"/>
+      <trkpt lat="39.956178" lon="-75.169296"/>
+      <trkpt lat="39.957547" lon="-75.168980"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.957547" lon="-75.168980"/>
+      <trkpt lat="39.957096" lon="-75.169075"/>
+      <trkpt lat="39.956416" lon="-75.164610"/>
+      <trkpt lat="39.955602" lon="-75.164777"/>
+      <trkpt lat="39.955106" lon="-75.163865"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.955106" lon="-75.163865"/>
+      <trkpt lat="39.955147" lon="-75.164181"/>
+      <trkpt lat="39.955444" lon="-75.164116"/>
+      <trkpt lat="39.955321" lon="-75.163137"/>
+      <trkpt lat="39.953627" lon="-75.163174"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.953627" lon="-75.163174"/>
+      <trkpt lat="39.952391" lon="-75.163598"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.952391" lon="-75.163598"/>
+      <trkpt lat="39.952280" lon="-75.162502"/>
+      <trkpt lat="39.953329" lon="-75.162162"/>
+      <trkpt lat="39.953004" lon="-75.159581"/>
+      <trkpt lat="39.953456" lon="-75.159481"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.953456" lon="-75.159481"/>
+      <trkpt lat="39.953870" lon="-75.159386"/>
+      <trkpt lat="39.952831" lon="-75.149802"/>
+      <trkpt lat="39.953742" lon="-75.149599"/>
+      <trkpt lat="39.953745" lon="-75.149279"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.953745" lon="-75.149279"/>
+      <trkpt lat="39.954518" lon="-75.149422"/>
+      <trkpt lat="39.953712" lon="-75.142862"/>
+      <trkpt lat="39.953239" lon="-75.142818"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.953239" lon="-75.142818"/>
+      <trkpt lat="39.952854" lon="-75.143039"/>
+      <trkpt lat="39.952787" lon="-75.142503"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.952787" lon="-75.142503"/>
+      <trkpt lat="39.952854" lon="-75.143039"/>
+      <trkpt lat="39.950797" lon="-75.143621"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.950797" lon="-75.143621"/>
+      <trkpt lat="39.950044" lon="-75.143805"/>
+      <trkpt lat="39.950406" lon="-75.148569"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.950406" lon="-75.148569"/>
+      <trkpt lat="39.950436" lon="-75.148818"/>
+      <trkpt lat="39.948243" lon="-75.149440"/>
+      <trkpt lat="39.948324" lon="-75.150049"/>
+      <trkpt lat="39.948799" lon="-75.149727"/>
+      <trkpt lat="39.948761" lon="-75.150025"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="39.948761" lon="-75.150025"/>
+      <trkpt lat="39.948882" lon="-75.150373"/>
+      <trkpt lat="39.948215" lon="-75.150268"/>
+      <trkpt lat="39.947421" lon="-75.151630"/>
+      <trkpt lat="39.946235" lon="-75.151953"/>
+      <trkpt lat="39.946358" lon="-75.152947"/>
+      <trkpt lat="39.945555" lon="-75.153262"/>
+      <trkpt lat="39.945732" lon="-75.154698"/>
+      <trkpt lat="39.944385" lon="-75.155134"/>
+      <trkpt lat="39.944563" lon="-75.156571"/>
+      <trkpt lat="39.943675" lon="-75.156839"/>
+      <trkpt lat="39.943815" lon="-75.158343"/>
+      <trkpt lat="39.942857" lon="-75.158626"/>
+      <trkpt lat="39.942831" lon="-75.159324"/>
+    </trkseg>
+  </trk>
+</gpx>

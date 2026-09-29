@@ -1,0 +1,156 @@
+{
+  "id": "chevrolet-family-road-trip-ne",
+  "title": "The Northeast Family Road Trip by Chevrolet",
+  "legacy_url": "https://rhiever.github.io/optimal-roadtrip-usa/chevrolet-family-road-trip-ne.html",
+  "post_url": null,
+  "profile": "car",
+  "closed_loop": false,
+  "quoted_total": null,
+  "stops": [
+    {
+      "order": 0,
+      "name": "Fenway Park",
+      "query": "4 Yawkey Way, Boston, MA 02215",
+      "lat": 42.34584359999999,
+      "lon": -71.09878189999999,
+      "drive_lat": 42.34584359999999,
+      "drive_lon": -71.09878189999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 1,
+      "name": "Salem Witch Museum",
+      "query": "19 1/2 Washington Square, Salem, MA 01970",
+      "lat": 42.523651,
+      "lon": -70.8910922,
+      "drive_lat": 42.523651,
+      "drive_lon": -70.8910922,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 2,
+      "name": "Portland Head Light and Fort Williams Park",
+      "query": "12 Captain Strout Cir, Cape Elizabeth, ME 04107 ",
+      "lat": 43.623104,
+      "lon": -70.2081123,
+      "drive_lat": 43.623104,
+      "drive_lon": -70.2081123,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 3,
+      "name": "Liberty Bell",
+      "query": "N 6th St & Market St, Philadelphia, PA 19106",
+      "lat": 39.9507426,
+      "lon": -75.15037459999999,
+      "drive_lat": 39.9507426,
+      "drive_lon": -75.15037459999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 4,
+      "name": "Colonial Williamsburg",
+      "query": "101 S Henry St, Williamsburg, VA 23185",
+      "lat": 37.2707562,
+      "lon": -76.7055796,
+      "drive_lat": 37.2707562,
+      "drive_lon": -76.7055796,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 5,
+      "name": "National Zoo",
+      "query": "3001 Connecticut Ave NW, Washington, DC 20008",
+      "lat": 38.9319273,
+      "lon": -77.0524404,
+      "drive_lat": 38.9319273,
+      "drive_lon": -77.0524404,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 6,
+      "name": "Cape May",
+      "query": "Cape May, New Jersey 08204",
+      "lat": 38.9351125,
+      "lon": -74.90600529999999,
+      "drive_lat": 38.9351125,
+      "drive_lon": -74.90600529999999,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 7,
+      "name": "The Bronx Zoo",
+      "query": "2300 Southern Blvd, Bronx, NY 10460",
+      "lat": 40.8502883,
+      "lon": -73.8786113,
+      "drive_lat": 40.8502883,
+      "drive_lon": -73.8786113,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 8,
+      "name": "Gillette Castle State Park",
+      "query": " 67 River Rd, East Haddam, CT 06423",
+      "lat": 41.4271657,
+      "lon": -72.4286718,
+      "drive_lat": 41.4271657,
+      "drive_lon": -72.4286718,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 9,
+      "name": "Newport Mansions",
+      "query": "424 Bellevue Ave, Newport, RI 02840",
+      "lat": 41.4750152,
+      "lon": -71.3072335,
+      "drive_lat": 41.4750152,
+      "drive_lon": -71.3072335,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    }
+  ],
+  "totals": {
+    "distance_m": 2400566.6,
+    "duration_s": 116460.8,
+    "flight_distance_m": 0,
+    "flight_legs": 0
+  },
+  "comparison": null,
+  "warnings": [],
+  "build": {
+    "osm_snapshot": "2026-09-25T20:24:36Z",
+    "osrm_version": "v26.9.0",
+    "built_at": "2026-09-27T22:16:44Z"
+  },
+  "override_note": null,
+  "exports": {
+    "gpx": "route.gpx",
+    "kml": "route.kml",
+    "google_maps": [
+      "https://www.google.com/maps/dir/?api=1&origin=42.345844%2C-71.098782&destination=41.475015%2C-71.307233&waypoints=42.523651%2C-70.891092%7C43.623104%2C-70.208112%7C39.950743%2C-75.150375%7C37.270756%2C-76.705580%7C38.931927%2C-77.052440%7C38.935113%2C-74.906005%7C40.850288%2C-73.878611%7C41.427166%2C-72.428672&travelmode=driving"
+    ],
+    "apple_maps": [
+      "https://maps.apple.com/directions?source=42.345844%2C-71.098782&destination=41.475015%2C-71.307233&waypoint=42.523651%2C-70.891092&waypoint=43.623104%2C-70.208112&waypoint=39.950743%2C-75.150375&waypoint=37.270756%2C-76.705580&waypoint=38.931927%2C-77.052440&waypoint=38.935113%2C-74.906005&waypoint=40.850288%2C-73.878611&waypoint=41.427166%2C-72.428672&mode=driving"
+    ],
+    "geojson": "route.geojson"
+  }
+}

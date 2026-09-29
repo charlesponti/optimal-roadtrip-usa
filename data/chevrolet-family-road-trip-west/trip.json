@@ -1,0 +1,182 @@
+{
+  "id": "chevrolet-family-road-trip-west",
+  "title": "The West Coast Family Road Trip by Chevrolet",
+  "legacy_url": "https://rhiever.github.io/optimal-roadtrip-usa/chevrolet-family-road-trip-west.html",
+  "post_url": null,
+  "profile": "car",
+  "closed_loop": false,
+  "quoted_total": null,
+  "stops": [
+    {
+      "order": 0,
+      "name": "Santa Cruz Beach Board Walk",
+      "query": "400 Beach St, Santa Cruz, CA 95060",
+      "lat": 36.9642107,
+      "lon": -122.0185246,
+      "drive_lat": 36.9642107,
+      "drive_lon": -122.0185246,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 1,
+      "name": "Monterey Bay Aquarium",
+      "query": "886 Cannery Row, Monterey, CA 93940",
+      "lat": 36.617578,
+      "lon": -121.901173,
+      "drive_lat": 36.617578,
+      "drive_lon": -121.901173,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 2,
+      "name": "Pismo Sand Dunes",
+      "query": "Oceano Dunes State Vehicular Recreation Area, Oceano, CA 93445",
+      "lat": 35.1102862,
+      "lon": -120.6326629,
+      "drive_lat": 35.1102862,
+      "drive_lon": -120.6326629,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 3,
+      "name": "Santa Monica Pier",
+      "query": "200 Santa Monica Pier A, Santa Monica, CA 90401",
+      "lat": 34.0100878,
+      "lon": -118.4961372,
+      "drive_lat": 34.0100878,
+      "drive_lon": -118.4961372,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 4,
+      "name": "Balboa Park",
+      "query": "1549 El Prado, San Diego, CA 92101",
+      "lat": 32.7324985,
+      "lon": -117.1492236,
+      "drive_lat": 32.7324985,
+      "drive_lon": -117.1492236,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 5,
+      "name": "Oregon Dunes National Recreation Area",
+      "query": "855 U.S. 101, Reedsport, OR 97467",
+      "lat": 43.706537,
+      "lon": -124.1027681,
+      "drive_lat": 43.706537,
+      "drive_lon": -124.1027681,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 6,
+      "name": "Tillamook Cheese Factory",
+      "query": "4175 US-101, Tillamook, OR 97141",
+      "lat": 45.4850325,
+      "lon": -123.8448034,
+      "drive_lat": 45.4850325,
+      "drive_lon": -123.8448034,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 7,
+      "name": "Cannon Beach, Haystack Rock",
+      "query": "2864 S. Pacific St., Cannon Beach, OR 97110",
+      "lat": 45.8821096,
+      "lon": -123.962944,
+      "drive_lat": 45.8821096,
+      "drive_lon": -123.962944,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 8,
+      "name": "Olympic National Park",
+      "query": "3002 Mt Angeles Rd, Port Angeles, WA 98362",
+      "lat": 47.9691847,
+      "lon": -123.4984814,
+      "drive_lat": 47.9691847,
+      "drive_lon": -123.4984814,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 9,
+      "name": "Seattle Aquarium",
+      "query": "Seattle Aquarium, Alaskan Way, Seattle, WA",
+      "lat": 47.607445,
+      "lon": -122.3429996,
+      "drive_lat": 47.607445,
+      "drive_lon": -122.3429996,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 10,
+      "name": "Pike Place Market",
+      "query": "85 Pike Street, Seattle, WA 98101",
+      "lat": 47.6084444,
+      "lon": -122.3405493,
+      "drive_lat": 47.6084444,
+      "drive_lon": -122.3405493,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    },
+    {
+      "order": 11,
+      "name": "Golden Gate Bridge",
+      "query": "Golden Gate Bridge, San Francisco, CA 94129",
+      "lat": 37.8080561,
+      "lon": -122.4763625,
+      "drive_lat": 37.8080561,
+      "drive_lon": -122.4763625,
+      "mode_to_next": "drive",
+      "geocode_source": "legacy-marker",
+      "note": ""
+    }
+  ],
+  "totals": {
+    "distance_m": 4587146.9,
+    "duration_s": 216047.4,
+    "flight_distance_m": 0,
+    "flight_legs": 0
+  },
+  "comparison": null,
+  "warnings": [],
+  "build": {
+    "osm_snapshot": "2026-09-25T20:24:36Z",
+    "osrm_version": "v26.9.0",
+    "built_at": "2026-09-27T22:16:45Z"
+  },
+  "override_note": null,
+  "exports": {
+    "gpx": "route.gpx",
+    "kml": "route.kml",
+    "google_maps": [
+      "https://www.google.com/maps/dir/?api=1&origin=36.964211%2C-122.018525&destination=47.608444%2C-122.340549&waypoints=36.617578%2C-121.901173%7C35.110286%2C-120.632663%7C34.010088%2C-118.496137%7C32.732498%2C-117.149224%7C43.706537%2C-124.102768%7C45.485033%2C-123.844803%7C45.882110%2C-123.962944%7C47.969185%2C-123.498481%7C47.607445%2C-122.343000&travelmode=driving",
+      "https://www.google.com/maps/dir/?api=1&origin=47.608444%2C-122.340549&destination=37.808056%2C-122.476362&travelmode=driving"
+    ],
+    "apple_maps": [
+      "https://maps.apple.com/directions?source=36.964211%2C-122.018525&destination=47.608444%2C-122.340549&waypoint=36.617578%2C-121.901173&waypoint=35.110286%2C-120.632663&waypoint=34.010088%2C-118.496137&waypoint=32.732498%2C-117.149224&waypoint=43.706537%2C-124.102768&waypoint=45.485033%2C-123.844803&waypoint=45.882110%2C-123.962944&waypoint=47.969185%2C-123.498481&waypoint=47.607445%2C-122.343000&mode=driving",
+      "https://maps.apple.com/directions?source=47.608444%2C-122.340549&destination=37.808056%2C-122.476362&mode=driving"
+    ],
+    "geojson": "route.geojson"
+  }
+}

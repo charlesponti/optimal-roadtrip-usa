@@ -1,154 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-  	<meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Randy Olson uses machine learning to find the optimal road trip across the U.S.">
-    <meta name="author" content="Randal S. Olson">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The optimal road trip across the U.S. according to machine learning (restored map)</title>
+<meta name="description" content="The optimal road trip across the U.S. according to machine learning: 51 stops, 14,033 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="major-landmarks.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"major-landmarks","profile":"car","assets":"assets/","data":"data/major-landmarks/","basemap":{"region":"us-lower48","url":"assets/basemaps/us-lower48-z8.pmtiles","maxzoom":8},"connectors":[{"order":13,"drive":[-80.603596,28.38798],"display":[-80.527778,28.455556],"distance_m":10556,"via":"City of Cape Canaveral"},{"order":15,"drive":[-79.925217,32.790553],"display":[-79.87444,32.7525],"distance_m":6359,"via":"the ferry departure at Liberty Square"},{"order":24,"drive":[-74.0158,40.7055],"display":[-74.04443,40.68921],"distance_m":3018,"via":"Battery Place by Castle Clinton"},{"order":28,"drive":[-68.184,44.331],"display":[-68.21667,44.35],"distance_m":3349,"via":"Sand Beach lot on the one-way Park Loop Road"},{"order":40,"drive":[-90.05757,43.14446],"display":[-90.0709,43.1415],"distance_m":1130,"via":"Frank Lloyd Wright Visitor Center, 5607 County Road C"}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>The optimal road trip across the U.S. according to machine learning</h1>
+    <p class="restored">Restored in 2026 with open data. Originally published March 8, 2015. <a href="https://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">Read the original post</a>. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>The optimal road trip across the U.S. according to machine learning</strong>
+      <span class="meta">51 stops · 14,033 mi · 283 hours driving</span><br>
+      <a href="major-landmarks.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>51<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>14,033 mi<small>22,583 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>283 hours<small>11.8 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>51<small>all by road</small></dd></div>
+    </dl>
     
-    <title>The optimal road trip across the U.S. according to machine learning</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var routes_list = []
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: markerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+    <p class="note">The original post quoted 13,699 mi and 224 hours.</p>
 
-		function initialize() {
-		  var center = new google.maps.LatLng(39, -96);
-		  var mapOptions = {
-			zoom: 5,
-			center: center
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  for (i=0; i<routes_list.length; i++) {
-		  	routes_list[i].setMap(map);	
-		  }
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/major-landmarks/route.gpx" download>GPX<small>1.0 MB</small></a><a class="btn" href="data/major-landmarks/route.kml" download>KML<small>2.2 MB</small></a><a class="btn" href="data/major-landmarks/route.geojson" download>GeoJSON<small>709 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=36.056700%2C-112.139500&amp;destination=32.345520%2C-90.855470&amp;waypoints=37.640381%2C-112.169611%7C43.462030%2C-113.561760%7C44.658344%2C-111.099275%7C38.840560%2C-105.044170%7C32.175280%2C-104.443890%7C29.425833%2C-98.486111%7C34.507590%2C-96.969880%7C34.649121%2C-92.068357%7C35.045680%2C-90.025040&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=32.345520%2C-90.855470&amp;destination=38.978890%2C-76.491110&amp;waypoints=29.958600%2C-90.065000%7C30.681780%2C-88.014790%7C28.387980%2C-80.603596%7C31.056910%2C-82.272280%7C32.790553%2C-79.925217%7C37.832600%2C-80.446900%7C36.020693%2C-75.667698%7C38.710000%2C-77.086500%7C38.897700%2C-77.039400&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=38.978890%2C-76.491110&amp;destination=44.407570%2C-73.247510&amp;waypoints=39.661042%2C-75.564168%7C38.931400%2C-74.924300%7C39.949500%2C-75.150300%7C40.705500%2C-74.015800%7C41.767480%2C-72.701310%7C41.470280%2C-71.299650%7C42.372100%2C-71.055600%7C44.331000%2C-68.184000%7C44.257220%2C-71.439440&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=44.407570%2C-73.247510&amp;destination=43.144460%2C-90.057570&amp;waypoints=41.510069%2C-81.691268%7C42.338400%2C-83.051920%7C39.164220%2C-84.523060%7C37.186940%2C-86.101110%7C38.567220%2C-86.618060%7C39.796860%2C-89.646490%7C38.625800%2C-90.187900%7C39.317600%2C-94.909350%7C41.583330%2C-93.648890&amp;travelmode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=43.144460%2C-90.057570&amp;destination=36.016111%2C-114.739444&amp;waypoints=44.892990%2C-93.185860%7C42.425000%2C-98.158600%7C43.876900%2C-103.456000%7C47.999440%2C-104.040560%7C48.500639%2C-113.979911%7C46.632300%2C-119.647166%7C45.633500%2C-120.910000%7C37.794570%2C-122.411450%7C36.598410%2C-121.194500&amp;travelmode=driving" rel="noopener" target="_blank">Part 5</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=36.016111%2C-114.739444&amp;destination=36.056700%2C-112.139500&amp;travelmode=driving" rel="noopener" target="_blank">Part 6</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=36.056700%2C-112.139500&amp;destination=32.345520%2C-90.855470&amp;waypoint=37.640381%2C-112.169611&amp;waypoint=43.462030%2C-113.561760&amp;waypoint=44.658344%2C-111.099275&amp;waypoint=38.840560%2C-105.044170&amp;waypoint=32.175280%2C-104.443890&amp;waypoint=29.425833%2C-98.486111&amp;waypoint=34.507590%2C-96.969880&amp;waypoint=34.649121%2C-92.068357&amp;waypoint=35.045680%2C-90.025040&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=32.345520%2C-90.855470&amp;destination=38.978890%2C-76.491110&amp;waypoint=29.958600%2C-90.065000&amp;waypoint=30.681780%2C-88.014790&amp;waypoint=28.387980%2C-80.603596&amp;waypoint=31.056910%2C-82.272280&amp;waypoint=32.790553%2C-79.925217&amp;waypoint=37.832600%2C-80.446900&amp;waypoint=36.020693%2C-75.667698&amp;waypoint=38.710000%2C-77.086500&amp;waypoint=38.897700%2C-77.039400&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=38.978890%2C-76.491110&amp;destination=44.407570%2C-73.247510&amp;waypoint=39.661042%2C-75.564168&amp;waypoint=38.931400%2C-74.924300&amp;waypoint=39.949500%2C-75.150300&amp;waypoint=40.705500%2C-74.015800&amp;waypoint=41.767480%2C-72.701310&amp;waypoint=41.470280%2C-71.299650&amp;waypoint=42.372100%2C-71.055600&amp;waypoint=44.331000%2C-68.184000&amp;waypoint=44.257220%2C-71.439440&amp;mode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://maps.apple.com/directions?source=44.407570%2C-73.247510&amp;destination=43.144460%2C-90.057570&amp;waypoint=41.510069%2C-81.691268&amp;waypoint=42.338400%2C-83.051920&amp;waypoint=39.164220%2C-84.523060&amp;waypoint=37.186940%2C-86.101110&amp;waypoint=38.567220%2C-86.618060&amp;waypoint=39.796860%2C-89.646490&amp;waypoint=38.625800%2C-90.187900&amp;waypoint=39.317600%2C-94.909350&amp;waypoint=41.583330%2C-93.648890&amp;mode=driving" rel="noopener" target="_blank">Part 4</a><a href="https://maps.apple.com/directions?source=43.144460%2C-90.057570&amp;destination=36.016111%2C-114.739444&amp;waypoint=44.892990%2C-93.185860&amp;waypoint=42.425000%2C-98.158600&amp;waypoint=43.876900%2C-103.456000&amp;waypoint=47.999440%2C-104.040560&amp;waypoint=48.500639%2C-113.979911&amp;waypoint=46.632300%2C-119.647166&amp;waypoint=45.633500%2C-120.910000&amp;waypoint=37.794570%2C-122.411450&amp;waypoint=36.598410%2C-121.194500&amp;mode=driving" rel="noopener" target="_blank">Part 5</a><a href="https://maps.apple.com/directions?source=36.016111%2C-114.739444&amp;destination=36.056700%2C-112.139500&amp;mode=driving" rel="noopener" target="_blank">Part 6</a></p>
 
-		function calcRoute(start, end, routes) {
-		  
-		  var directionsDisplay = new google.maps.DirectionsRenderer(directionsDisplayOptions);
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Grand Canyon National Park Lodges</span><span class="stop-leg">289 mi (465 km), 6 h 17 min driving to 2. Bryce Canyon National Park</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Bryce Canyon National Park</span><span class="stop-leg">530 mi (853 km), 9 h 17 min driving to 3. Craters of the Moon National Monument &amp; Preserve</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Craters of the Moon National Monument &amp; Preserve</span><span class="stop-leg">194 mi (312 km), 3 h 46 min driving to 4. West Yellowstone Visitor Information Center</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">West Yellowstone Visitor Information Center</span><span class="stop-leg">674 mi (1,085 km), 14 h 33 min driving to 5. Pikes Peak</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Pikes Peak</span><span class="stop-leg">565 mi (910 km), 11 h 14 min driving to 6. Carlsbad Caverns National Park</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Carlsbad Caverns National Park</span><span class="stop-leg">462 mi (744 km), 8 h 10 min driving to 7. The Alamo</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">The Alamo</span><span class="stop-leg">400 mi (643 km), 7 h 13 min driving to 8. Chickasaw National Recreation Area</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Chickasaw National Recreation Area</span><span class="stop-leg">375 mi (603 km), 6 h 43 min driving to 9. Toltec Mounds</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Toltec Mounds</span><span class="stop-leg">146 mi (236 km), 2 h 44 min driving to 10. Graceland</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Graceland</span><span class="stop-leg">237 mi (382 km), 4 h 23 min driving to 11. Vicksburg National Military Park</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Vicksburg National Military Park</span><span class="stop-leg">224 mi (361 km), 4 h 12 min driving to 12. French Quarter</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">French Quarter</span><span class="stop-leg">145 mi (233 km), 2 h 45 min driving to 13. USS Alabama</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">USS Alabama</span><span class="stop-leg">547 mi (881 km), 9 h 59 min driving to 14. Cape Canaveral</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Cape Canaveral</span><span class="stop-via">Reached via City of Cape Canaveral (6.6 mi away)</span><span class="stop-leg">238 mi (383 km), 4 h 41 min driving to 15. Okefenokee Swamp Park</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Okefenokee Swamp Park</span><span class="stop-leg">226 mi (363 km), 4 h 46 min driving to 16. Fort Sumter National Monument</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Fort Sumter National Monument</span><span class="stop-via">Reached via the ferry departure at Liberty Square (4 mi away)</span><span class="stop-leg">460 mi (741 km), 8 h 46 min driving to 17. Lost World Caverns</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Lost World Caverns</span><span class="stop-leg">380 mi (612 km), 7 h 33 min driving to 18. Wright Brothers National Memorial Visitor Center</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Wright Brothers National Memorial Visitor Center</span><span class="stop-leg">264 mi (424 km), 5 h 29 min driving to 19. Mount Vernon</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">Mount Vernon</span><span class="stop-leg">17 mi (27 km), 33 min driving to 20. White House</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">White House</span><span class="stop-leg">33 mi (52 km), 47 min driving to 21. Maryland State House</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Maryland State House</span><span class="stop-leg">86 mi (139 km), 1 h 58 min driving to 22. New Castle Historic District</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">New Castle Historic District</span><span class="stop-leg">81 mi (131 km), 1 h 55 min driving to 23. Congress Hall</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">Congress Hall</span><span class="stop-leg">93 mi (150 km), 1 h 58 min driving to 24. Liberty Bell</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">Liberty Bell</span><span class="stop-leg">94 mi (151 km), 2 h 6 min driving to 25. Statue of Liberty</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Statue of Liberty</span><span class="stop-via">Reached via Battery Place by Castle Clinton (1.9 mi away)</span><span class="stop-leg">115 mi (185 km), 2 h 45 min driving to 26. The Mark Twain House &amp; Museum</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">The Mark Twain House &amp; Museum</span><span class="stop-leg">91 mi (146 km), 2 h 9 min driving to 27. The Breakers</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">The Breakers</span><span class="stop-leg">74 mi (120 km), 1 h 48 min driving to 28. USS Constitution</span></span></button></li>
+        <li data-order="27"><button type="button"><span class="num">28</span><span><span class="stop-name">USS Constitution</span><span class="stop-leg">268 mi (432 km), 5 h 52 min driving to 29. Acadia National Park</span></span></button></li>
+        <li data-order="28"><button type="button"><span class="num">29</span><span><span class="stop-name">Acadia National Park</span><span class="stop-via">Reached via Sand Beach lot on the one-way Park Loop Road (2.1 mi away)</span><span class="stop-leg">225 mi (362 km), 5 h 51 min driving to 30. Omni Mount Washington Resort</span></span></button></li>
+        <li data-order="29"><button type="button"><span class="num">30</span><span><span class="stop-name">Omni Mount Washington Resort</span><span class="stop-leg">120 mi (192 km), 2 h 43 min driving to 31. Shelburne Farms</span></span></button></li>
+        <li data-order="30"><button type="button"><span class="num">31</span><span><span class="stop-name">Shelburne Farms</span><span class="stop-leg">561 mi (903 km), 11 h 59 min driving to 32. USS Cod Submarine Memorial</span></span></button></li>
+        <li data-order="31"><button type="button"><span class="num">32</span><span><span class="stop-name">USS Cod Submarine Memorial</span><span class="stop-leg">168 mi (270 km), 3 h 14 min driving to 33. Olympia Entertainment</span></span></button></li>
+        <li data-order="32"><button type="button"><span class="num">33</span><span><span class="stop-name">Olympia Entertainment</span><span class="stop-leg">254 mi (409 km), 4 h 49 min driving to 34. Spring Grove Cemetery</span></span></button></li>
+        <li data-order="33"><button type="button"><span class="num">34</span><span><span class="stop-name">Spring Grove Cemetery</span><span class="stop-leg">197 mi (317 km), 3 h 50 min driving to 35. Mammoth Cave National Park</span></span></button></li>
+        <li data-order="34"><button type="button"><span class="num">35</span><span><span class="stop-name">Mammoth Cave National Park</span><span class="stop-leg">144 mi (232 km), 3 h 3 min driving to 36. West Baden Springs Hotel</span></span></button></li>
+        <li data-order="35"><button type="button"><span class="num">36</span><span><span class="stop-name">West Baden Springs Hotel</span><span class="stop-leg">241 mi (387 km), 5 h 23 min driving to 37. Lincoln Home National Historic Site Visitor Center</span></span></button></li>
+        <li data-order="36"><button type="button"><span class="num">37</span><span><span class="stop-name">Lincoln Home National Historic Site Visitor Center</span><span class="stop-leg">97 mi (156 km), 1 h 53 min driving to 38. Gateway Arch</span></span></button></li>
+        <li data-order="37"><button type="button"><span class="num">38</span><span><span class="stop-name">Gateway Arch</span><span class="stop-leg">282 mi (453 km), 5 h 30 min driving to 39. C. W. Parker Carousel Museum</span></span></button></li>
+        <li data-order="38"><button type="button"><span class="num">39</span><span><span class="stop-name">C. W. Parker Carousel Museum</span><span class="stop-leg">201 mi (324 km), 3 h 55 min driving to 40. Terrace Hill</span></span></button></li>
+        <li data-order="39"><button type="button"><span class="num">40</span><span><span class="stop-name">Terrace Hill</span><span class="stop-leg">255 mi (411 km), 5 h 12 min driving to 41. Taliesin</span></span></button></li>
+        <li data-order="40"><button type="button"><span class="num">41</span><span><span class="stop-name">Taliesin</span><span class="stop-via">Reached via Frank Lloyd Wright Visitor Center, 5607 County Road C (0.7 mi away)</span><span class="stop-leg">250 mi (402 km), 4 h 56 min driving to 42. Fort Snelling</span></span></button></li>
+        <li data-order="41"><button type="button"><span class="num">42</span><span><span class="stop-name">Fort Snelling</span><span class="stop-leg">391 mi (630 km), 7 h 41 min driving to 43. Ashfall Fossil Bed</span></span></button></li>
+        <li data-order="42"><button type="button"><span class="num">43</span><span><span class="stop-name">Ashfall Fossil Bed</span><span class="stop-leg">381 mi (614 km), 7 h 18 min driving to 44. Mount Rushmore National Memorial</span></span></button></li>
+        <li data-order="43"><button type="button"><span class="num">44</span><span><span class="stop-name">Mount Rushmore National Memorial</span><span class="stop-leg">370 mi (596 km), 7 h 27 min driving to 45. Fort Union Trading Post National Historic Site</span></span></button></li>
+        <li data-order="44"><button type="button"><span class="num">45</span><span><span class="stop-name">Fort Union Trading Post National Historic Site</span><span class="stop-leg">522 mi (840 km), 10 h 8 min driving to 46. Glacier National Park</span></span></button></li>
+        <li data-order="45"><button type="button"><span class="num">46</span><span><span class="stop-name">Glacier National Park</span><span class="stop-leg">440 mi (708 km), 9 h 46 min driving to 47. Hanford Site</span></span></button></li>
+        <li data-order="46"><button type="button"><span class="num">47</span><span><span class="stop-name">Hanford Site</span><span class="stop-leg">154 mi (248 km), 4 h 7 min driving to 48. Columbia River Gorge National Scenic Area</span></span></button></li>
+        <li data-order="47"><button type="button"><span class="num">48</span><span><span class="stop-name">Columbia River Gorge National Scenic Area</span><span class="stop-leg">631 mi (1,015 km), 12 h 39 min driving to 49. Cable Car Museum</span></span></button></li>
+        <li data-order="48"><button type="button"><span class="num">49</span><span><span class="stop-name">Cable Car Museum</span><span class="stop-leg">117 mi (188 km), 2 h 29 min driving to 50. San Andreas Fault</span></span></button></li>
+        <li data-order="49"><button type="button"><span class="num">50</span><span><span class="stop-name">San Andreas Fault</span><span class="stop-leg">476 mi (765 km), 9 h 32 min driving to 51. Hoover Dam</span></span></button></li>
+        <li data-order="50"><button type="button"><span class="num">51</span><span><span class="stop-name">Hoover Dam</span><span class="stop-leg">248 mi (399 km), 4 h 47 min driving to 1. Grand Canyon National Park Lodges</span></span></button></li>
+    </ol>
 
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				directionsDisplay.setDirections(response);		
-			}
-		  });
-
-		  routes_list.push(directionsDisplay);
-		}
-
-		function createRoutes(route) {
-			// Google's free map API is limited to 10 waypoints so need to break into batches
-			route.push(route[0]);
-			var subset = 0;
-			while (subset < route.length) {
-				var waypointSubset = route.slice(subset, subset + 10);
-
-				var startPoint = waypointSubset[0];
-				var midPoints = waypointSubset.slice(1, waypointSubset.length - 1);
-				var endPoint = waypointSubset[waypointSubset.length - 1];
-
-				calcRoute(startPoint, endPoint, midPoints);
-
-				subset += 9;
-			}
-		}
-
-		optimal_route = ["Grand Canyon National Park Lodges, 88 Village Loop Drive, Grand Canyon Village, AZ 86023", 						"Bryce Canyon National Park, Hwy 63, Bryce, UT",
-					"Craters of the Moon National Monument & Preserve, Arco, ID",
-					"West Yellowstone Visitor Information Center, 30 Yellowstone Ave, West Yellowstone, MT 59758",
-					"Pikes Peak, Colorado",
-					"Carlsbad Caverns National Park, Carlsbad, NM",
-					"The Alamo, Alamo Plaza, San Antonio, TX",
-					"Chickasaw National Recreation Area, 1008 W 2nd St, Sulphur, OK 73086",
-					"Toltec Mounds, Scott, AR",
-					"Graceland, Elvis Presley Boulevard, Memphis, TN",
-					"Vicksburg National Military Park, Clay Street, Vicksburg, MS",
-					"French Quarter, New Orleans, LA",
-					"USS Alabama, Battleship Parkway, Mobile, AL",
-					"Cape Canaveral, FL",
-					"Okefenokee Swamp Park, Okefenokee Swamp Park Road, Waycross, GA",
-					"Fort Sumter National Monument, Sullivan's Island, SC",
-					"Lost World Caverns, Lewisburg, WV",
-					"Wright Brothers National Memorial Visitor Center, Manteo, NC",
-					"Mount Vernon, Fairfax County, Virginia",
-					"White House, Pennsylvania Avenue Northwest, Washington, DC",
-					"Maryland State House, 100 State Cir, Annapolis, MD 21401",
-					"New Castle Historic District, Delaware",
-					"Congress Hall, Congress Place, Cape May, NJ 08204",
-					"Liberty Bell, 6th Street, Philadelphia, PA",
-					"Statue of Liberty, Liberty Island, NYC, NY",
-					"The Mark Twain House & Museum, Farmington Avenue, Hartford, CT",
-					"The Breakers, Ochre Point Avenue, Newport, RI",
-					"USS Constitution, Boston, MA",
-					"Acadia National Park, Maine",
-					"Omni Mount Washington Resort, Mount Washington Hotel Road, Bretton Woods, NH",
-					"Shelburne Farms, Harbor Road, Shelburne, VT",
-					"USS Cod Submarine Memorial, East 9th Street, Cleveland, OH",
-					"Olympia Entertainment, Woodward Avenue, Detroit, MI",
-					"Spring Grove Cemetery, Spring Grove Avenue, Cincinnati, OH",
-					"Mammoth Cave National Park, Mammoth Cave Pkwy, Mammoth Cave, KY",
-					"West Baden Springs Hotel, West Baden Avenue, West Baden Springs, IN",
-					"Lincoln Home National Historic Site Visitor Center, 426 South 7th Street, Springfield, IL",
-					"Gateway Arch, Washington Avenue, St Louis, MO",
-					"C. W. Parker Carousel Museum, South Esplanade Street, Leavenworth, KS",
-					"Terrace Hill, Grand Avenue, Des Moines, IA",
-					"Taliesin, County Road C, Spring Green, Wisconsin",
-					"Fort Snelling, Tower Avenue, Saint Paul, MN",
-					"Ashfall Fossil Bed, Royal, NE",
-					"Mount Rushmore National Memorial, South Dakota 244, Keystone, SD",
-					"Fort Union Trading Post National Historic Site, Williston, North Dakota 1804, ND",
-					"Glacier National Park, 64 Grinnell Drive, West Glacier, MT 59936",
-					"Hanford Site, Benton County, WA",
-					"Columbia River Gorge National Scenic Area, Oregon",
-					"Cable Car Museum, 94108, 1201 Mason St, San Francisco, CA 94108",
-					"San Andreas Fault, San Benito County, CA",
-					"Hoover Dam, Boulder City, CO",
-					"Grand Canyon National Park Lodges, 88 Village Loop Drive, Grand Canyon Village, AZ 86023"]
-		
-		createRoutes(optimal_route);
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>

@@ -1,113 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Randy Olson uses machine learning to find the optimal road trip across France.">
-    <meta name="author" content="Randal S. Olson">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>An optimal road trip across France according to machine learning (restored map)</title>
+<meta name="description" content="An optimal road trip across France according to machine learning: 32 stops, 3,528 mi of driving. Interactive map restored in 2026 on OpenStreetMap data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b83b0b'/%3E%3Cpath d='M9 21c4-10 10 0 14-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="france-trip.html">
+<script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed');</script>
+<link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/json" id="page-config">{"id":"france-trip","profile":"car","assets":"assets/","data":"data/france-trip/","basemap":{"region":"europe","url":"assets/basemaps/europe.pmtiles","maxzoom":7},"connectors":[{"order":15,"drive":[-1.503191,48.612751],"display":[-1.511,48.636],"distance_m":2648,"via":"the mainland Mont St. Michel P10 car park"},{"order":30,"drive":[7.284922,43.69419],"display":[8.694149,42.267654],"distance_m":195705,"via":"Port of Nice (Port Lympia)"}]}</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="head">
+    <p class="eyebrow"><a href="https://www.randalolson.com/">Randal S. Olson</a> · Optimal road trips</p>
+    <h1>An optimal road trip across France according to machine learning</h1>
+    <p class="restored">Restored in 2026 with open data. Routes are recomputed on OpenStreetMap, so distances can differ from the original.</p>
+  </header>
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of the route"></div>
+    <div class="embed-card">
+      <strong>An optimal road trip across France according to machine learning</strong>
+      <span class="meta">32 stops · 3,528 mi · 71.3 hours driving</span><br>
+      <a href="france-trip.html" target="_blank" rel="noopener">Open the full map, stop list and downloads</a>
+    </div>
+  </main>
+  <section class="details">
+    <dl class="totals">
+      <div><dt>Stops</dt><dd>32<small>round trip</small></dd></div>
+      <div><dt>Distance</dt><dd>3,528 mi<small>5,678 km</small></dd></div>
+      <div><dt>Time driving</dt><dd>71.3 hours<small>3 days nonstop</small></dd></div>
+      <div><dt>Legs</dt><dd>32<small>all by road</small></dd></div>
+    </dl>
     
-    <title>An optimal road trip across France according to machine learning</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script>
-		var directionsDisplay1, directionsDisplay2;
-		var directionsDisplay3, directionsDisplay4;
-		var markerOptions = {icon: "http://maps.gstatic.com/mapfiles/markers2/marker.png"};
-		var directionsDisplayOptions = {preserveViewport: true,
-										markerOptions: markerOptions};
-		var directionsService = new google.maps.DirectionsService();
-		var map;
+    
 
-		function initialize() {
-		  var mapOptions = {
-			zoom: 6,
-			center: new google.maps.LatLng(46.2157467, 2.2088258)
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		  directionsDisplay1.setMap(map);
-		  directionsDisplay2.setMap(map);
-		  directionsDisplay3.setMap(map);
-		  directionsDisplay4.setMap(map);
-		}
+    <h2>Take the route with you</h2>
+    <div class="downloads"><a class="btn" href="data/france-trip/route.gpx" download>GPX<small>464 KB</small></a><a class="btn" href="data/france-trip/route.kml" download>KML<small>766 KB</small></a><a class="btn" href="data/france-trip/route.geojson" download>GeoJSON<small>315 KB</small></a></div>
+    <p class="open-in"><span>Google Maps</span><a href="https://www.google.com/maps/dir/?api=1&amp;origin=44.845800%2C6.487500&amp;destination=49.895000%2C2.302222&amp;waypoints=45.762222%2C4.826667%7C47.025000%2C4.839700%7C47.033000%2C5.778000%7C48.017700%2C7.528500%7C48.583121%2C7.747861%7C48.693611%2C6.183056%7C49.253889%2C4.034167%7C50.331689%2C3.172622%7C50.643300%2C3.060600&amp;travelmode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=49.895000%2C2.302222&amp;destination=46.392500%2C1.622200&amp;waypoints=48.858222%2C2.294500%7C48.409700%2C2.702500%7C48.447800%2C1.487800%7C49.710000%2C0.210000%7C48.612751%2C-1.503191%7C47.584700%2C-3.079400%7C47.296346%2C-2.453556%7C47.206000%2C-1.564819%7C46.564770%2C0.865970&amp;travelmode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=46.392500%2C1.622200&amp;destination=43.694190%2C7.284922&amp;waypoints=45.694220%2C2.950875%7C45.053630%2C1.167400%7C44.841600%2C-0.569100%7C42.735000%2C-0.010000%7C43.604500%2C1.444000%7C43.213333%2C2.350833%7C43.611300%2C3.870120%7C43.282545%2C5.348035%7C43.691111%2C7.247500&amp;travelmode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=43.694190%2C7.284922&amp;destination=44.845800%2C6.487500&amp;waypoints=45.923100%2C6.869700&amp;travelmode=driving" rel="noopener" target="_blank">Part 4</a></p>
+    <p class="open-in"><span>Apple Maps</span><a href="https://maps.apple.com/directions?source=44.845800%2C6.487500&amp;destination=49.895000%2C2.302222&amp;waypoint=45.762222%2C4.826667&amp;waypoint=47.025000%2C4.839700&amp;waypoint=47.033000%2C5.778000&amp;waypoint=48.017700%2C7.528500&amp;waypoint=48.583121%2C7.747861&amp;waypoint=48.693611%2C6.183056&amp;waypoint=49.253889%2C4.034167&amp;waypoint=50.331689%2C3.172622&amp;waypoint=50.643300%2C3.060600&amp;mode=driving" rel="noopener" target="_blank">Part 1</a><a href="https://maps.apple.com/directions?source=49.895000%2C2.302222&amp;destination=46.392500%2C1.622200&amp;waypoint=48.858222%2C2.294500&amp;waypoint=48.409700%2C2.702500&amp;waypoint=48.447800%2C1.487800&amp;waypoint=49.710000%2C0.210000&amp;waypoint=48.612751%2C-1.503191&amp;waypoint=47.584700%2C-3.079400&amp;waypoint=47.296346%2C-2.453556&amp;waypoint=47.206000%2C-1.564819&amp;waypoint=46.564770%2C0.865970&amp;mode=driving" rel="noopener" target="_blank">Part 2</a><a href="https://maps.apple.com/directions?source=46.392500%2C1.622200&amp;destination=43.694190%2C7.284922&amp;waypoint=45.694220%2C2.950875&amp;waypoint=45.053630%2C1.167400&amp;waypoint=44.841600%2C-0.569100&amp;waypoint=42.735000%2C-0.010000&amp;waypoint=43.604500%2C1.444000&amp;waypoint=43.213333%2C2.350833&amp;waypoint=43.611300%2C3.870120&amp;waypoint=43.282545%2C5.348035&amp;waypoint=43.691111%2C7.247500&amp;mode=driving" rel="noopener" target="_blank">Part 3</a><a href="https://maps.apple.com/directions?source=43.694190%2C7.284922&amp;destination=44.845800%2C6.487500&amp;waypoint=45.923100%2C6.869700&amp;mode=driving" rel="noopener" target="_blank">Part 4</a></p>
 
-		function calcRoute(start, end, routes) {
-		  switch (start) {
-		  	case "Parc national des Écrins, France":
-		  		directionsDisplay1 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Vieux-Lille, Lille, France":
-		  		directionsDisplay2 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Les Machines de l'île, Nantes, France":
-		  		directionsDisplay3 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  	case "Promenade du Peyrou, Montpellier, France":
-		  		directionsDisplay4 = new google.maps.DirectionsRenderer(directionsDisplayOptions);
-		  		break;
-		  }
-		  
-		  var waypts = [];
-		  for (var i = 0; i < routes.length; i++) {
-		  	waypts.push({
-		  	  location:routes[i],
-		  	  stopover:true});
-		  	}
-		  
-		  var request = {
-			  origin: start,
-			  destination: end,
-			  waypoints: waypts,
-			  optimizeWaypoints: false,
-			  travelMode: google.maps.TravelMode.DRIVING
-		  };
-		  directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				switch (start) {
-					case "Parc national des Écrins, France":
-						directionsDisplay1.setDirections(response);
-						break;
-					case "Vieux-Lille, Lille, France":
-						directionsDisplay2.setDirections(response);
-						break;
-					case "Les Machines de l'île, Nantes, France":
-						directionsDisplay3.setDirections(response);
-						break;
-					case "Promenade du Peyrou, Montpellier, France":
-						directionsDisplay4.setDirections(response);
-						break;
-				  }
-			}
-		  });
-		}
+    <h2>Stops in order</h2>
+    <ol class="stop-list">
+        <li data-order="0"><button type="button"><span class="num">1</span><span><span class="stop-name">Parc national des Écrins</span><span class="stop-leg">148 mi (238 km), 3 h 37 min driving to 2. Vieux Lyon</span></span></button></li>
+        <li data-order="1"><button type="button"><span class="num">2</span><span><span class="stop-name">Vieux Lyon</span><span class="stop-leg">96 mi (154 km), 1 h 43 min driving to 3. Beaune</span></span></button></li>
+        <li data-order="2"><button type="button"><span class="num">3</span><span><span class="stop-name">Beaune</span><span class="stop-leg">59 mi (95 km), 1 h 22 min driving to 4. Saline Royale d&#39;Arc-et-Senans</span></span></button></li>
+        <li data-order="3"><button type="button"><span class="num">4</span><span><span class="stop-name">Saline Royale d&#39;Arc-et-Senans</span><span class="stop-leg">141 mi (226 km), 2 h 46 min driving to 5. Neuf-Brisach</span></span></button></li>
+        <li data-order="4"><button type="button"><span class="num">5</span><span><span class="stop-name">Neuf-Brisach</span><span class="stop-leg">56 mi (90 km), 1 h 11 min driving to 6. Grande-Île de Strasbourg</span></span></button></li>
+        <li data-order="5"><button type="button"><span class="num">6</span><span><span class="stop-name">Grande-Île de Strasbourg</span><span class="stop-leg">98 mi (157 km), 1 h 58 min driving to 7. Place Stanislas</span></span></button></li>
+        <li data-order="6"><button type="button"><span class="num">7</span><span><span class="stop-name">Place Stanislas</span><span class="stop-leg">152 mi (245 km), 2 h 46 min driving to 8. Cathedrale Notre-Dame de Reims</span></span></button></li>
+        <li data-order="7"><button type="button"><span class="num">8</span><span><span class="stop-name">Cathedrale Notre-Dame de Reims</span><span class="stop-leg">100 mi (161 km), 1 h 53 min driving to 9. Centre Historique Minier</span></span></button></li>
+        <li data-order="8"><button type="button"><span class="num">9</span><span><span class="stop-name">Centre Historique Minier</span><span class="stop-leg">32 mi (52 km), 45 min driving to 10. Vieux-Lille</span></span></button></li>
+        <li data-order="9"><button type="button"><span class="num">10</span><span><span class="stop-name">Vieux-Lille</span><span class="stop-leg">88 mi (142 km), 1 h 36 min driving to 11. Cathédrale Notre-Dame d&#39;Amiens</span></span></button></li>
+        <li data-order="10"><button type="button"><span class="num">11</span><span><span class="stop-name">Cathédrale Notre-Dame d&#39;Amiens</span><span class="stop-leg">87 mi (140 km), 1 h 52 min driving to 12. La Tour Eiffel</span></span></button></li>
+        <li data-order="11"><button type="button"><span class="num">12</span><span><span class="stop-name">La Tour Eiffel</span><span class="stop-leg">43 mi (69 km), 1 h 4 min driving to 13. Foret de Fontainebleau</span></span></button></li>
+        <li data-order="12"><button type="button"><span class="num">13</span><span><span class="stop-name">Foret de Fontainebleau</span><span class="stop-leg">72 mi (116 km), 1 h 26 min driving to 14. Chartres Cathedral</span></span></button></li>
+        <li data-order="13"><button type="button"><span class="num">14</span><span><span class="stop-name">Chartres Cathedral</span><span class="stop-leg">139 mi (224 km), 2 h 54 min driving to 15. Etretat</span></span></button></li>
+        <li data-order="14"><button type="button"><span class="num">15</span><span><span class="stop-name">Etretat</span><span class="stop-leg">151 mi (243 km), 2 h 53 min driving to 16. Mont Saint-Michel</span></span></button></li>
+        <li data-order="15"><button type="button"><span class="num">16</span><span><span class="stop-name">Mont Saint-Michel</span><span class="stop-via">Reached via the mainland Mont St. Michel P10 car park (1.6 mi away)</span><span class="stop-leg">141 mi (228 km), 2 h 46 min driving to 17. Carnac</span></span></button></li>
+        <li data-order="16"><button type="button"><span class="num">17</span><span><span class="stop-name">Carnac</span><span class="stop-leg">65 mi (105 km), 1 h 31 min driving to 18. Marais salants de Guérande</span></span></button></li>
+        <li data-order="17"><button type="button"><span class="num">18</span><span><span class="stop-name">Marais salants de Guérande</span><span class="stop-leg">56 mi (89 km), 1 h 15 min driving to 19. Les Machines de l&#39;île</span></span></button></li>
+        <li data-order="18"><button type="button"><span class="num">19</span><span><span class="stop-name">Les Machines de l&#39;île</span><span class="stop-leg">163 mi (262 km), 3 h 6 min driving to 20. Abbaye de Saint-Savin-sur-Gartempe</span></span></button></li>
+        <li data-order="19"><button type="button"><span class="num">20</span><span><span class="stop-name">Abbaye de Saint-Savin-sur-Gartempe</span><span class="stop-leg">88 mi (142 km), 2 h 1 min driving to 21. Crozant</span></span></button></li>
+        <li data-order="20"><button type="button"><span class="num">21</span><span><span class="stop-name">Crozant</span><span class="stop-leg">160 mi (257 km), 3 h 5 min driving to 22. Parc naturel regional des volcans d&#39;Auvergne</span></span></button></li>
+        <li data-order="21"><button type="button"><span class="num">22</span><span><span class="stop-name">Parc naturel regional des volcans d&#39;Auvergne</span><span class="stop-leg">129 mi (207 km), 2 h 28 min driving to 23. Grotte de Lascaux II</span></span></button></li>
+        <li data-order="22"><button type="button"><span class="num">23</span><span><span class="stop-name">Grotte de Lascaux II</span><span class="stop-leg">114 mi (184 km), 2 h 11 min driving to 24. Le Miroir d&#39;eau</span></span></button></li>
+        <li data-order="23"><button type="button"><span class="num">24</span><span><span class="stop-name">Le Miroir d&#39;eau</span><span class="stop-leg">194 mi (312 km), 3 h 38 min driving to 25. Pyrenees National Park</span></span></button></li>
+        <li data-order="24"><button type="button"><span class="num">25</span><span><span class="stop-name">Pyrenees National Park</span><span class="stop-leg">141 mi (227 km), 2 h 54 min driving to 26. Place du Capitole</span></span></button></li>
+        <li data-order="25"><button type="button"><span class="num">26</span><span><span class="stop-name">Place du Capitole</span><span class="stop-leg">59 mi (95 km), 1 h 8 min driving to 27. Carcassonne</span></span></button></li>
+        <li data-order="26"><button type="button"><span class="num">27</span><span><span class="stop-name">Carcassonne</span><span class="stop-leg">93 mi (150 km), 1 h 43 min driving to 28. Promenade du Peyrou</span></span></button></li>
+        <li data-order="27"><button type="button"><span class="num">28</span><span><span class="stop-name">Promenade du Peyrou</span><span class="stop-leg">107 mi (172 km), 2 h 10 min driving to 29. Anse de Malmousque</span></span></button></li>
+        <li data-order="28"><button type="button"><span class="num">29</span><span><span class="stop-name">Anse de Malmousque</span><span class="stop-leg">127 mi (204 km), 2 h 20 min driving to 30. Promenade des Anglais</span></span></button></li>
+        <li data-order="29"><button type="button"><span class="num">30</span><span><span class="stop-name">Promenade des Anglais</span><span class="stop-leg">2.6 mi (4.1 km), 10 min driving to 31. Golfe de Porto</span></span></button></li>
+        <li data-order="30"><button type="button"><span class="num">31</span><span><span class="stop-name">Golfe de Porto</span><span class="stop-via">Reached via Port of Nice (Port Lympia) (122 mi away)</span><span class="stop-leg">284 mi (457 km), 5 h 28 min driving to 32. Massif du Mont Blanc</span></span></button></li>
+        <li data-order="31"><button type="button"><span class="num">32</span><span><span class="stop-name">Massif du Mont Blanc</span><span class="stop-leg">145 mi (233 km), 3 h 40 min driving to 1. Parc national des Écrins</span></span></button></li>
+    </ol>
 
-		google.maps.event.addDomListener(window, 'load', initialize);
-
-		calcRoute("Parc national des Écrins, France", "Vieux-Lille, Lille, France", ["Vieux Lyon, Lyon, France", "Beaune, France", "Saline Royale d'Arc-et-Senans, France", "Neuf-Brisach, France", "Grande-Île de Strasbourg, Strasbourg, France", "Place Stanislas, Nancy, France", "Cathedrale Notre-Dame de Reims, France", "Centre Historique Minier, Rue d'Erchin, 59287 Lewarde, France"]);
-
-		calcRoute("Vieux-Lille, Lille, France", "Les Machines de l'île, Nantes, France", ["Cathédrale Notre-Dame d'Amiens, Place Notre Dame, Amiens, France", "La Tour Eiffel, Avenue Anatole France, Paris, France", "Foret de Fontainebleau, Fontainebleau, France", "Chartres Cathedral, France", "Etretat, France", "Mont Saint-Michel, France", "Carnac, France", "Marais salants de Guérande, Route des Marais, Guérande 44350, France"]);
-
-		calcRoute("Les Machines de l'île, Nantes, France", "Promenade du Peyrou, Montpellier, France", ["Abbaye de Saint-Savin-sur-Gartempe, Place de la Libération, Saint-Savin, France", "Crozant, France", "Parc naturel regional des volcans d'Auvergne, France", "Grotte de Lascaux II, France", "Le Miroir d'eau, Bordeaux, France", "Pyrenees National Park, France", "Place du Capitole, Toulouse, France", "Carcassonne, France"]);
-
-		calcRoute("Promenade du Peyrou, Montpellier, France", "Parc national des Écrins, France", ["Anse de Malmousque, Marseille, France", "Promenade des Anglais, Nice, France", "Golfe de Porto, France", "Massif du Mont Blanc, Chamonix, France"]);
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    <footer class="foot">
+      <p>Map data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, available under the ODbL. Basemap by <a href="https://protomaps.com">Protomaps</a>, rendered with <a href="https://maplibre.org">MapLibre</a>. Routes computed with <a href="https://project-osrm.org">OSRM</a>.</p>
+      <p>Built 2026-09-27, OSM snapshot 2026-09-25. Original code MIT, content CC BY 4.0, by Randal S. Olson.</p>
+    </footer>
+  </section>
+</div>
+</body>
 </html>
